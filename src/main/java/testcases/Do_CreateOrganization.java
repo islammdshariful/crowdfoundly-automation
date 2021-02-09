@@ -1,15 +1,18 @@
 package testcases;
 
-import modules.GiveDonation;
+import modules.CreateOrganization;
+import modules.CreateSubscription;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 import utils.Config;
 import utils.DriverManager;
+import utils.Menus;
 import utils.Urls;
 
 import java.util.concurrent.TimeUnit;
 
-public class Do_Donation {
+public class Do_CreateOrganization {
     WebDriver driver = null;
 
     public void invokeBrowser() {
@@ -23,8 +26,12 @@ public class Do_Donation {
     @Test
     public void nxCommentsTestCase() {
         invokeBrowser();
-//        (driver, url, campaign type, tip, login)
-//        GiveDonation.donate(driver, "https://tu3testorganization1.crowdfundly.dev/campaigns/automation-donation-date-14599", "donation", "yes", "yes");
-        GiveDonation.donate(driver, "https://tu3testorganization1.crowdfundly.dev/campaigns/automation-reward-date", "reward", "yes", "yes");
+        driver.get(Urls.dev);
+        Config.allow_cookies();
+        modules.Login.loginToAccount(driver, "organizer");
+//        CreateSubscription.createSubs(driver, "free");
+        Menus.profileMenu.clickSubscription();
+        Menus.profileMenu.clickAllPlans();
+        CreateOrganization.create(driver);
     }
 }

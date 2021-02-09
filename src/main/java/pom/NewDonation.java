@@ -2,6 +2,9 @@ package pom;
 
 public class NewDonation {
     public static class Locator {
+        public static final String login_btn_xpth = "//*[@id=\"public\"]/div/div[3]/div/div/div/div[2]/div[2]/ul/li[1]/div/a";
+
+
         public static final String backit_contribute_xpth = "//*[@id=\"public\"]/div/div[4]/div/div/div/div/div[1]/div/div[2]/div/div[4]/button";
 
         public static final String get_now_btn_xpth = "//*[@id=\"backModal\"]/div/div[2]/div/div/div[2]/div/div/div/div[3]/button";

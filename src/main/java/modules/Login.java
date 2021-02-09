@@ -31,4 +31,34 @@ public class Login {
 
         softassert.assertAll();
     }
+
+    public static void loginToAccount(WebDriver driver, String usr) {
+        SoftAssert softassert = new SoftAssert();
+
+
+        driver.findElement(By.id(LoginPage.Locators.email_id)).click();
+        driver.findElement(By.id(LoginPage.Locators.email_id)).clear();
+        if(usr.equals("contributor")){
+            driver.findElement(By.id(LoginPage.Locators.email_id)).sendKeys(Credentials.dev.con_email);
+        } else if (usr.equals("organizer")) {
+            driver.findElement(By.id(LoginPage.Locators.email_id)).sendKeys(Credentials.dev.org_email);
+        }
+
+        driver.findElement(By.id(LoginPage.Locators.pass_id)).click();
+        driver.findElement(By.id(LoginPage.Locators.pass_id)).clear();
+        if(usr.equals("contributor")){
+            driver.findElement(By.id(LoginPage.Locators.pass_id)).sendKeys(Credentials.dev.con_password);
+        }else if (usr.equals("organizer")) {
+            driver.findElement(By.id(LoginPage.Locators.pass_id)).sendKeys(Credentials.dev.org_password);
+        }
+
+        driver.findElement(By.xpath(LoginPage.Locators.signin_btn_xpth)).click();
+
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

@@ -7,12 +7,25 @@ import pom.NewDonation;
 import utils.Config;
 
 public class GiveDonation {
-    public static void donate(WebDriver driver, String cmp_type, String url) {
+    public static void donate(WebDriver driver, String url, String cmp_type, String tip, String log) {
         if (!url.equals("")) {
             driver.get(url);
             Config.allow_cookies();
         } else {
             Config.allow_cookies();
+        }
+
+        if (log.equals("yes")) {
+            String cmp_url = driver.getCurrentUrl();
+            System.out.println(cmp_url);
+            driver.findElement(By.xpath(NewDonation.Locator.login_btn_xpth)).click();
+            modules.Login.loginToAccount(driver, "contributor");
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            driver.get(cmp_url);
         }
 
         driver.findElement(By.xpath(NewDonation.Locator.backit_contribute_xpth)).click();
@@ -25,16 +38,24 @@ public class GiveDonation {
             driver.findElement(By.xpath(NewDonation.Locator.custom_amnt_nxt_btn_xpth)).click();
         }
 
+        if (tip.equals("yes")) {
+            driver.findElement(By.id(NewDonation.Locator.tip_amnt_field_id)).click();
+            driver.findElement(By.xpath(NewDonation.Locator.tip_amnt_xpth)).click();
+            driver.findElement(By.xpath(NewDonation.Locator.tip_amnt_continue_btn_xpth)).click();
+        }
+
 
         // Contribution Info
         driver.findElement(By.id(NewDonation.Locator.message_id)).click();
         driver.findElement(By.id(NewDonation.Locator.message_id)).sendKeys(NewDonation.Text.message_txt);
 
-        driver.findElement(By.id(NewDonation.Locator.name_id)).click();
-        driver.findElement(By.id(NewDonation.Locator.name_id)).sendKeys(NewDonation.Text.name_txt);
+        if (!log.equals("yes")) {
+            driver.findElement(By.id(NewDonation.Locator.name_id)).click();
+            driver.findElement(By.id(NewDonation.Locator.name_id)).sendKeys(NewDonation.Text.name_txt);
 
-        driver.findElement(By.id(NewDonation.Locator.email_id)).click();
-        driver.findElement(By.id(NewDonation.Locator.email_id)).sendKeys(NewDonation.Text.email_txt);
+            driver.findElement(By.id(NewDonation.Locator.email_id)).click();
+            driver.findElement(By.id(NewDonation.Locator.email_id)).sendKeys(NewDonation.Text.email_txt);
+        }
 
         driver.findElement(By.xpath(NewDonation.Locator.contribute_xpth)).click();
 
