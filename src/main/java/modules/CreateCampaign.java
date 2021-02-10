@@ -2,9 +2,13 @@ package modules;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import pom.CampaignPage;
 import pom.NewCampaign;
 import utils.Config;
+import utils.DriverManager;
 import utils.Menus;
 
 import java.io.IOException;
@@ -12,8 +16,13 @@ import java.io.IOException;
 public class CreateCampaign {
     public static void create(WebDriver driver, String cmp_type, String duration, String do_donate) {
         Menus.clickCampaigns();
+
         try {
+            Thread.sleep(5000);
             // Add new campaign
+//            WebDriverWait wait = new WebDriverWait(DriverManager.driver, 30);
+//            WebElement add_new = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(CampaignPage.Locators.add_new_xpth)));
+//            add_new.click();
             driver.findElement(By.xpath(CampaignPage.Locators.add_new_xpth)).click();
 
             // Campaign type
@@ -111,7 +120,8 @@ public class CreateCampaign {
             driver.findElement(By.xpath(NewCampaign.Locator.stry_img_xpth)).click();
             driver.findElement(By.xpath(NewCampaign.Locator.stry_img_field_xpth)).click();
             Thread.sleep(1000);
-            Runtime.getRuntime().exec("C:\\Users\\shari\\IdeaProjects\\CROWDFUNDLY\\autoit\\CreateCampaign\\Story\\stry_fileupload.exe");
+            Runtime.getRuntime().exec(System.getProperty("user.dir") + "/autoit/CreateCampaign/Story/stry_fileupload.exe");
+//            Runtime.getRuntime().exec("C:\\Users\\shari\\IdeaProjects\\CROWDFUNDLY\\autoit\\CreateCampaign\\Story\\stry_fileupload.exe");
             driver.findElement(By.xpath(NewCampaign.Locator.stry_img_crp_xpth)).click();
 
             // Add Video

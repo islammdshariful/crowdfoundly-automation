@@ -9,7 +9,7 @@ public class NewSubscription {
 
         public static final String debit_crd_iframe_xpth = "//*[@id=\"public\"]/div/div[4]/div/div/div/div[4]/div[2]/div[3]/div/iframe";
         public static final String debit_crd_num_name = "cardnumber";
-        public static final String debit_crd_cvc_name = "cvc";
+        public static final String debit_crd_cvc_name = "postal";
 
         public static final String paynow_btn_xpth = "//*[@id=\"public\"]/div/div[4]/div/div/div/div[4]/div[2]/div[5]/button/span";
         public static final String subs_btn_xpth = "//*[@id=\"public\"]/div/div[4]/div/div/div/div[4]/div/div/button/span";

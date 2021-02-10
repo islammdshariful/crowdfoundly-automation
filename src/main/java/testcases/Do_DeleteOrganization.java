@@ -1,6 +1,6 @@
 package testcases;
 
-import modules.GiveDonation;
+import modules.DeleteAccounts;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 import utils.Config;
@@ -9,7 +9,7 @@ import utils.Urls;
 
 import java.util.concurrent.TimeUnit;
 
-public class Do_Donation {
+public class Do_DeleteOrganization {
     WebDriver driver = null;
 
     public void invokeBrowser() {
@@ -23,9 +23,9 @@ public class Do_Donation {
     @Test
     public void nxCommentsTestCase() {
         invokeBrowser();
-//        (driver, url, campaign type, tip, login)
-//        GiveDonation.donate(driver, "https://tu3testorganization1.crowdfundly.dev/campaigns/automation-donation-date-14599", "donation", "yes", "yes");
-//        GiveDonation.donate(driver, "https://tu3testorganization1.crowdfundly.dev/campaigns/automation-reward-date", "reward", "yes", "yes");
-        GiveDonation.donate(driver, "https://orgbyautomation.crowdfundly.dev/campaigns/automation-donation-nodate", "donation", "", "yes");
+        driver.get(Urls.dev);
+        Config.allow_cookies();
+        modules.Login.loginToAccount(driver, "organizer");
+        DeleteAccounts.deleteOrganization(driver);
     }
 }

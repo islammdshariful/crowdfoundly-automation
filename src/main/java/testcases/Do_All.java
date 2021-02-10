@@ -3,6 +3,7 @@ package testcases;
 import modules.CreateOrganization;
 import modules.CreateSubscription;
 import modules.DeleteAccounts;
+import modules.SetupPaymentGateway;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 import utils.Config;
@@ -12,7 +13,7 @@ import utils.Urls;
 
 import java.util.concurrent.TimeUnit;
 
-public class Do_CreateOrganization {
+public class Do_All {
     WebDriver driver = null;
 
     public void invokeBrowser() {
@@ -29,9 +30,14 @@ public class Do_CreateOrganization {
         driver.get(Urls.dev);
         Config.allow_cookies();
         modules.Login.loginToAccount(driver, "organizer");
-        CreateSubscription.createSubs(driver, "free");
+        CreateSubscription.createSubs(driver, "plus");
         Menus.profileMenu.clickSubscription();
         Menus.profileMenu.clickAllPlans();
         CreateOrganization.create(driver);
+        SetupPaymentGateway.paymentGateway(driver);
+        modules.CreateCampaign.create(driver, "donation", "nodate", "yes");
+        driver.get(Urls.dev);
+        Menus.clickCampaigns();
+        DeleteAccounts.deleteOrganization(driver);
     }
 }

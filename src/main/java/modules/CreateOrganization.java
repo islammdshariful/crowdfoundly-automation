@@ -9,11 +9,9 @@ public class CreateOrganization {
     public static void create(WebDriver driver) {
 
         try {
-//            driver.findElement(By.id(NewOrganization.Locator.action_btn_id)).click();
-            driver.findElement(By.xpath("/html/body/div/div/div/div/div[5]/div/div[2]/div/div/div/div[2]/div/div/div/table/tbody/tr/td[6]/div/button/div/img")).click();
+            driver.findElement(By.xpath(NewOrganization.Locator.action_btn_xpth)).click();
             Thread.sleep(1000);
-//            driver.findElement(By.xpath(NewOrganization.Locator.add_org_btn_xpth)).click();
-            driver.findElement(By.xpath("/html/body/div/div/div/div/div[5]/div/div[2]/div/div/div/div[2]/div/div/div/table/tbody/tr/td[6]/div/ul/li/button")).click();
+            driver.findElement(By.xpath(NewOrganization.Locator.add_org_btn_xpth)).click();
 
             driver.findElement(By.id(NewOrganization.Locator.org_name_id)).click();
             driver.findElement(By.id(NewOrganization.Locator.org_name_id)).sendKeys(NewOrganization.Text.org_name_txt);
@@ -35,6 +33,7 @@ public class CreateOrganization {
             Thread.sleep(1000);
 
             driver.findElement(By.xpath(NewOrganization.Locator.org_agree_term_xpth)).click();
+            Thread.sleep(1000);
             driver.findElement(By.xpath(NewOrganization.Locator.org_save_btn_xpth)).click();
         } catch (InterruptedException e) {
             e.printStackTrace();

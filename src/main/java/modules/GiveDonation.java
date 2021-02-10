@@ -5,6 +5,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import pom.NewDonation;
 import utils.Config;
+import utils.DriverManager;
+
+import java.util.concurrent.TimeUnit;
 
 public class GiveDonation {
     public static void donate(WebDriver driver, String url, String cmp_type, String tip, String log) {
@@ -18,7 +21,13 @@ public class GiveDonation {
         if (log.equals("yes")) {
             String cmp_url = driver.getCurrentUrl();
             System.out.println(cmp_url);
-            driver.findElement(By.xpath(NewDonation.Locator.login_btn_xpth)).click();
+            WebDriver driver1 = DriverManager.driver;
+            driver1.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+            if(driver1.findElements(By.xpath(NewDonation.Locator.login_btn1_xpth)).size() != 0){
+                driver1.findElement(By.xpath(NewDonation.Locator.login_btn1_xpth)).click();
+            }else {
+                driver1.findElement(By.xpath(NewDonation.Locator.login_btn2_xpth)).click();
+            }
             modules.Login.loginToAccount(driver, "contributor");
             try {
                 Thread.sleep(1000);
@@ -71,5 +80,12 @@ public class GiveDonation {
 
         driver.switchTo().parentFrame();
         driver.findElement(By.xpath(NewDonation.Locator.contribute_now_btn_xpth)).click();
+        try {
+            Thread.sleep(4000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        // Download PDF Flyer
+        driver.findElement(By.xpath(NewDonation.Locator.dwnld_pdf_flyer_xpth)).click();
     }
 }

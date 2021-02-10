@@ -2,7 +2,8 @@ package pom;
 
 public class NewDonation {
     public static class Locator {
-        public static final String login_btn_xpth = "//*[@id=\"public\"]/div/div[3]/div/div/div/div[2]/div[2]/ul/li[1]/div/a";
+        public static final String login_btn1_xpth = "/html/body/div/div/div/div/div[3]/div/div/div/div[2]/div[2]/ul/li[2]/div/a";
+        public static final String login_btn2_xpth = "/html/body/div/div/div/div/div[3]/div/div/div/div[2]/div[2]/ul/li[1]/div/a";
 
 
         public static final String backit_contribute_xpth = "//*[@id=\"public\"]/div/div[4]/div/div/div/div/div[1]/div/div[2]/div/div[4]/button";
@@ -28,6 +29,8 @@ public class NewDonation {
         public static final String debit_crd_postal_name = "postal";
 
         public static final String contribute_now_btn_xpth = "//*[@id=\"public\"]/div/div[4]/div/div[1]/div[2]/div/button/span";
+
+        public static final String dwnld_pdf_flyer_xpth = "/html/body/div/div/div/div/div[4]/div/div/div/div/div[3]/div/div[2]/a";
     }
 
     public static class Text {

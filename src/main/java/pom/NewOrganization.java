@@ -2,8 +2,8 @@ package pom;
 
 public class NewOrganization {
     public static class Locator {
-        public static final String action_btn_id = "dropdown-right__BV_toggle_";
-        public static final String add_org_btn_xpth = "//*[@id=\"dropdown-right\"]/ul/li/button";
+        public static final String action_btn_xpth = "/html/body/div/div/div/div/div[5]/div/div[2]/div/div/div/div[2]/div/div/div/table/tbody/tr/td[6]/div/button/div/img";
+        public static final String add_org_btn_xpth = "/html/body/div[1]/div/div/div/div[5]/div/div[2]/div/div/div/div[2]/div/div/div/table/tbody/tr/td[6]/div/ul/li/a";
 
         public static final String org_name_id = "name";
         public static final String org_username_id = "user-name";
@@ -11,8 +11,8 @@ public class NewOrganization {
         public static final String org_des_id = "description";
         public static final String org_des_xpth = "//*[@id=\"description\"]/div[1]/p";
         public static final String org_number_id = "contact-number";
-        public static final String org_agree_term_xpth = "//*[@id=\"public\"]/div/div[4]/div/div/div/div/div/form/div/div[8]/div/label";
-        public static final String org_save_btn_xpth = "//*[@id=\"public\"]/div/div[4]/div/div/div/div/div/form/div/button/span";
+        public static final String org_agree_term_xpth = "//*[@id=\"public\"]/div/div[4]/div/div/div/div/form/div/div[9]/div/label";
+        public static final String org_save_btn_xpth = "//*[@id=\"public\"]/div/div[4]/div/div/div/div/form/div/button/span";
 
 
     }
