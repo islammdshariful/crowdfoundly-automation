@@ -47,4 +47,21 @@ public class OrganizationSettingsPage {
         public static final String paypal_client_id_txt = "AYxB_zwl_3sG0oB0cYeYIO0O5B6H7IshyrQ670BqgBD5tZOCDYPDOck_q9ty7URJac14oMg_xwQwxdTG";
         public static final String paypal_client_secret_txt = "EAAkuLQyPmrhYCVnu5X2r9TmHrARTcNMqHfmUgej5HK8XJif7Zn0KM990lTljboYgVwYqqGOIWpv-GEl";
     }
+
+    public static class CrowdfundlyLocator {
+        public static final String commision_id = "commission_percentage";
+        public static final String auto_approv_xpth = "//*[@id=\"dashboard\"]/div/div[6]/div[2]/div/div[2]/div[2]/form/div[2]/div/div/div[1]/div/div/label";
+        public static final String update_auto_approv_xpth = "//*[@id=\"dashboard\"]/div/div[6]/div[2]/div/div[2]/div[2]/form/div[2]/div/div/div[2]/div/div/label";
+        public static final String allow_tip_xpth = "//*[@id=\"dashboard\"]/div/div[6]/div[2]/div/div[2]/div[2]/form/div[2]/div/div/div[3]/div/div/label";
+        public static final String escrow_xpth = "//*[@id=\"dashboard\"]/div/div[6]/div[2]/div/div[2]/div[2]/form/div[2]/div/div/div[4]/div/div/label";
+        public static final String escrow_duration_id = "escrow_duration";
+        public static final String allow_refund_xpth = "//*[@id=\"dashboard\"]/div/div[6]/div[2]/div/div[2]/div[2]/form/div[2]/div/div/div[6]/div/div/label";
+
+        public static final String save_xpth = "//*[@id=\"dashboard\"]/div/div[6]/div[2]/div/div[2]/div[2]/form/div[3]/div/button/span";
+    }
+
+    public static class CrowdfundlyText {
+        public static final String commision_txt = "5";
+        public static final String escrow_duration_txt = "2";
+    }
 }

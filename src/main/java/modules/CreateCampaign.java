@@ -150,7 +150,7 @@ public class CreateCampaign {
 
 
             if (do_donate.equals("yes")) {
-                GiveDonation.donate(driver, "", cmp_type, "", "yes");
+                GiveDonation.donate(driver, "", cmp_type, "yes", "yes");
             } else {
                 Config.allow_cookies();
             }
