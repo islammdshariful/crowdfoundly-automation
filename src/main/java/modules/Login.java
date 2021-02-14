@@ -42,6 +42,8 @@ public class Login {
             driver.findElement(By.id(LoginPage.Locators.email_id)).sendKeys(Credentials.dev.con_email);
         } else if (usr.equals("organizer")) {
             driver.findElement(By.id(LoginPage.Locators.email_id)).sendKeys(Credentials.dev.org_email);
+        }else{
+            driver.findElement(By.id(LoginPage.Locators.email_id)).sendKeys(Credentials.dev.fund_email);
         }
 
         driver.findElement(By.id(LoginPage.Locators.pass_id)).click();
@@ -50,6 +52,8 @@ public class Login {
             driver.findElement(By.id(LoginPage.Locators.pass_id)).sendKeys(Credentials.dev.con_password);
         }else if (usr.equals("organizer")) {
             driver.findElement(By.id(LoginPage.Locators.pass_id)).sendKeys(Credentials.dev.org_password);
+        }else{
+            driver.findElement(By.id(LoginPage.Locators.pass_id)).sendKeys(Credentials.dev.fund_password);
         }
 
         driver.findElement(By.xpath(LoginPage.Locators.signin_btn_xpth)).click();

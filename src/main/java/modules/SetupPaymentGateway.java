@@ -25,6 +25,7 @@ public class SetupPaymentGateway {
             driver.findElement(By.xpath(OrganizationSettingsPage.PaymentLocator.strip_save_btn_xpth)).click();
 
             driver.findElement(By.xpath(OrganizationSettingsPage.PaymentLocator.active_strip_btn_xpth)).click();
+            Thread.sleep(1000);
 
             // PayPal
             driver.findElement(By.id(OrganizationSettingsPage.PaymentLocator.paypal_client_id)).click();
