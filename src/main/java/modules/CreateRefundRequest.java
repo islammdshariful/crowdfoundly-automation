@@ -7,7 +7,7 @@ import pom.TopbarMenu;
 import utils.Menus;
 
 public class CreateRefundRequest {
-    public static void create(WebDriver driver, String shipping) {
+    public static void create(WebDriver driver) {
         try {
             Menus.profileMenu.clickContribution();
             driver.findElement(By.xpath(NewRefundRequest.ConLocator.action_btn_xpth)).click();

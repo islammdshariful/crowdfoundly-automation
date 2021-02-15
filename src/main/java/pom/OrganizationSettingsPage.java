@@ -32,7 +32,7 @@ public class OrganizationSettingsPage {
         public static final String stripe_secret_id = "stripe_secret";
         public static final String strip_save_btn_xpth = "//*[@id=\"dashboard\"]/div/div[6]/div[2]/div/div[2]/div[2]/div[1]/div[2]/div/form/button/span";
 
-        public static final String active_strip_btn_xpth = "//*[@id=\"dashboard\"]/div/div[6]/div[2]/div/div[2]/div[2]/div[1]/div[2]/div/div/button[3]/span";
+        public static final String active_strip_btn_xpth = "//*[@id=\"dashboard\"]/div/div[6]/div[2]/div/div[2]/div[2]/div[1]/div[2]/div/div/button[2]/span";
 
         // PayPal
         public static final String paypal_client_id = "client_id";
@@ -51,11 +51,12 @@ public class OrganizationSettingsPage {
     public static class CrowdfundlyLocator {
         public static final String commision_id = "commission_percentage";
         public static final String auto_approv_xpth = "//*[@id=\"dashboard\"]/div/div[6]/div[2]/div/div[2]/div[2]/form/div[2]/div/div/div[1]/div/div/label";
-        public static final String update_auto_approv_xpth = "//*[@id=\"dashboard\"]/div/div[6]/div[2]/div/div[2]/div[2]/form/div[2]/div/div/div[2]/div/div/label";
-        public static final String allow_tip_xpth = "//*[@id=\"dashboard\"]/div/div[6]/div[2]/div/div[2]/div[2]/form/div[2]/div/div/div[3]/div/div/label";
-        public static final String escrow_xpth = "//*[@id=\"dashboard\"]/div/div[6]/div[2]/div/div[2]/div[2]/form/div[2]/div/div/div[4]/div/div/label";
+        public static final String auto_public_fundriser_xpth = "//*[@id=\"dashboard\"]/div/div[6]/div[2]/div/div[2]/div[2]/form/div[2]/div/div/div[2]/div/div/label";
+        public static final String update_auto_approv_xpth = "//*[@id=\"dashboard\"]/div/div[6]/div[2]/div/div[2]/div[2]/form/div[2]/div/div/div[3]/div/div/label";
+        public static final String allow_tip_xpth = "//*[@id=\"dashboard\"]/div/div[6]/div[2]/div/div[2]/div[2]/form/div[2]/div/div/div[4]/div/div/label";
+        public static final String escrow_xpth = "//*[@id=\"dashboard\"]/div/div[6]/div[2]/div/div[2]/div[2]/form/div[2]/div/div/div[5]/div/div/label";
         public static final String escrow_duration_id = "escrow_duration";
-        public static final String allow_refund_xpth = "//*[@id=\"dashboard\"]/div/div[6]/div[2]/div/div[2]/div[2]/form/div[2]/div/div/div[6]/div/div/label";
+        public static final String allow_refund_xpth = "//*[@id=\"dashboard\"]/div/div[6]/div[2]/div/div[2]/div[2]/form/div[2]/div/div/div[7]/div/div/label";
 
         public static final String save_xpth = "//*[@id=\"dashboard\"]/div/div[6]/div[2]/div/div[2]/div[2]/form/div[3]/div/button/span";
     }

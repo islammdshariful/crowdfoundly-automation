@@ -1,6 +1,7 @@
 package testcases;
 
 import modules.*;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 import utils.Config;
@@ -53,10 +54,16 @@ public class Do_All {
 //        driver.get(Urls.dev);
 //        Menus.clickCampaigns();
 
-        // Delete Campaign
-        DeleteCampaign.deleteCampaign(driver);
+        // Ask for Refund
+        driver.get(Urls.dev);
+        Menus.clickLogouts();
+        modules.Login.loginToAccount(driver, "contributor");
+        CreateRefundRequest.create(driver);
 
-        // Delete Organization
-        DeleteAccounts.deleteOrganization(driver);
+//        // Delete Campaign
+//        DeleteCampaign.deleteCampaign(driver);
+//
+//        // Delete Organization
+//        DeleteAccounts.deleteOrganization(driver);
     }
 }

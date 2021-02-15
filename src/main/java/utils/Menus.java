@@ -71,22 +71,31 @@ public class Menus {
         driver.findElement(By.xpath(roles_xpth)).click();
     }
 
-    public static void clickSettings() {
+    public static void clickCatagories() {
         String settings_xpth = "//*[@id=\"dashboard\"]/div/div[5]/div/div[2]/ul/li[10]/a/span";
         WebDriver driver = DriverManager.driver;
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.findElement(By.xpath(settings_xpth)).click();
     }
 
+
+
+    public static void clickSettings() {
+        String settings_xpth = "//*[@id=\"dashboard\"]/div/div[5]/div/div[2]/ul/li[11]/a/span";
+        WebDriver driver = DriverManager.driver;
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.findElement(By.xpath(settings_xpth)).click();
+    }
+
     public static void clickReports() {
-        String reports_xpth = "//*[@id=\"dashboard\"]/div/div[5]/div/div[2]/ul/li[11]/a/span";
+        String reports_xpth = "//*[@id=\"dashboard\"]/div/div[5]/div/div[2]/ul/li[12]/a/span";
         WebDriver driver = DriverManager.driver;
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.findElement(By.xpath(reports_xpth)).click();
     }
 
     public static void clickLogouts() {
-        String logouts_xpth = "";
+        String logouts_xpth = "//*[@id=\"dashboard\"]/div/div[5]/div/div[3]/ul/li/div/span";
         WebDriver driver = DriverManager.driver;
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.findElement(By.xpath(logouts_xpth)).click();
