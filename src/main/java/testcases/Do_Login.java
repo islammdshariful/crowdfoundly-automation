@@ -20,7 +20,7 @@ public class Do_Login {
     }
 
     @Test
-    public void nxCommentsTestCase() {
+    public void testCase() {
         invokeBrowser();
         driver.get(Urls.dev);
         Config.allow_cookies();

@@ -20,11 +20,11 @@ public class Do_CreateCampaign {
     }
 
     @Test
-    public void nxCommentsTestCase() {
+    public void testCase() {
         invokeBrowser();
         driver.get(Urls.dev);
         Config.allow_cookies();
-        modules.Login.loginToAccount(driver);
+        modules.Login.loginToAccount(driver, "organizer");
 //        (driver, category, duration, do donation)
 //        modules.CreateCampaign.create(driver, "reward", "nodate");
 //        modules.CreateCampaign.create(driver, "reward", "nodate", "");

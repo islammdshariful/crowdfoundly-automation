@@ -1,15 +1,16 @@
 package testcases;
 
-import modules.DeleteAccounts;
+import modules.SetupCrowdfundly;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 import utils.Config;
 import utils.DriverManager;
+import utils.Menus;
 import utils.Urls;
 
 import java.util.concurrent.TimeUnit;
 
-public class Do_DeleteOrganization {
+public class Do_Test {
     WebDriver driver = null;
 
     public void invokeBrowser() {
@@ -26,6 +27,7 @@ public class Do_DeleteOrganization {
         driver.get(Urls.dev);
         Config.allow_cookies();
         modules.Login.loginToAccount(driver, "organizer");
-        DeleteAccounts.deleteOrganization(driver);
+        Menus.clickSettings();
+        SetupCrowdfundly.activeEscrow(driver);
     }
 }

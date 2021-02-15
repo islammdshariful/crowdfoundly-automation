@@ -22,20 +22,41 @@ public class Do_All {
     }
 
     @Test
-    public void nxCommentsTestCase() {
+    public void testCase() {
         invokeBrowser();
         driver.get(Urls.dev);
         Config.allow_cookies();
+
+        // Login to Account
         modules.Login.loginToAccount(driver, "organizer");
+
+        // Create Subscription
         CreateSubscription.createSubs(driver, "plus");
+
+        // Create Organization
         Menus.profileMenu.clickSubscription();
         Menus.profileMenu.clickAllPlans();
         CreateOrganization.create(driver);
+
+        // Set up payment gateway
         SetupPaymentGateway.paymentGateway(driver);
+
+        // Set up Tips
         SetupCrowdfundly.allowTips(driver);
+
+        //Set up Refund
+        SetupCrowdfundly.activeEscrow(driver);
+
+        // Create Campaign
         modules.CreateCampaign.create(driver, "donation", "nodate", "yes");
-        driver.get(Urls.dev);
-        Menus.clickCampaigns();
+
+//        driver.get(Urls.dev);
+//        Menus.clickCampaigns();
+
+        // Delete Campaign
+        DeleteCampaign.deleteCampaign(driver);
+
+        // Delete Organization
         DeleteAccounts.deleteOrganization(driver);
     }
 }

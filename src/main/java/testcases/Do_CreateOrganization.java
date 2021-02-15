@@ -24,7 +24,7 @@ public class Do_CreateOrganization {
     }
 
     @Test
-    public void nxCommentsTestCase() {
+    public void testCase() {
         invokeBrowser();
         driver.get(Urls.dev);
         Config.allow_cookies();

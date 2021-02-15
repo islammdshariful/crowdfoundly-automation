@@ -21,7 +21,7 @@ public class Do_Donation {
     }
 
     @Test
-    public void nxCommentsTestCase() {
+    public void testCase() {
         invokeBrowser();
 //        (driver, url, campaign type, tip, login)
 //        GiveDonation.donate(driver, "https://tu3testorganization1.crowdfundly.dev/campaigns/automation-donation-date-14599", "donation", "yes", "yes");

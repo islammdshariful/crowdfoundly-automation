@@ -25,7 +25,7 @@ public class Do_DeleteCampaign {
     }
 
     @Test
-    public void nxCommentsTestCase() {
+    public void testCase() {
         invokeBrowser();
         driver.get(Urls.dev);
         Config.allow_cookies();
