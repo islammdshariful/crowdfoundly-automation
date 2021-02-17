@@ -1,6 +1,7 @@
 package testcases;
 
 import modules.Login;
+import modules.ManageRefundRequest;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 import utils.Config;
@@ -9,7 +10,7 @@ import utils.Urls;
 
 import java.util.concurrent.TimeUnit;
 
-public class Do_Login {
+public class Do_ManageRefund {
     WebDriver driver = null;
 
     public void invokeBrowser() {
@@ -26,5 +27,6 @@ public class Do_Login {
         driver.get(Urls.dev);
         Config.allow_cookies();
         Login.loginToAccount(driver, "organizer");
+        ManageRefundRequest.approve(driver);
     }
 }

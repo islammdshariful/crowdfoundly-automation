@@ -1,7 +1,11 @@
 package modules;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import pom.NewRefundRequest;
 import pom.TopbarMenu;
 import utils.Menus;
@@ -21,7 +25,15 @@ public class CreateRefundRequest {
 
             driver.findElement(By.xpath(TopbarMenu.Profile.dropdown_menu_xpth)).click();
             Thread.sleep(1000);
-            driver.findElement(By.xpath(TopbarMenu.Profile.logout_xpth)).click();
+
+//            driver.findElement(By.xpath(TopbarMenu.Profile.logout_xpth)).click();
+
+            WebElement logout = driver.findElement(By.xpath(TopbarMenu.Profile.logout_xpth));
+            JavascriptExecutor executor = (JavascriptExecutor)driver;
+            executor.executeScript("arguments[0].click();", logout);
+
+            Thread.sleep(2000);
+
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

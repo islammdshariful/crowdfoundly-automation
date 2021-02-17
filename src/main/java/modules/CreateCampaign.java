@@ -1,12 +1,14 @@
 package modules;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pom.CampaignPage;
 import pom.NewCampaign;
+import pom.TopbarMenu;
 import utils.Config;
 import utils.DriverManager;
 import utils.Menus;
@@ -18,12 +20,13 @@ public class CreateCampaign {
         Menus.clickCampaigns();
 
         try {
-            Thread.sleep(5000);
+//            Thread.sleep(5000);
+
             // Add new campaign
-//            WebDriverWait wait = new WebDriverWait(DriverManager.driver, 30);
-//            WebElement add_new = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(CampaignPage.Locators.add_new_xpth)));
-//            add_new.click();
-            driver.findElement(By.xpath(CampaignPage.Locators.add_new_xpth)).click();
+//            driver.findElement(By.xpath(CampaignPage.Locators.add_new_xpth)).click();
+            WebElement add_new =  driver.findElement(By.xpath(CampaignPage.Locators.add_new_xpth));
+            JavascriptExecutor executor = (JavascriptExecutor)driver;
+            executor.executeScript("arguments[0].click();", add_new);
 
             // Campaign type
             if (cmp_type.equals("reward")) {

@@ -28,8 +28,8 @@ public class Do_All {
         driver.get(Urls.dev);
         Config.allow_cookies();
 
-        // Login to Account
-        modules.Login.loginToAccount(driver, "organizer");
+        // Login to Organization Account
+        Login.loginToAccount(driver, "organizer");
 
         // Create Subscription
         CreateSubscription.createSubs(driver, "plus");
@@ -57,13 +57,19 @@ public class Do_All {
         // Ask for Refund
         driver.get(Urls.dev);
         Menus.clickLogouts();
-        modules.Login.loginToAccount(driver, "contributor");
+        Login.loginToAccount(driver, "contributor");
         CreateRefundRequest.create(driver);
 
-//        // Delete Campaign
-//        DeleteCampaign.deleteCampaign(driver);
-//
-//        // Delete Organization
-//        DeleteAccounts.deleteOrganization(driver);
+        // Login to Organization Account
+        Login.loginToAccount(driver, "organizer");
+
+        // Manage Refund
+        ManageRefundRequest.approve(driver);
+
+        // Delete Campaign
+        DeleteCampaign.deleteCampaign(driver);
+
+        // Delete Organization
+        DeleteAccounts.deleteOrganization(driver);
     }
 }

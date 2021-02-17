@@ -21,6 +21,9 @@ public class NewRefundRequest {
         public static final String accept_btn_xpth = "//*[@id=\"refundModal\"]/div/div[2]/div/form/div[2]/button";
         public static final String cancle_note_id = "cancel_note";
         public static final String cancel_submit_xpth = "//*[@id=\"cancelModal\"]/div/div[2]/div/form/div[2]/button";
+
+        public static final String yes_confrim_btn_xpth = "/html/body/div[3]/div/div[3]/button[1]";
+        public static final String no_cancel_btn_xpth = "/html/body/div[3]/div/div[3]/button[2]";
     }
 
     public static class OrgText {
