@@ -8,28 +8,17 @@ import pom.LoginPage;
 import utils.Credentials;
 
 public class Login {
-    public static void loginToAccount(WebDriver driver) {
-        SoftAssert softassert = new SoftAssert();
-
-        softassert.assertEquals(driver.findElement(By.xpath(LoginPage.Locators.header_xpth)).getText(), LoginPage.Texts.header_txt);
-        softassert.assertEquals(driver.findElement(By.xpath(LoginPage.Locators.des_xpth)).getText(), LoginPage.Texts.des_xpth);
-
-        softassert.assertEquals(driver.findElement(By.xpath(LoginPage.Locators.signup_txt_xpth)).getText(), LoginPage.Texts.signup_txt);
+    public static void loginToAccount(WebDriver driver,  String email, String pass) {
 
         driver.findElement(By.id(LoginPage.Locators.email_id)).click();
         driver.findElement(By.id(LoginPage.Locators.email_id)).clear();
-        driver.findElement(By.id(LoginPage.Locators.email_id)).sendKeys(Credentials.dev.email);
+        driver.findElement(By.id(LoginPage.Locators.email_id)).sendKeys(email);
 
         driver.findElement(By.id(LoginPage.Locators.pass_id)).click();
         driver.findElement(By.id(LoginPage.Locators.pass_id)).clear();
-        driver.findElement(By.id(LoginPage.Locators.pass_id)).sendKeys(Credentials.dev.password);
+        driver.findElement(By.id(LoginPage.Locators.pass_id)).sendKeys(pass);
 
         driver.findElement(By.xpath(LoginPage.Locators.signin_btn_xpth)).click();
-
-        //Check Dashboard
-        softassert.assertEquals(driver.findElement(By.xpath(DashboardPage.Locators.overview_txt_xpth)).getText(), DashboardPage.Texts.overview_txt);
-
-        softassert.assertAll();
     }
 
     public static void loginToAccount(WebDriver driver, String usr) {
