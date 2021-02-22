@@ -43,7 +43,6 @@ public class CreateReward {
             driver.findElement(By.id(NewReward.Locator.rwd_img_id)).click();
             Thread.sleep(1000);
             Runtime.getRuntime().exec(System.getProperty("user.dir") + "/autoit/CreateReward/rwd_fileupload.exe");
-//            Runtime.getRuntime().exec("C:\\Users\\shari\\IdeaProjects\\CROWDFUNDLY\\autoit\\CreateReward\\rwd_fileupload.exe");
             driver.findElement(By.xpath(NewReward.Locator.img_crp_xpth)).click();
 
             // Describe Reward

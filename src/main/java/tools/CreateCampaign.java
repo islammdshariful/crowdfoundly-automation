@@ -24,10 +24,15 @@ public class CreateCampaign {
         invokeBrowser();
         driver.get(Urls.dev);
         Config.allow_cookies();
-        modules.Login.loginToAccount(driver, "forusualtest+tu3@gmail.com", "123456");
 
-        for(int i = 0; i < 5; i++){
-            modules.CreateCampaign.Quickcreate(driver, "donation", "nodate", "no");
+        Config.quickCreate = true;
+
+        // Login to your account
+        modules.Login.loginToAccount(driver, "forusualtest+fr1@gmail.com", "123456");
+
+        // Create campaign
+        for(int i = 0; i < 3; i++){
+            modules.CreateCampaign.create(driver, "reward", "nodate", "no");
         }
     }
 }

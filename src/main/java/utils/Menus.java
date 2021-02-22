@@ -3,139 +3,159 @@ package utils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import pom.CampaignPage;
 
 import java.util.concurrent.TimeUnit;
 
 public class Menus {
 
     public static void clickDashboard() {
-        String dashboard_xpth = "//*[@id=\"dashboard\"]/div/div[5]/div/div[2]/ul/li[1]/a/span";
         WebDriver driver = DriverManager.driver;
+        WebElement dashboard_xpth = driver.findElement(By.xpath("//*[@id=\"dashboard\"]/div/div[5]/div/div[2]/ul/li[1]/a/span"));
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        driver.findElement(By.xpath(dashboard_xpth)).click();
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].click();", dashboard_xpth);
     }
 
     public static void clickCampaigns() {
-        String campaigns_xpth = "//*[@id=\"dashboard\"]/div/div[5]/div/div[2]/ul/li[2]/a/span";
         WebDriver driver = DriverManager.driver;
+        WebElement campaigns_xpth = driver.findElement(By.xpath("//*[@id=\"dashboard\"]/div/div[5]/div/div[2]/ul/li[2]/a/span"));
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        driver.findElement(By.xpath(campaigns_xpth)).click();
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].click();", campaigns_xpth);
     }
 
     public static void clickOnlineContributors() {
-        String online_contributors_xpth = "//*[@id=\"dashboard\"]/div/div[5]/div/div[2]/ul/li[3]/a/span";
         WebDriver driver = DriverManager.driver;
+        WebElement oncontributor_xpth = driver.findElement(By.xpath("//*[@id=\"dashboard\"]/div/div[5]/div/div[2]/ul/li[3]/a/span"));
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        driver.findElement(By.xpath(online_contributors_xpth)).click();
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].click();", oncontributor_xpth);
     }
 
     public static void clickOfflineContributors() {
-        String offline_contributors_xpth = "//*[@id=\"dashboard\"]/div/div[5]/div/div[2]/ul/li[4]/a/span";
         WebDriver driver = DriverManager.driver;
+        WebElement offcontributor_xpth = driver.findElement(By.xpath("//*[@id=\"dashboard\"]/div/div[5]/div/div[2]/ul/li[4]/a/span"));
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        driver.findElement(By.xpath(offline_contributors_xpth)).click();
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].click();", offcontributor_xpth);
     }
 
     public static void clickFundraiser() {
-        String Fundraiser_xpth = "//*[@id=\"dashboard\"]/div/div[5]/div/div[2]/ul/li[5]/a/span";
         WebDriver driver = DriverManager.driver;
+        WebElement fundraiser_xpth = driver.findElement(By.xpath("//*[@id=\"dashboard\"]/div/div[5]/div/div[2]/ul/li[5]/a/span"));
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        driver.findElement(By.xpath(Fundraiser_xpth)).click();
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].click();", fundraiser_xpth);
     }
 
     public static void clickWalletPayouts() {
-        String walletpayouts_xpth = "//*[@id=\"dashboard\"]/div/div[5]/div/div[2]/ul/li[6]/a/span";
         WebDriver driver = DriverManager.driver;
+        WebElement walletpayout_xpth = driver.findElement(By.xpath("//*[@id=\"dashboard\"]/div/div[5]/div/div[2]/ul/li[6]/a/span"));
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        driver.findElement(By.xpath(walletpayouts_xpth)).click();
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].click();", walletpayout_xpth);
     }
 
     public static void clickRefunds() {
-        String refunds_xpth = "//*[@id=\"dashboard\"]/div/div[5]/div/div[2]/ul/li[7]/a/span";
         WebDriver driver = DriverManager.driver;
+        WebElement refunds_xpth = driver.findElement(By.xpath("//*[@id=\"dashboard\"]/div/div[5]/div/div[2]/ul/li[7]/a/span"));
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        driver.findElement(By.xpath(refunds_xpth)).click();
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].click();", refunds_xpth);
     }
 
     public static void clickTeamAccounts() {
-        String team_accounts_xpth = "//*[@id=\"dashboard\"]/div/div[5]/div/div[2]/ul/li[8]/a/span";
         WebDriver driver = DriverManager.driver;
+        WebElement team_xpth = driver.findElement(By.xpath("//*[@id=\"dashboard\"]/div/div[5]/div/div[2]/ul/li[8]/a/span"));
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        driver.findElement(By.xpath(team_accounts_xpth)).click();
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].click();", team_xpth);
     }
 
     public static void clickRoles() {
-        String roles_xpth = "//*[@id=\"dashboard\"]/div/div[5]/div/div[2]/ul/li[9]/a/span";
         WebDriver driver = DriverManager.driver;
+        WebElement roles_xpth = driver.findElement(By.xpath("//*[@id=\"dashboard\"]/div/div[5]/div/div[2]/ul/li[9]/a/span"));
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        driver.findElement(By.xpath(roles_xpth)).click();
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].click();", roles_xpth);
     }
 
     public static void clickCatagories() {
-        String settings_xpth = "//*[@id=\"dashboard\"]/div/div[5]/div/div[2]/ul/li[10]/a/span";
         WebDriver driver = DriverManager.driver;
+        WebElement catagories_xpth = driver.findElement(By.xpath("//*[@id=\"dashboard\"]/div/div[5]/div/div[2]/ul/li[10]/a/span"));
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        driver.findElement(By.xpath(settings_xpth)).click();
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].click();", catagories_xpth);
     }
 
 
 
     public static void clickSettings() {
-        String settings_xpth = "//*[@id=\"dashboard\"]/div/div[5]/div/div[2]/ul/li[11]/a/span";
         WebDriver driver = DriverManager.driver;
+        WebElement settings_xpth = driver.findElement(By.xpath("//*[@id=\"dashboard\"]/div/div[5]/div/div[2]/ul/li[11]/a/span"));
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        driver.findElement(By.xpath(settings_xpth)).click();
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].click();", settings_xpth);
     }
 
     public static void clickReports() {
-        String reports_xpth = "//*[@id=\"dashboard\"]/div/div[5]/div/div[2]/ul/li[12]/a/span";
         WebDriver driver = DriverManager.driver;
+        WebElement report_xpth = driver.findElement(By.xpath("//*[@id=\"dashboard\"]/div/div[5]/div/div[2]/ul/li[12]/a/span"));
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        driver.findElement(By.xpath(reports_xpth)).click();
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].click();", report_xpth);
     }
 
     public static void clickLogouts() {
-        String logouts_xpth = "//*[@id=\"dashboard\"]/div/div[5]/div/div[3]/ul/li/div/span";
         WebDriver driver = DriverManager.driver;
+        WebElement logout_xpth = driver.findElement(By.xpath("//*[@id=\"dashboard\"]/div/div[5]/div/div[3]/ul/li/div/span"));
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        driver.findElement(By.xpath(logouts_xpth)).click();
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].click();", logout_xpth);
     }
 
     public static class profileMenu {
 
         public static void clickStory() {
-            String story_xpth = "//*[@id=\"public\"]/div/div[5]/div/div[1]/div/div[2]/ul/li[1]/a/div[2]";
             WebDriver driver = DriverManager.driver;
+            WebElement story_xpth = driver.findElement(By.xpath("//*[@id=\"public\"]/div/div[5]/div/div[1]/div/div[2]/ul/li[1]/a/div[2]"));
             driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-            driver.findElement(By.xpath(story_xpth)).click();
+            JavascriptExecutor executor = (JavascriptExecutor) driver;
+            executor.executeScript("arguments[0].click();", story_xpth);
         }
 
         public static void clickSettings() {
-            String settings_xpth = "//*[@id=\"public\"]/div/div[5]/div/div[1]/div/div[2]/ul/li[2]/a/div[2]";
             WebDriver driver = DriverManager.driver;
+            WebElement settings_xpth = driver.findElement(By.xpath("//*[@id=\"public\"]/div/div[5]/div/div[1]/div/div[2]/ul/li[2]/a/div[2]"));
             driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-            driver.findElement(By.xpath(settings_xpth)).click();
+            JavascriptExecutor executor = (JavascriptExecutor) driver;
+            executor.executeScript("arguments[0].click();", settings_xpth);
         }
 
         public static void clickContribution() {
-            String contributions_xpth = "//*[@id=\"public\"]/div/div[5]/div/div[1]/div/div[2]/ul/li[3]/a/div[2]";
             WebDriver driver = DriverManager.driver;
+            WebElement contributions_xpth = driver.findElement(By.xpath("//*[@id=\"public\"]/div/div[5]/div/div[1]/div/div[2]/ul/li[3]/a/div[2]"));
             driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-            driver.findElement(By.xpath(contributions_xpth)).click();
+            JavascriptExecutor executor = (JavascriptExecutor) driver;
+            executor.executeScript("arguments[0].click();", contributions_xpth);
         }
 
         public static void clickRefund() {
-            String refunds_xpth = "//*[@id=\"public\"]/div/div[5]/div/div[1]/div/div[2]/ul/li[4]/a/div[2]";
             WebDriver driver = DriverManager.driver;
+            WebElement refunds_xpth = driver.findElement(By.xpath("//*[@id=\"public\"]/div/div[5]/div/div[1]/div/div[2]/ul/li[4]/a/div[2]"));
             driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-            driver.findElement(By.xpath(refunds_xpth)).click();
+            JavascriptExecutor executor = (JavascriptExecutor) driver;
+            executor.executeScript("arguments[0].click();", refunds_xpth);
         }
 
         public static void clickAllLTDLicense() {
-            String ltd_xpth = "//*[@id=\"public\"]/div/div[5]/div/div[1]/div/div[2]/ul/li[5]/a/div[2]";
             WebDriver driver = DriverManager.driver;
+            WebElement ltd_xpth = driver.findElement(By.xpath("//*[@id=\"public\"]/div/div[5]/div/div[1]/div/div[2]/ul/li[5]/a/div[2]"));
             driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-            driver.findElement(By.xpath(ltd_xpth)).click();
+            JavascriptExecutor executor = (JavascriptExecutor) driver;
+            executor.executeScript("arguments[0].click();", ltd_xpth);
         }
 
         public static void clickSubscription() {
@@ -143,22 +163,25 @@ public class Menus {
             driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("window.scrollBy(0,325)", "");
-            String subs_xpth = "//*[@id=\"treeview5\"]/div/div[2]";
-            driver.findElement(By.xpath(subs_xpth)).click();
+            WebElement subs_xpth = driver.findElement(By.xpath("//*[@id=\"treeview5\"]/div/div[2]"));
+            JavascriptExecutor executor = (JavascriptExecutor) driver;
+            executor.executeScript("arguments[0].click();", subs_xpth);
         }
 
         public static void clickAllPlans() {
-            String allplans_xpth = "//*[@id=\"treeview5\"]/ul/li[1]/a/div[2]";
             WebDriver driver = DriverManager.driver;
+            WebElement allplans_xpth = driver.findElement(By.xpath("//*[@id=\"treeview5\"]/ul/li[1]/a/div[2]"));
             driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-            driver.findElement(By.xpath(allplans_xpth)).click();
+            JavascriptExecutor executor = (JavascriptExecutor) driver;
+            executor.executeScript("arguments[0].click();", allplans_xpth);
         }
 
         public static void clickPaymentHistory() {
-            String paymhistory_xpth = "//*[@id=\"treeview5\"]/ul/li[2]/a/div[2]";
             WebDriver driver = DriverManager.driver;
+            WebElement paymhistory_xpth = driver.findElement(By.xpath("//*[@id=\"treeview5\"]/ul/li[2]/a/div[2]"));
             driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-            driver.findElement(By.xpath(paymhistory_xpth)).click();
+            JavascriptExecutor executor = (JavascriptExecutor) driver;
+            executor.executeScript("arguments[0].click();", paymhistory_xpth);
         }
     }
 }

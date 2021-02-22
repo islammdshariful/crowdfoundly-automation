@@ -23,18 +23,25 @@ public class GiveDonation {
             System.out.println(cmp_url);
             WebDriver driver1 = DriverManager.driver;
             driver1.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-            if(driver1.findElements(By.xpath(NewDonation.Locator.login_btn1_xpth)).size() != 0){
+            if (driver1.findElements(By.xpath(NewDonation.Locator.login_btn1_xpth)).size() != 0) {
                 driver1.findElement(By.xpath(NewDonation.Locator.login_btn1_xpth)).click();
-            }else {
+                modules.Login.loginToAccount(driver, "contributor");
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                driver.get(cmp_url);
+            } else if (driver1.findElements(By.xpath(NewDonation.Locator.login_btn2_xpth)).size() != 0) {
                 driver1.findElement(By.xpath(NewDonation.Locator.login_btn2_xpth)).click();
+                modules.Login.loginToAccount(driver, "contributor");
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                driver.get(cmp_url);
             }
-            modules.Login.loginToAccount(driver, "contributor");
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            driver.get(cmp_url);
         }
 
         driver.findElement(By.xpath(NewDonation.Locator.backit_contribute_xpth)).click();

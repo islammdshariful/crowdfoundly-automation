@@ -48,7 +48,7 @@ public class Do_All {
         //Set up Refund
         SetupCrowdfundly.activeEscrow(driver);
 
-        // Create Campaign
+        // Create Campaign - Donation
         modules.CreateCampaign.create(driver, "donation", "nodate", "yes");
 
 //        driver.get(Urls.dev);
@@ -66,10 +66,17 @@ public class Do_All {
         // Manage Refund
         ManageRefundRequest.approve(driver);
 
+        // Again Create Campaign - Reward
+        modules.CreateCampaign.create(driver, "reward", "nodate", "yes");
+
+        // Go to Campagin Page
+        driver.get(Urls.dev);
+        Menus.clickCampaigns();
+
         // Delete Campaign
         DeleteCampaign.deleteCampaign(driver);
 
         // Delete Organization
-        DeleteAccounts.deleteOrganization(driver);
+//        DeleteAccounts.deleteOrganization(driver);
     }
 }
