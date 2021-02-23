@@ -69,6 +69,16 @@ public class Do_All {
         // Again Create Campaign - Reward
         modules.CreateCampaign.create(driver, "reward", "nodate", "yes");
 
+        // Again Create Campaign - Reward with date
+        driver.get(Urls.dev);
+        Menus.clickCampaigns();
+        modules.CreateCampaign.create(driver, "reward", "date", "yes");
+
+        // Again Create Campaign - Reward with date
+        driver.get(Urls.dev);
+        Menus.clickCampaigns();
+        modules.CreateCampaign.create(driver, "donation", "date", "yes");
+
         // Go to Campagin Page
         driver.get(Urls.dev);
         Menus.clickCampaigns();

@@ -1,9 +1,6 @@
 package testcases;
 
-import modules.CreateCampaign;
-import modules.CreateOrganization;
-import modules.CreateSubscription;
-import modules.DeleteCampaign;
+import modules.*;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 import utils.Config;
@@ -29,12 +26,12 @@ public class Do_DeleteCampaign {
         invokeBrowser();
         driver.get(Urls.dev);
         Config.allow_cookies();
-        modules.Login.loginToAccount(driver, "organizer");
-        CreateSubscription.createSubs(driver, "plus");
-        Menus.profileMenu.clickSubscription();
-        Menus.profileMenu.clickAllPlans();
-        CreateOrganization.create(driver);
-        CreateCampaign.create(driver, "donation", "nodate", "");
+        Login.loginToAccount(driver, "organizer");
+//        CreateSubscription.createSubs(driver, "plus");
+//        Menus.profileMenu.clickSubscription();
+//        Menus.profileMenu.clickAllPlans();
+//        CreateOrganization.create(driver);
+//        CreateCampaign.create(driver, "donation", "nodate", "");
         DeleteCampaign.deleteCampaign(driver);
     }
 }
