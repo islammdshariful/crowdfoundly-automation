@@ -2,8 +2,10 @@ package pom;
 
 public class NewRefundRequest {
     public static class ConLocator{
-        public static final String action_btn_xpth = "/html/body/div[1]/div/div/div/div[5]/div/div[2]/div/div[1]/div/div[2]/div/div[2]/div/table/tbody/tr/td[8]/div/button/div/img";
-        public static final String refund_req_xpth = "/html/body/div[1]/div/div/div/div[5]/div/div[2]/div/div[1]/div/div[2]/div/div[2]/div/table/tbody/tr/td[8]/div/ul/li/button";
+        public static final String export_to_excel_btn_xpth = "/html/body/div[1]/div/div/div/div[5]/div/div[2]/div/div[1]/div/div[1]/div";
+
+        public static final String action_btn_xpth = "/html/body/div[1]/div/div/div/div[5]/div/div[2]/div/div[1]/div/div[2]/div/div[1]/div/table/tbody/tr/td[8]/div/button/div/img";
+        public static final String refund_req_xpth = "/html/body/div[1]/div/div/div/div[5]/div/div[2]/div/div[1]/div/div[2]/div/div[1]/div/table/tbody/tr/td[8]/div/ul/li/button";
         public static final String refund_note_id = "refund_note";
         public static final String submit_btn_xpth = "//*[@id=\"requestRefundModal\"]/div/div[2]/div/form/div[2]/button/span";
     }

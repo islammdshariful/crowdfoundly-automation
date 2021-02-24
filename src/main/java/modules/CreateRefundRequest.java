@@ -14,6 +14,10 @@ public class CreateRefundRequest {
     public static void create(WebDriver driver) {
         try {
             Menus.profileMenu.clickContribution();
+
+            driver.findElement(By.xpath((NewRefundRequest.ConLocator.export_to_excel_btn_xpth))).click();
+            Thread.sleep(1000);
+
             driver.findElement(By.xpath(NewRefundRequest.ConLocator.action_btn_xpth)).click();
             driver.findElement(By.xpath(NewRefundRequest.ConLocator.refund_req_xpth)).click();
             Thread.sleep(1000);

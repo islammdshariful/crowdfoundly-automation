@@ -51,9 +51,6 @@ public class Do_All {
         // Create Campaign - Donation
         modules.CreateCampaign.create(driver, "donation", "nodate", "yes");
 
-//        driver.get(Urls.dev);
-//        Menus.clickCampaigns();
-
         // Ask for Refund
         driver.get(Urls.dev);
         Menus.clickLogouts();
