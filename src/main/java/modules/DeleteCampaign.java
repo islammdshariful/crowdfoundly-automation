@@ -17,7 +17,8 @@ public class DeleteCampaign {
             Menus.clickCampaigns();
             Thread.sleep(1000);
 
-            ((JavascriptExecutor) driver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
+//            ((JavascriptExecutor) driver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
+            ((JavascriptExecutor) driver).executeScript("window.scrollTo(0, 321)");
             Thread.sleep(1000);
 
             WebDriver driver1 = DriverManager.driver;

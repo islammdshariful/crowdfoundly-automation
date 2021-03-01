@@ -29,7 +29,7 @@ public class Do_CreateCampaign {
 //        modules.CreateCampaign.create(driver, "reward", "nodate");
 //        modules.CreateCampaign.create(driver, "reward", "nodate", "");
 //        modules.CreateCampaign.create(driver, "reward", "date", "");
-//        modules.CreateCampaign.create(driver, "donation", "nodate", "yes");
+        modules.CreateCampaign.create(driver, "donation", "nodate", "yes");
 //        modules.CreateCampaign.create(driver, "donation", "date", "");
     }
 }

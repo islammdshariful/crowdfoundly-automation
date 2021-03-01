@@ -17,9 +17,9 @@ import static utils.Config.quickCampTitle;
 
 public class CreateCampaign {
     public static void create(WebDriver driver, String cmp_type, String duration, String do_donate) {
-        Menus.clickCampaigns();
-
         try {
+            Thread.sleep(1000);
+            Menus.clickCampaigns();
             // Add new campaign
             WebElement add_new = driver.findElement(By.xpath(CampaignPage.Locators.add_new_xpth));
             JavascriptExecutor executor = (JavascriptExecutor) driver;
@@ -92,7 +92,14 @@ public class CreateCampaign {
             // Gallery
             driver.findElement(By.xpath(NewCampaign.Locator.cmp_upload_img_xpth)).click();
             Thread.sleep(1000);
-            Runtime.getRuntime().exec(System.getProperty("user.dir") + "/autoit/CreateCampaign/cmp_fileupload.exe");
+            Process proc = null;
+            proc = Runtime.getRuntime().exec(System.getProperty("user.dir") + "/autoit/CreateCampaign/cmp_fileupload.exe");
+//            Runtime.getRuntime().exec("C:\\Users\\shari\\IdeaProjects\\CROWDFUNDLY\\autoit\\CreateCampaign\\Story\\stry_fileupload.exe");
+
+            if(proc !=null){
+                System.out.println("Check hoyna keno");
+                proc.waitFor();
+            }
             driver.findElement(By.xpath(NewCampaign.Locator.img_crop_xpth)).click();
             driver.findElement(By.xpath(NewCampaign.Locator.cmp_gal_nxt_btn_xpth)).click();
 
@@ -149,17 +156,22 @@ public class CreateCampaign {
             driver.findElement(By.id(NewCampaign.Locator.stry_vdo_field_id)).click();
             driver.findElement(By.id(NewCampaign.Locator.stry_vdo_field_id)).sendKeys(NewCampaign.Text.vimeo_vdo_link);
             Thread.sleep(1000);
+            driver.findElement(By.xpath(NewCampaign.Locator.cmp_sty_nxt_btn_xpth)).click();
 
+            //Other Information
 
             if (cmp_type.equals("reward")) {
-                driver.findElement(By.xpath(NewCampaign.Locator.cmp_sty_nxt_btn_xpth)).click();
+                // Other Information
+                driver.findElement(By.xpath(NewCampaign.Locator.other_info_nxt_btn_xpth)).click();
 
                 driver.findElement(By.xpath(NewCampaign.Locator.add_new_reward_xpth)).click();
                 CreateReward.create(driver, "no");
-                driver.findElement(By.xpath(NewCampaign.Locator.published_btn_xpth)).click();
+                Thread.sleep(1000);
+                driver.findElement(By.xpath(NewCampaign.Locator.published_rwrd_btn_xpth)).click();
 
             } else {
-                driver.findElement(By.xpath(NewCampaign.Locator.published_btn_xpth)).click();
+                Thread.sleep(1000);
+                driver.findElement(By.xpath(NewCampaign.Locator.published_don_btn_xpth)).click();
             }
 
             if (Config.quickCreate) {
@@ -176,8 +188,6 @@ public class CreateCampaign {
                     Config.allow_cookies();
                 }
             }
-
-
         } catch (InterruptedException | IOException e) {
             e.printStackTrace();
         }

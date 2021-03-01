@@ -65,16 +65,28 @@ public class NewCampaign {
         public static final String stry_vdo_xpth = "//*[@id=\"public\"]/div/div[3]/div[2]/div/div[1]/div[8]/div/div[2]/div/div/div[5]/div[2]/button[5]/span/i";
         public static final String stry_vdo_field_id = "text_input_4";
 
-        public static final String cmp_sty_nxt_btn_xpth = "//*[@id=\"buttonArea\"]/div/div/button";
+        public static final String cmp_sty_nxt_btn_xpth = "//*[@id=\"buttonArea\"]/div/button[2]";
 
+        // Other information
+        public static final String add_new_field_xpth = "//*[@id=\"otherInfoForm\"]/div/div[2]/div/div/div/button";
+        public static final String section_title_id = "title_createcampaignCreate";
+        public static final String label_id = "campaignCreatelabel0";
+        public static final String placeholder_id = "campaignCreateplaceholder0";
+        public static final String required_yes_xpth = "//*[@id=\"campaignCreateis_required_label0\"]/div[1]/label";
+        public static final String required_no_xpth = "//*[@id=\"campaignCreateis_required_label0\"]/div[2]/label";
+        public static final String other_info_nxt_btn_xpth = "//*[@id=\"buttonArea\"]/div/div/button[2]";
 
         // Campaign Rewards
         public static final String add_new_reward_xpth = "//*[@id=\"public\"]/div/div[3]/div[2]/div/div[2]/div[1]/div[2]/div/div[2]/button";
 
 
+
         // Published - Draft Buttons
-        public static final String draft_btn_xpth = "//*[@id=\"buttonArea\"]/div/div/button[1]";
-        public static final String published_btn_xpth = "//*[@id=\"buttonArea\"]/div/div/button[2]";
+        public static final String back_btn_xpth = "//*[@id=\"buttonArea\"]/div/button";
+        public static final String draft_don_btn_xpth = "//*[@id=\"buttonArea\"]/div/div/button[2]";
+        public static final String draft_rwrd_btn_xpth = "//*[@id=\"buttonArea\"]/div/div/button[1]";
+        public static final String published_don_btn_xpth = "//*[@id=\"buttonArea\"]/div/div/button[3]/span";
+        public static final String published_rwrd_btn_xpth = "//*[@id=\"buttonArea\"]/div/div/button[2]/span";
 
         // Go to dashboard
         public static final String go_to_dashboard_xpth = "//*[@id=\"finishingModal\"]/div/div[2]/div/div/div[2]/div/div[2]/div/div[1]/a";
