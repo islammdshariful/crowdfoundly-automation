@@ -45,10 +45,10 @@ public class Login {
             } else {
                 driver.findElement(By.id(LoginPage.Locators.pass_id)).sendKeys(Credentials.dev.fund_password);
             }
-
+            System.out.println(usr+ " - data fill up completed");
             driver.findElement(By.xpath(LoginPage.Locators.signin_btn_xpth)).click();
-
-            Thread.sleep(1000);
+            System.out.println(usr+ " - signing button clicked");
+            Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

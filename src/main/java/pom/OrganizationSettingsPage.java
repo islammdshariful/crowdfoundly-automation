@@ -54,9 +54,11 @@ public class OrganizationSettingsPage {
         public static final String auto_public_fundriser_xpth = "//*[@id=\"dashboard\"]/div/div[6]/div[2]/div/div[2]/div[2]/form/div[2]/div/div/div[2]/div/div/label";
         public static final String update_auto_approv_xpth = "//*[@id=\"dashboard\"]/div/div[6]/div[2]/div/div[2]/div[2]/form/div[2]/div/div/div[3]/div/div/label";
         public static final String allow_tip_xpth = "//*[@id=\"dashboard\"]/div/div[6]/div[2]/div/div[2]/div[2]/form/div[2]/div/div/div[4]/div/div/label";
-        public static final String escrow_xpth = "//*[@id=\"dashboard\"]/div/div[6]/div[2]/div/div[2]/div[2]/form/div[2]/div/div/div[5]/div/div/label";
+        public static final String show_similar_cmp_xpth = "//*[@id=\"dashboard\"]/div/div[6]/div[2]/div/div[2]/div[2]/form/div[2]/div/div/div[5]/div/div/label";
+        public static final String allow_login_xpth = "//*[@id=\"dashboard\"]/div/div[6]/div[2]/div/div[2]/div[2]/form/div[2]/div/div/div[6]/div/div/label";
+        public static final String escrow_xpth = "//*[@id=\"dashboard\"]/div/div[6]/div[2]/div/div[2]/div[2]/form/div[2]/div/div/div[7]/div/div/label";
         public static final String escrow_duration_id = "escrow_duration";
-        public static final String allow_refund_xpth = "//*[@id=\"dashboard\"]/div/div[6]/div[2]/div/div[2]/div[2]/form/div[2]/div/div/div[7]/div/div/label";
+        public static final String allow_refund_xpth = "//*[@id=\"dashboard\"]/div/div[6]/div[2]/div/div[2]/div[2]/form/div[2]/div/div/div[9]/div/div/label";
 
         public static final String save_xpth = "//*[@id=\"dashboard\"]/div/div[6]/div[2]/div/div[2]/div[2]/form/div[3]/div/button/span";
     }

@@ -26,7 +26,7 @@ public class SetupPaymentGateway {
 
             driver.findElement(By.xpath(OrganizationSettingsPage.PaymentLocator.active_strip_btn_xpth)).click();
             Thread.sleep(1000);
-
+            System.out.println("D - a: Strip gateway activated");
             // PayPal
             driver.findElement(By.id(OrganizationSettingsPage.PaymentLocator.paypal_client_id)).click();
             driver.findElement(By.id(OrganizationSettingsPage.PaymentLocator.paypal_client_id)).sendKeys(OrganizationSettingsPage.PaymentText.paypal_client_id_txt);
@@ -35,6 +35,7 @@ public class SetupPaymentGateway {
             driver.findElement(By.id(OrganizationSettingsPage.PaymentLocator.paypal_client_secret_id)).sendKeys(OrganizationSettingsPage.PaymentText.paypal_client_secret_txt);
 
             driver.findElement(By.xpath(OrganizationSettingsPage.PaymentLocator.paypal_save_btn_xpth)).click();
+            System.out.println("D - b: PayPal gateway activated");
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

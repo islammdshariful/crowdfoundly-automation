@@ -18,7 +18,7 @@ public class SetupCrowdfundly {
             js.executeScript("window.scrollBy(0,325)", "");
             Thread.sleep(1000);
 
-            driver.findElement(By.xpath(OrganizationSettingsPage.CrowdfundlyLocator.save_xpth)).click();
+//            driver.findElement(By.xpath(OrganizationSettingsPage.CrowdfundlyLocator.save_xpth)).click();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -32,7 +32,7 @@ public class SetupCrowdfundly {
             Thread.sleep(1000);
             driver.findElement(By.xpath(OrganizationSettingsPage.CrowdfundlyLocator.allow_tip_xpth)).click();
 
-            driver.findElement(By.xpath(OrganizationSettingsPage.CrowdfundlyLocator.save_xpth)).click();
+//            driver.findElement(By.xpath(OrganizationSettingsPage.CrowdfundlyLocator.save_xpth)).click();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -46,7 +46,7 @@ public class SetupCrowdfundly {
             Thread.sleep(1000);
             driver.findElement(By.xpath(OrganizationSettingsPage.CrowdfundlyLocator.auto_approv_xpth)).click();
 
-            driver.findElement(By.xpath(OrganizationSettingsPage.CrowdfundlyLocator.save_xpth)).click();
+//            driver.findElement(By.xpath(OrganizationSettingsPage.CrowdfundlyLocator.save_xpth)).click();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -60,7 +60,21 @@ public class SetupCrowdfundly {
             Thread.sleep(1000);
             driver.findElement(By.xpath(OrganizationSettingsPage.CrowdfundlyLocator.update_auto_approv_xpth)).click();
 
-            driver.findElement(By.xpath(OrganizationSettingsPage.CrowdfundlyLocator.save_xpth)).click();
+//            driver.findElement(By.xpath(OrganizationSettingsPage.CrowdfundlyLocator.save_xpth)).click();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void allowLogin(WebDriver driver){
+        try {
+            driver.findElement(By.xpath(OrganizationSettingsPage.TabsLocator.crowdfundly_xpth)).click();
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("window.scrollBy(0,325)", "");
+            Thread.sleep(1000);
+            driver.findElement(By.xpath(OrganizationSettingsPage.CrowdfundlyLocator.allow_login_xpth)).click();
+
+//            driver.findElement(By.xpath(OrganizationSettingsPage.CrowdfundlyLocator.save_xpth)).click();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -79,14 +93,18 @@ public class SetupCrowdfundly {
             driver.findElement(By.id(OrganizationSettingsPage.CrowdfundlyLocator.escrow_duration_id)).clear();
             driver.findElement(By.id(OrganizationSettingsPage.CrowdfundlyLocator.escrow_duration_id)).sendKeys(OrganizationSettingsPage.CrowdfundlyText.escrow_duration_txt);
             Thread.sleep(1000);
-
+            System.out.println("F - a: Escrow toggle ON");
             driver.findElement(By.xpath(OrganizationSettingsPage.CrowdfundlyLocator.allow_refund_xpth)).click();
             Thread.sleep(1000);
+            System.out.println("F- b: Refund toggle ON");
 
-            driver.findElement(By.xpath(OrganizationSettingsPage.CrowdfundlyLocator.save_xpth)).click();
-            Thread.sleep(1000);
+//            driver.findElement(By.xpath(OrganizationSettingsPage.CrowdfundlyLocator.save_xpth)).click();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    public static void saveCrowdfundly(WebDriver driver){
+        driver.findElement(By.xpath(OrganizationSettingsPage.CrowdfundlyLocator.save_xpth)).click();
     }
 }

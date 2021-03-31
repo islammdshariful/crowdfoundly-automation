@@ -24,6 +24,7 @@ public class CreateSubscription {
         }else {
             try {
                 if (pkg.equals("free")) {
+                    System.out.println("B - a: Subscription: free");
                     driver.findElement(By.xpath(NewSubscription.Subscription.free_xpth)).click();
 
                     js.executeScript("window.scrollBy(0,1511)", "");
@@ -31,6 +32,7 @@ public class CreateSubscription {
 
                     driver.findElement(By.xpath(NewSubscription.Subscription.subs_btn_xpth)).click();
                 } else if (pkg.equals("lite")) {
+                    System.out.println("B - a: Subscription: lite");
                     driver.findElement(By.xpath(NewSubscription.Subscription.lite_xpth)).click();
 
                     js.executeScript("window.scrollBy(0,1511)", "");
@@ -44,6 +46,7 @@ public class CreateSubscription {
                     driver.switchTo().parentFrame();
                     driver.findElement(By.xpath(NewSubscription.Subscription.paynow_btn_xpth)).click();
                 } else if (pkg.equals("plus")) {
+                    System.out.println("B - a: Subscription: plus");
                     driver.findElement(By.xpath(NewSubscription.Subscription.plus_xpth)).click();
 
                     js.executeScript("window.scrollBy(0,1511)", "");
@@ -57,9 +60,10 @@ public class CreateSubscription {
                     driver.switchTo().parentFrame();
                     driver.findElement(By.xpath(NewSubscription.Subscription.paynow_btn_xpth)).click();
                 } else {
+                    System.out.println("B - a: Subscription: professional");
                     js.executeScript("window.scrollBy(0,667)", "");
 
-                    driver.findElement(By.xpath(NewSubscription.Subscription.plus_xpth)).click();
+                    driver.findElement(By.xpath(NewSubscription.Subscription.professional_xpth)).click();
 
                     js.executeScript("window.scrollBy(0,1526)", "");
 
@@ -82,6 +86,7 @@ public class CreateSubscription {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         try {
             if (pkg.equals("lite")) {
+                System.out.println("B - a: Subscription LTD: lite");
                 js.executeScript("window.scrollBy(0,256)", "");
                 Thread.sleep(1000);
 
@@ -98,6 +103,7 @@ public class CreateSubscription {
 
                 driver.findElement(By.xpath(NewSubscription.LTD.paynow_btn_xpth)).click();
             } else if (pkg.equals("plus")) {
+                System.out.println("B - a: Subscription LTD: plus");
                 js.executeScript("window.scrollBy(0,256)", "");
                 Thread.sleep(1000);
 
@@ -114,6 +120,7 @@ public class CreateSubscription {
 
                 driver.findElement(By.xpath(NewSubscription.LTD.paynow_btn_xpth)).click();
             } else if (pkg.equals("professional")) {
+                System.out.println("B - a: Subscription LTD: professional");
                 js.executeScript("window.scrollBy(0,256)", "");
                 Thread.sleep(1000);
 
@@ -130,6 +137,7 @@ public class CreateSubscription {
 
                 driver.findElement(By.xpath(NewSubscription.LTD.paynow_btn_xpth)).click();
             } else {
+                System.out.println("B - a: Subscription LTD: enterprise");
                 js.executeScript("window.scrollBy(0,759)", "");
                 Thread.sleep(1000);
 
