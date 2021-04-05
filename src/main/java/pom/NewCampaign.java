@@ -68,12 +68,15 @@ public class NewCampaign {
         public static final String cmp_sty_nxt_btn_xpth = "//*[@id=\"buttonArea\"]/div/button[2]";
 
         // Other information
-        public static final String add_new_field_xpth = "//*[@id=\"otherInfoForm\"]/div/div[2]/div/div/div/button";
-        public static final String section_title_id = "title_createcampaignCreate";
-        public static final String label_id = "campaignCreatelabel0";
-        public static final String placeholder_id = "campaignCreateplaceholder0";
-        public static final String required_yes_xpth = "//*[@id=\"campaignCreateis_required_label0\"]/div[1]/label";
-        public static final String required_no_xpth = "//*[@id=\"campaignCreateis_required_label0\"]/div[2]/label";
+        public static final String oi_add_new_field_xpth = "//*[@id=\"otherInfoForm\"]/div/div[2]/div/div/div/button";
+        public static final String oi_section_title_id = "title_createcampaignCreate";
+        public static final String oi_consent_disable_enable_toggle_xpth = "//*[@id=\"consentcampaignCreate\"]/div/div[1]/div/div/label";
+        public static final String oi_consent_text_id = "consent_textcampaignCreate";
+        public static final String oi_type_id = "campaignCreatetype0";
+        public static final String oi_label_id = "campaignCreatelabel0";
+        public static final String oi_placeholder_id = "campaignCreateplaceholder0";
+        public static final String oi_required_yes_xpth = "//*[@id=\"campaignCreateis_required_label0\"]/div[1]/label";
+        public static final String oi_required_no_xpth = "//*[@id=\"campaignCreateis_required_label0\"]/div[2]/label";
         public static final String other_info_nxt_btn_xpth = "//*[@id=\"buttonArea\"]/div/div/button[2]";
 
         // Campaign Rewards
@@ -88,11 +91,31 @@ public class NewCampaign {
         public static final String published_don_btn_xpth = "//*[@id=\"buttonArea\"]/div/div/button[3]/span";
         public static final String published_rwrd_btn_xpth = "//*[@id=\"buttonArea\"]/div/div/button[2]/span";
 
-        // Go to dashboard
+        // Go to Dashboard
         public static final String go_to_dashboard_xpth = "//*[@id=\"finishingModal\"]/div/div[2]/div/div/div[2]/div/div[2]/div/div[1]/a";
+        // Go to Edit
         public static final String edit_campaign_xpth = "//*[@id=\"finishingModal\"]/div/div[2]/div/div/div[2]/div/div[2]/div/div[2]/a";
+        // Go to Preview
         public static final String public_preview_xpth = "//*[@id=\"finishingModal\"]/div/div[2]/div/div/div[2]/div/div[2]/div/div[3]/a";
+
+        // Edit mode
+
+        // THANK YOU message
+        public static final String thankyou_message_xpth = "//*[@id=\"public\"]/div/div[5]/div[1]/div/div[2]/ul[2]/li[8]";
+        public static final String ty_msg_input_xpth = "//*[@id=\"public\"]/div/div[5]/div[2]/div/div/div[2]/form/div[1]/textarea";
+        public static final String ty_save_msg_xpth = "//*[@id=\"public\"]/div/div[5]/div[2]/div/div/div[2]/form/button/span";
+
+        // BROCHURE message
+        public static final String brochure_xpth = "//*[@id=\"public\"]/div/div[5]/div[1]/div/div[2]/ul[2]/li[7]/a";
+        public static final String flyder_txt_id = "summary";
+        public static final String update_summary_btn_xpth = "//*[@id=\"public\"]/div/div[5]/div[2]/div/div/div[2]/div/div/div[2]/div/button/span";
+        public static final String dwnld_pdf_xpth = "//*[@id=\"public\"]/div/div[5]/div[2]/div/div/div[2]/div/div/div[1]/div/a";
+
+        // View campaign
+        public static final String view_campaign_xpth = "//*[@id=\"public\"]/div/div[5]/div[2]/div/div/div[1]/a";
+
     }
+
 
     public static class Text {
         public static final String cmp_astnt_txt = "Campaign Assistant";
@@ -122,5 +145,20 @@ public class NewCampaign {
                 "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.";
 
         public static final String ammout_txt = "00.45";
+
+        // Other Information
+        public static final String oi_section_title_text = "Please input valid information here";
+        public static final String oi_consent_text = "I'm agreeing that this is valid information.";
+        public static final String oi_label_n_placeholder_text = "Mobile Number";
+
+        // Edit mode
+        public static final String ty_msg_text = "Thank you for your generous gift. We are thrilled to have your support. Through your donation, we have been able to accomplish our goal and continue working towards our purpose of the organization. You truly make a difference for us.";
+        public static final String brochure_msg_text = "What is Lorem Ipsum?\n" +
+                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\n" +
+                "\n" +
+                "Why do we use it?\n" +
+                "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.";
     }
+
+
 }

@@ -25,11 +25,12 @@ public class Do_CreateCampaign {
         driver.get(Urls.dev);
         Config.allow_cookies();
         modules.Login.loginToAccount(driver, "organizer");
-//        (driver, category, duration, do donation)
-//        modules.CreateCampaign.create(driver, "reward", "nodate");
-//        modules.CreateCampaign.create(driver, "reward", "nodate", "");
-//        modules.CreateCampaign.create(driver, "reward", "date", "");
-        modules.CreateCampaign.create(driver, "donation", "nodate", "yes");
-//        modules.CreateCampaign.create(driver, "donation", "date", "");
+//        (driver, category, duration, other_info, do donation)
+        modules.CreateCampaign.create(driver, "donation", "nodate", "yes", "no");
+//        modules.CreateCampaign.create(driver, "donation", "date", "yes", "no");
+//        modules.CreateCampaign.create(driver, "reward", "nodate", "yes", "no");
+//        modules.CreateCampaign.create(driver, "reward", "date", "yes", "no");
+//        modules.CreateCampaign.create(driver, "donation", "nodate", "no", "no");
+//        modules.CreateCampaign.create(driver, "reward", "nodate", "no", "no");
     }
 }

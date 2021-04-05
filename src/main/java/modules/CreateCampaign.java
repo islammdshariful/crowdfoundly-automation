@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 import pom.CampaignPage;
 import pom.NewCampaign;
 import utils.Config;
@@ -16,7 +18,7 @@ import java.util.Date;
 import static utils.Config.quickCampTitle;
 
 public class CreateCampaign {
-    public static void create(WebDriver driver, String cmp_type, String duration, String do_donate) {
+    public static void create(WebDriver driver, String cmp_type, String duration, String other_info, String do_donate) {
         try {
             Thread.sleep(1000);
             Menus.clickCampaigns();
@@ -159,6 +161,30 @@ public class CreateCampaign {
 
             //Other Information
 
+            if(other_info.equals("yes")){
+                driver.findElement(By.xpath(NewCampaign.Locator.oi_add_new_field_xpth)).click();
+                Thread.sleep(1000);
+                driver.findElement(By.id(NewCampaign.Locator.oi_section_title_id)).click();
+                driver.findElement(By.id(NewCampaign.Locator.oi_section_title_id)).clear();
+                driver.findElement(By.id(NewCampaign.Locator.oi_section_title_id)).sendKeys(NewCampaign.Text.oi_section_title_text);
+
+                driver.findElement(By.xpath(NewCampaign.Locator.oi_consent_disable_enable_toggle_xpth)).click();
+
+                driver.findElement(By.id(NewCampaign.Locator.oi_consent_text_id)).click();
+                driver.findElement(By.id(NewCampaign.Locator.oi_consent_text_id)).clear();
+                driver.findElement(By.id(NewCampaign.Locator.oi_consent_text_id)).sendKeys(NewCampaign.Text.oi_consent_text);
+
+                Select type = new Select(driver.findElement(By.id(NewCampaign.Locator.oi_type_id)));
+                type.selectByVisibleText("Number");
+                driver.findElement(By.id(NewCampaign.Locator.oi_label_id)).click();
+                driver.findElement(By.id(NewCampaign.Locator.oi_label_id)).sendKeys(NewCampaign.Text.oi_label_n_placeholder_text);
+
+                driver.findElement(By.id(NewCampaign.Locator.oi_placeholder_id)).click();
+                driver.findElement(By.id(NewCampaign.Locator.oi_placeholder_id)).sendKeys(NewCampaign.Text.oi_label_n_placeholder_text);
+
+                driver.findElement(By.xpath(NewCampaign.Locator.oi_required_yes_xpth)).click();
+            }
+
             if (cmp_type.equals("reward")) {
                 // Other Information
                 driver.findElement(By.xpath(NewCampaign.Locator.other_info_nxt_btn_xpth)).click();
@@ -176,7 +202,28 @@ public class CreateCampaign {
             if (Config.quickCreate) {
                 driver.findElement(By.xpath(NewCampaign.Locator.go_to_dashboard_xpth)).click();
             } else {
-                driver.findElement(By.xpath(NewCampaign.Locator.public_preview_xpth)).click();
+                driver.findElement(By.xpath(NewCampaign.Locator.edit_campaign_xpth)).click();
+
+                // Update Thank you message
+                driver.findElement(By.xpath(NewCampaign.Locator.thankyou_message_xpth)).click();
+                driver.findElement(By.xpath(NewCampaign.Locator.ty_msg_input_xpth)).click();
+                driver.findElement(By.xpath(NewCampaign.Locator.ty_msg_input_xpth)).clear();
+                driver.findElement(By.xpath(NewCampaign.Locator.ty_msg_input_xpth)).sendKeys(NewCampaign.Text.ty_msg_text);
+                driver.findElement(By.xpath(NewCampaign.Locator.ty_save_msg_xpth)).click();
+
+                // Update Brochure
+                driver.findElement(By.xpath(NewCampaign.Locator.brochure_xpth)).click();
+                driver.findElement(By.id(NewCampaign.Locator.flyder_txt_id)).click();
+                driver.findElement(By.id(NewCampaign.Locator.flyder_txt_id)).clear();
+                driver.findElement(By.id(NewCampaign.Locator.flyder_txt_id)).sendKeys(NewCampaign.Text.brochure_msg_text);
+                driver.findElement(By.xpath(NewCampaign.Locator.update_summary_btn_xpth)).click();
+                Thread.sleep(1000);
+                driver.findElement(By.xpath(NewCampaign.Locator.dwnld_pdf_xpth)).click();
+
+                // View Campaign
+                driver.findElement(By.xpath(NewCampaign.Locator.view_campaign_xpth)).click();
+
+//                driver.findElement(By.xpath(NewCampaign.Locator.public_preview_xpth)).click();
             }
 
 

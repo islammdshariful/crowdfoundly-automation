@@ -32,7 +32,7 @@ public class CreateCampaign {
 
         // Create campaign
         for(int i = 0; i < 3; i++){
-            modules.CreateCampaign.create(driver, "reward", "nodate", "no");
+            modules.CreateCampaign.create(driver, "reward", "date", "yes", "no");
         }
     }
 }
