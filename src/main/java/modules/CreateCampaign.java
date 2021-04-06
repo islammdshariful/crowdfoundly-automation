@@ -13,6 +13,7 @@ import utils.Menus;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 import static utils.Config.quickCampTitle;
@@ -222,6 +223,10 @@ public class CreateCampaign {
 
                 // View Campaign
                 driver.findElement(By.xpath(NewCampaign.Locator.view_campaign_xpth)).click();
+                ArrayList<String> tabs = new ArrayList<String> (driver.getWindowHandles());
+                driver.switchTo().window(tabs.get(1));
+//                driver.close();
+//                driver.switchTo().window(tabs.get(0));
 
 //                driver.findElement(By.xpath(NewCampaign.Locator.public_preview_xpth)).click();
             }
