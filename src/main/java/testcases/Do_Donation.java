@@ -23,9 +23,7 @@ public class Do_Donation {
     @Test
     public void testCase() {
         invokeBrowser();
-//        (driver, url, campaign type, tip, login)
-//        GiveDonation.donate(driver, "https://tu3testorganization1.crowdfundly.dev/campaigns/automation-donation-date-14599", "donation", "yes", "yes");
-//        GiveDonation.donate(driver, "https://tu3testorganization1.crowdfundly.dev/campaigns/automation-reward-date", "reward", "yes", "yes");
-        GiveDonation.donate(driver, "https://orgbyautomation.crowdfundly.dev/campaigns/automation-donation-nodate", "donation", "", "yes");
+//        (driver, url, campaign type, tip, login, other_info)
+        GiveDonation.donate(driver, "https://orgbyautomation.crowdfundly.dev/campaigns/automation-donation-nodate-77821", "donation", "yes", "yes", "yes");
     }
 }

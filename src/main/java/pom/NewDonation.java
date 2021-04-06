@@ -31,6 +31,10 @@ public class NewDonation {
         public static final String contribute_now_btn_xpth = "//*[@id=\"public\"]/div/div[4]/div/div[1]/div[2]/div/button/span";
 
         public static final String dwnld_pdf_flyer_xpth = "/html/body/div/div/div/div/div[4]/div/div/div/div/div[3]/div/div[2]/a";
+
+        public static final String oi_number_id = "Mobile NumbercampaignAdditionalData";
+        public static final String oi_agree_xpth = "//*[@id=\"public\"]/div/div[4]/div/div/div/div/form/div[5]/div/div[2]/div[2]/div/label";
+
     }
 
     public static class Text {
@@ -42,5 +46,7 @@ public class NewDonation {
 
         public static final String debit_crd_num_txt = "42424242424242420242123";
         public static final String debit_crd_postal_txt = "54321";
+
+        public static final String oi_number_txt = "01622152381";
     }
 }

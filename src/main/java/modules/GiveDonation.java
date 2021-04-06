@@ -10,7 +10,7 @@ import utils.DriverManager;
 import java.util.concurrent.TimeUnit;
 
 public class GiveDonation {
-    public static void donate(WebDriver driver, String url, String cmp_type, String tip, String log) {
+    public static void donate(WebDriver driver, String url, String cmp_type, String tip, String log, String other_info) {
         try {
             if (!url.equals("")) {
                 driver.get(url);
@@ -26,7 +26,7 @@ public class GiveDonation {
                 driver1.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
                 if (driver1.findElements(By.xpath(NewDonation.Locator.login_btn1_xpth)).size() != 0) {
                     driver1.findElement(By.xpath(NewDonation.Locator.login_btn1_xpth)).click();
-                    System.out.println(cmp_type + "a. Login to Contributor Account...");
+                    System.out.println(cmp_type + " a. Login to Contributor Account...");
                     Login.loginToAccount(driver, "contributor");
                     try {
                         Thread.sleep(1000);
@@ -36,7 +36,7 @@ public class GiveDonation {
                     driver.get(cmp_url);
                 } else if (driver1.findElements(By.xpath(NewDonation.Locator.login_btn2_xpth)).size() != 0) {
                     driver1.findElement(By.xpath(NewDonation.Locator.login_btn2_xpth)).click();
-                    System.out.println(cmp_type + "a. Login to Contributor Account...");
+                    System.out.println(cmp_type + " a. Login to Contributor Account...");
                     Login.loginToAccount(driver, "contributor");
                     try {
                         Thread.sleep(1000);
@@ -51,12 +51,12 @@ public class GiveDonation {
 
             if (cmp_type.equals("reward")) {
                 driver.findElement(By.xpath(NewDonation.Locator.get_now_btn_xpth)).click();
-                System.out.println("b. Amount is set");
+                System.out.println(" b. Amount is set");
             } else {
                 driver.findElement(By.xpath(NewDonation.Locator.custom_amnt_xpth)).click();
                 driver.findElement(By.xpath(NewDonation.Locator.custom_amnt_xpth)).sendKeys(NewDonation.Text.custom_amnt_text);
                 driver.findElement(By.xpath(NewDonation.Locator.custom_amnt_nxt_btn_xpth)).click();
-                System.out.println("b. Amount is set");
+                System.out.println(" b. Amount is set");
             }
 
 
@@ -71,18 +71,28 @@ public class GiveDonation {
             driver.findElement(By.id(NewDonation.Locator.message_id)).click();
             driver.findElement(By.id(NewDonation.Locator.message_id)).sendKeys(NewDonation.Text.message_txt);
 
-            System.out.println("c. Information filled up");
+            System.out.println(" c. Information filled up");
             if (!log.equals("yes")) {
                 driver.findElement(By.id(NewDonation.Locator.name_id)).click();
                 driver.findElement(By.id(NewDonation.Locator.name_id)).sendKeys(NewDonation.Text.name_txt);
 
                 driver.findElement(By.id(NewDonation.Locator.email_id)).click();
                 driver.findElement(By.id(NewDonation.Locator.email_id)).sendKeys(NewDonation.Text.email_txt);
-                System.out.println("c. Information filled up");
+                System.out.println(" c. Information filled up");
             }
 
-            driver.findElement(By.xpath(NewDonation.Locator.contribute_xpth)).click();
+            // Additional Information
+            if(other_info.equals("yes")){
+                driver.findElement(By.id(NewDonation.Locator.oi_number_id)).click();
+                driver.findElement(By.id(NewDonation.Locator.oi_number_id)).clear();
+                driver.findElement(By.id(NewDonation.Locator.oi_number_id)).sendKeys(NewDonation.Text.oi_number_txt);
 
+                driver.findElement(By.xpath(NewDonation.Locator.oi_agree_xpth)).click();
+            }
+
+            Thread.sleep(1000);
+            driver.findElement(By.xpath(NewDonation.Locator.contribute_xpth)).click();
+            Thread.sleep(1000);
 
             // Contribution Payment
             driver.findElement(By.xpath(NewDonation.Locator.debit_crd_xpth)).click();
@@ -95,12 +105,12 @@ public class GiveDonation {
             driver.findElement(By.name(NewDonation.Locator.debit_crd_postal_name)).sendKeys(NewDonation.Text.debit_crd_postal_txt);
 
             driver.switchTo().parentFrame();
-            System.out.println("d. Card information fille dup");
+            System.out.println(" d. Card information fille dup");
             driver.findElement(By.xpath(NewDonation.Locator.contribute_now_btn_xpth)).click();
             Thread.sleep(4000);
             // Download PDF Flyer
             driver.findElement(By.xpath(NewDonation.Locator.dwnld_pdf_flyer_xpth)).click();
-            System.out.println("e. PDF downloaded");
+            System.out.println(" e. PDF downloaded");
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

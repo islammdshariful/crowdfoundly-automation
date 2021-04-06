@@ -26,7 +26,7 @@ public class Do_CreateCampaign {
         Config.allow_cookies();
         modules.Login.loginToAccount(driver, "organizer");
 //        (driver, category, duration, other_info, do donation)
-        modules.CreateCampaign.create(driver, "donation", "nodate", "no", "yes");
+        modules.CreateCampaign.create(driver, "donation", "nodate", "yes", "yes");
 //        modules.CreateCampaign.create(driver, "donation", "date", "yes", "no");
 //        modules.CreateCampaign.create(driver, "reward", "nodate", "yes", "no");
 //        modules.CreateCampaign.create(driver, "reward", "date", "yes", "no");

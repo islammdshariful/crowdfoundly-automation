@@ -70,13 +70,13 @@ public class CreateCampaign {
                 }
             }
             driver.findElement(By.xpath(NewCampaign.Locator.cmp_title_nxt_btn_xpth)).click();
-            System.out.println(cmp_type + "b: Campaign Title Done");
+            System.out.println(cmp_type + " b: Campaign Title Done");
 
 
             // Target amount
             driver.findElement(By.xpath(NewCampaign.Locator.cmp_trgt_amount_xpth)).sendKeys(NewCampaign.Text.ammout_txt);
             driver.findElement(By.xpath(NewCampaign.Locator.cmp_trgt_amt_nxt_btn_xpth)).click();
-            System.out.println(cmp_type + "c: Target Amount is set");
+            System.out.println(cmp_type + " c: Target Amount is set");
 
             // Duration
             if (duration.equals("date")) {
@@ -91,7 +91,7 @@ public class CreateCampaign {
             }
 
             driver.findElement(By.xpath(NewCampaign.Locator.cmp_dur_nxt_btn_xpth)).click();
-            System.out.println(cmp_type + "d: Campaign Duration is set");
+            System.out.println(cmp_type + " d: Campaign Duration is set");
 
 
             // Gallery
@@ -102,14 +102,14 @@ public class CreateCampaign {
             Thread.sleep(1000);
             driver.findElement(By.xpath(NewCampaign.Locator.img_crop_xpth)).click();
             driver.findElement(By.xpath(NewCampaign.Locator.cmp_gal_nxt_btn_xpth)).click();
-            System.out.println(cmp_type + "e: Campaign Gallery is set");
+            System.out.println(cmp_type + " e: Campaign Gallery is set");
 
             // Video
             driver.findElement(By.id(NewCampaign.Locator.cmp_upload_vdo_id)).click();
             driver.findElement(By.id(NewCampaign.Locator.cmp_upload_vdo_id)).sendKeys(NewCampaign.Text.youtube_vdo_link);
             driver.findElement(By.xpath(NewCampaign.Locator.cmp_add_vdo_xpth)).click();
             driver.findElement(By.xpath(NewCampaign.Locator.cmp_vdo_nxt_btn)).click();
-            System.out.println(cmp_type + "f: Campaign Video is set");
+            System.out.println(cmp_type + " f: Campaign Video is set");
 
             // Story
             // H1
@@ -158,7 +158,7 @@ public class CreateCampaign {
             driver.findElement(By.id(NewCampaign.Locator.stry_vdo_field_id)).sendKeys(NewCampaign.Text.vimeo_vdo_link);
             Thread.sleep(1000);
             driver.findElement(By.xpath(NewCampaign.Locator.cmp_sty_nxt_btn_xpth)).click();
-            System.out.println(cmp_type + "g: Campaign Story is set");
+            System.out.println(cmp_type + " g: Campaign Story is set");
 
             //Other Information
 
@@ -194,7 +194,7 @@ public class CreateCampaign {
                 CreateReward.create(driver, "no");
                 Thread.sleep(1000);
                 driver.findElement(By.xpath(NewCampaign.Locator.published_rwrd_btn_xpth)).click();
-                System.out.println(cmp_type + "h: Campaign Reward is set");
+                System.out.println(cmp_type + " h: Campaign Reward is set");
             } else {
                 Thread.sleep(1000);
                 driver.findElement(By.xpath(NewCampaign.Locator.published_don_btn_xpth)).click();
@@ -234,9 +234,9 @@ public class CreateCampaign {
 
             if (!Config.quickCreate) {
                 if (do_donate.equals("yes")) {
-                    System.out.println(cmp_type + "i: Going to Donate");
+                    System.out.println(cmp_type + " i: Going to Donate");
 //                    GiveDonation.donate(driver, "", cmp_type, "yes", "yes");
-                    GiveDonation.donate(driver, "", cmp_type, "yes", "yes");
+                    GiveDonation.donate(driver, "", cmp_type, "yes", "yes", other_info);
                 } else {
                     Config.allow_cookies();
                 }

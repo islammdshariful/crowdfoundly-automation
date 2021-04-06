@@ -62,7 +62,7 @@ public class Do_All {
         SetupCrowdfundly.saveCrowdfundly(driver);
 
         // Create Campaign - Donation
-        modules.CreateCampaign.create(driver, "donation", "nodate", "yes", "no");
+        modules.CreateCampaign.create(driver, "donation", "nodate", "yes", "yes");
         System.out.println("G. Create Campaign - Donation: COMPLETED");
 
         // Ask for Refund
@@ -106,8 +106,8 @@ public class Do_All {
         DeleteCampaign.deleteCampaign(driver);
         System.out.println("P. Campaign Deleted Successfully");
 
-        // Delete Organization
-        DeleteAccounts.deleteOrganization(driver);
-        System.out.println("P. Organization Deleted Successfully");
+//        // Delete Organization
+//        DeleteAccounts.deleteOrganization(driver);
+//        System.out.println("P. Organization Deleted Successfully");
     }
 }
