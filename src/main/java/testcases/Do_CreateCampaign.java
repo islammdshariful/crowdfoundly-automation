@@ -21,7 +21,7 @@ public class Do_CreateCampaign {
 
     @Test
     public void testCase() {
-        Config.setEnv("live"); //for DEV: dev & LIVE: live
+        Config.setEnv(""); //for DEV: dev & LIVE: live
         invokeBrowser();
         driver.get(Urls.getURLS("root"));
         Config.allow_cookies();

@@ -22,7 +22,7 @@ public class Do_Login {
 
     @Test
     public void testCase() {
-        Config.setEnv("dev"); //for DEV: dev & LIVE: live
+        Config.setEnv(""); //for DEV: dev & LIVE: live
         invokeBrowser();
         driver.get(Urls.getURLS("root"));
         Config.allow_cookies();
