@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 public class DeleteCampaign {
     public static void deleteCampaign(WebDriver driver) {
         try {
-            driver.get(Urls.dev);
+            driver.get(Urls.getURLS("root"));
             Menus.clickCampaigns();
             Thread.sleep(1000);
 

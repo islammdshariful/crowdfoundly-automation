@@ -26,20 +26,20 @@ public class GiveDonation {
                 driver1.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
                 if (driver1.findElements(By.xpath(NewDonation.Locator.login_btn1_xpth)).size() != 0) {
                     driver1.findElement(By.xpath(NewDonation.Locator.login_btn1_xpth)).click();
-                    System.out.println(cmp_type + " a. Login to Contributor Account...");
+                    System.out.println(cmp_type + " 1 a. Login to Contributor Account...");
                     Login.loginToAccount(driver, "contributor");
                     try {
-                        Thread.sleep(1000);
+                        Thread.sleep(2000);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
                     driver.get(cmp_url);
                 } else if (driver1.findElements(By.xpath(NewDonation.Locator.login_btn2_xpth)).size() != 0) {
                     driver1.findElement(By.xpath(NewDonation.Locator.login_btn2_xpth)).click();
-                    System.out.println(cmp_type + " a. Login to Contributor Account...");
+                    System.out.println(cmp_type + " 2 a. Login to Contributor Account...");
                     Login.loginToAccount(driver, "contributor");
                     try {
-                        Thread.sleep(1000);
+                        Thread.sleep(2000);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -87,7 +87,11 @@ public class GiveDonation {
                 driver.findElement(By.id(NewDonation.Locator.oi_number_id)).clear();
                 driver.findElement(By.id(NewDonation.Locator.oi_number_id)).sendKeys(NewDonation.Text.oi_number_txt);
 
-                driver.findElement(By.xpath(NewDonation.Locator.oi_agree_xpth)).click();
+                if(tip.equals("yes")){
+                    driver.findElement(By.xpath(NewDonation.Locator.oi_agree_1_xpth)).click();
+                }else {
+                    driver.findElement(By.xpath(NewDonation.Locator.oi_agree_2_xpth)).click();
+                }
             }
 
             Thread.sleep(1000);

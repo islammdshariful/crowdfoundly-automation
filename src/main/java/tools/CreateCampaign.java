@@ -22,7 +22,7 @@ public class CreateCampaign {
     @Test
     public void testCase() {
         invokeBrowser();
-        driver.get(Urls.dev);
+        driver.get(Urls.getURLS("root"));
         Config.allow_cookies();
 
         Config.quickCreate = true;

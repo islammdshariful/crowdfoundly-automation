@@ -21,7 +21,7 @@ import static utils.Config.quickCampTitle;
 public class CreateCampaign {
     public static void create(WebDriver driver, String cmp_type, String duration, String other_info, String do_donate) {
         try {
-            Thread.sleep(1000);
+            Thread.sleep(3000);
             Menus.clickCampaigns();
             // Add new campaign
             WebElement add_new = driver.findElement(By.xpath(CampaignPage.Locators.add_new_xpth));
@@ -236,7 +236,7 @@ public class CreateCampaign {
                 if (do_donate.equals("yes")) {
                     System.out.println(cmp_type + " i: Going to Donate");
 //                    GiveDonation.donate(driver, "", cmp_type, "yes", "yes");
-                    GiveDonation.donate(driver, "", cmp_type, "yes", "yes", other_info);
+                    GiveDonation.donate(driver, "", cmp_type, "no", "yes", other_info);
                 } else {
                     Config.allow_cookies();
                 }

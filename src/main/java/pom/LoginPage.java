@@ -16,7 +16,8 @@ public class LoginPage {
         public static final String email_id = "email";
         public static final String pass_id = "password";
 
-        public static final String signin_btn_xpth = "//*[@id=\"public\"]/div/div[3]/div[2]/div[2]/div/div[2]/form/div/div[3]/button";
+        public static final String dev_signin_btn_xpth = "//*[@id=\"public\"]/div/div[3]/div[2]/div[2]/div/div[2]/form/div/div[3]/button";
+        public static final String live_signin_btn_xpth = "//*[@id=\"public\"]/div/div[3]/div[2]/div[2]/div/div[2]/form/div/div[4]/button";
 
         public static final String forgot_pass_xpth = "//*[@id=\"public\"]/div/div[3]/div[2]/div[2]/div/div[2]/form/div/div[3]/div/a";
     }

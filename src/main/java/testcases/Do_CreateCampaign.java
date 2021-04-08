@@ -21,8 +21,9 @@ public class Do_CreateCampaign {
 
     @Test
     public void testCase() {
+        Config.setEnv("live"); //for DEV: dev & LIVE: live
         invokeBrowser();
-        driver.get(Urls.dev);
+        driver.get(Urls.getURLS("root"));
         Config.allow_cookies();
         modules.Login.loginToAccount(driver, "organizer");
 //        (driver, category, duration, other_info, do donation)

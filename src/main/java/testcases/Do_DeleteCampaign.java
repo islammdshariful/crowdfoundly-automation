@@ -23,8 +23,9 @@ public class Do_DeleteCampaign {
 
     @Test
     public void testCase() {
+        Config.setEnv(""); //for DEV: dev & LIVE: live
         invokeBrowser();
-        driver.get(Urls.dev);
+        driver.get(Urls.getURLS("root"));
         Config.allow_cookies();
         Login.loginToAccount(driver, "organizer");
 //        CreateSubscription.createSubs(driver, "plus");

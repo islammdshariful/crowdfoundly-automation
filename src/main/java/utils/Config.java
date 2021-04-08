@@ -12,6 +12,22 @@ public class Config {
     //Allow cookies button
     public static final String allow_cookies_btn_xpth = "//*[@id=\"public\"]/div[2]/div/button";
 
+    //Environment set
+    public static boolean live = false;
+    public static boolean dev = false;
+
+    public static void setEnv(String env){
+        if (env.equals("live")){
+            live = true;
+        }else if(env.equals("dev")){
+            dev = true;
+        }else{
+            System.out.println("PLEASE CHOOSE A CORRECT ENVIRONMENT. EX: dev OR live");
+            System.exit(0);
+        }
+    }
+
+
     public static boolean quickCreate = false;
     public static String quickCampTitle(){
         Date date = new Date();

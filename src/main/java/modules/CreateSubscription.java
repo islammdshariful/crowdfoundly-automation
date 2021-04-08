@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 
 public class CreateSubscription {
     public static void createSubs(WebDriver driver, String pkg) {
-        driver.get(Urls.dev_subs);
+        driver.get(Urls.getURLS("subs"));
         JavascriptExecutor js = (JavascriptExecutor) driver;
 
         WebDriver driver1 = DriverManager.driver;
@@ -82,7 +82,7 @@ public class CreateSubscription {
     }
 
     public static void createLTD(WebDriver driver, String pkg) {
-        driver.get(Urls.dev_subs);
+        driver.get(Urls.getURLS("ltd"));
         JavascriptExecutor js = (JavascriptExecutor) driver;
         try {
             if (pkg.equals("lite")) {

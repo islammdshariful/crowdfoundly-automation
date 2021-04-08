@@ -22,8 +22,9 @@ public class Do_DeleteOrganization {
 
     @Test
     public void testCase() {
+        Config.setEnv(""); //for DEV: dev & LIVE: live
         invokeBrowser();
-        driver.get(Urls.dev);
+        driver.get(Urls.getURLS("root"));
         Config.allow_cookies();
         modules.Login.loginToAccount(driver, "organizer");
         DeleteAccounts.deleteOrganization(driver);

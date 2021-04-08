@@ -24,49 +24,52 @@ public class Do_All {
 
     @Test
     public void testCase() {
+        Config.setEnv("live"); //for DEV: dev & LIVE: live
         invokeBrowser();
-        driver.get(Urls.dev);
+        driver.get(Urls.getURLS("root"));
         Config.allow_cookies();
 
         // Login to Organization Account
         Login.loginToAccount(driver, "organizer");
         System.out.println("A. Login to organization");
 
-        // Create Subscription
-        CreateSubscription.createSubs(driver, "plus");
-        System.out.println("B. Subscription created");
+        if (Config.dev) {
+            // Create Subscription
+            CreateSubscription.createSubs(driver, "plus");
+            System.out.println("B. Subscription created");
 
-        // Create Organization
-        Menus.profileMenu.clickSubscription();
-        Menus.profileMenu.clickAllPlans();
-        CreateOrganization.create(driver);
-        System.out.println("C. Organization Created");
+            // Create Organization
+            Menus.profileMenu.clickSubscription();
+            Menus.profileMenu.clickAllPlans();
+            CreateOrganization.create(driver);
+            System.out.println("C. Organization Created");
 
-        // Set up payment gateway
-        SetupPaymentGateway.paymentGateway(driver);
-        System.out.println("D. payment Gatway Setup Completed");
+            // Set up payment gateway
+            SetupPaymentGateway.paymentGateway(driver);
+            System.out.println("D. payment Gatway Setup Completed");
 
-        // Set up Tips
-        SetupCrowdfundly.allowTips(driver);
-        System.out.println("E. Allow tips Activated");
+            // Set up Tips
+            SetupCrowdfundly.allowTips(driver);
+            System.out.println("E. Allow tips Activated");
 
-        // Set up   Login
-        SetupCrowdfundly.allowLogin(driver);
-        System.out.println("E1. Allow Login Activated");
+            // Set up   Login
+            SetupCrowdfundly.allowLogin(driver);
+            System.out.println("E1. Allow Login Activated");
 
-        //Set up Refund
-        SetupCrowdfundly.activeEscrow(driver);
-        System.out.println("F. Escrow Activated");
+            //Set up Refund
+            SetupCrowdfundly.activeEscrow(driver);
+            System.out.println("F. Escrow Activated");
 
-        // Save Crowdfundly
-        SetupCrowdfundly.saveCrowdfundly(driver);
+            // Save Crowdfundly
+            SetupCrowdfundly.saveCrowdfundly(driver);
+        }
 
         // Create Campaign - Donation
         modules.CreateCampaign.create(driver, "donation", "nodate", "yes", "yes");
         System.out.println("G. Create Campaign - Donation: COMPLETED");
 
         // Ask for Refund
-        driver.get(Urls.dev);
+        driver.get(Urls.getURLS("root"));
         Menus.clickLogouts();
         Login.loginToAccount(driver, "contributor");
         System.out.println("H. Login to Contributor");
@@ -98,7 +101,7 @@ public class Do_All {
 //        System.out.println("N. Create Campaign - Reward with date");
 
         // Go to Campagin Page
-        driver.get(Urls.dev);
+        driver.get(Urls.getURLS("root"));
         Menus.clickCampaigns();
         System.out.println("O. Navigated to Campaign page");
 
