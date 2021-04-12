@@ -1,8 +1,10 @@
 package testcases;
 
-import modules.SetupCrowdfundly;
+import modules.*;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
+import pom.OrganizationSettingsPage;
 import utils.Config;
 import utils.DriverManager;
 import utils.Menus;
@@ -23,12 +25,32 @@ public class Do_Test {
 
     @Test
     public void testCase() {
-        Config.setEnv(""); //for DEV: dev & LIVE: live
+        Config.setEnv("dev"); //for DEV: dev & LIVE: live
         invokeBrowser();
         driver.get(Urls.getURLS("root"));
         Config.allow_cookies();
-        modules.Login.loginToAccount(driver, "organizer");
-        Menus.clickSettings();
-        SetupCrowdfundly.activeEscrow(driver);
+
+        // Login to Organization Account
+        Login.loginToAccount(driver, "organizer");
+        System.out.println("A. Login to organization");
+
+        if (Config.dev) {
+            // Create Subscription
+            CreateSubscription.createSubs(driver, "plus");
+            System.out.println("B. Subscription created");
+
+            // Create Organization
+            Menus.profileMenu.clickSubscription();
+            Menus.profileMenu.clickAllPlans();
+            CreateOrganization.create(driver);
+            System.out.println("C. Organization Created");
+
+            Menus.clickSettings();
+            driver.findElement(By.xpath(OrganizationSettingsPage.TabsLocator.media_xpth)).click();
+            SetupOrgMedia.fav(driver);
+            SetupOrgMedia.logo(driver);
+            SetupOrgMedia.cover(driver);
+            SetupOrgMedia.slider(driver);
+        }
     }
 }

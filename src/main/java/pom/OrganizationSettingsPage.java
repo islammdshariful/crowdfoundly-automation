@@ -17,6 +17,14 @@ public class OrganizationSettingsPage {
         public static final String paymenthistory_xpth = "//*[@id=\"dashboard\"]/div/div[6]/div[2]/div/div[2]/div[1]/ul/li[11]/a";
     }
 
+    public static class MediaLocator {
+        public static final String logo_xpth = "//*[@id=\"dashboard\"]/div/div[6]/div[2]/div/div[2]/div[2]/div/form/div/div/div[1]/div/div/div[1]/div/label";
+        public static final String favicon_xpth = "//*[@id=\"dashboard\"]/div/div[6]/div[2]/div/div[2]/div[2]/div/form/div/div/div[2]/div/div/div[1]/div/label";
+        public static final String cover_img_xpth = "//*[@id=\"dashboard\"]/div/div[6]/div[2]/div/div[2]/div[2]/div/form/div/div/div[3]/div/div/div[1]/div/label";
+        public static final String slider_img_xpth = "//*[@id=\"gallery\"]/label/div/div[2]/h5";
+        public static final String slider_more_xpth = "//*[@id=\"gallery\"]/label/div/div[2]/div/div/i";
+    }
+
     public static class BasicLocator {
         public static final String delete_org_btn_xpth = "//*[@id=\"dashboard\"]/div/div[6]/div[2]/div/div[2]/div[2]/div/form/div/div[2]/button[2]/span";
         public static final String confirm_delete_btn_xpth = "//*[@id=\"deleteOrganizationModal\"]/div/div[2]/div/div[2]/button[2]/span";
