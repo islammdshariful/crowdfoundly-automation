@@ -10,6 +10,7 @@ import utils.DriverManager;
 import utils.Menus;
 import utils.Urls;
 
+import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 public class Do_All {
@@ -88,22 +89,22 @@ public class Do_All {
         ManageRefundRequest.approve(driver);
         System.out.println("K. Refund Request Approved");
 
-//        // Again Create Campaign - Reward
-//        modules.CreateCampaign.create(driver, "reward", "nodate", "yes");
+//        // Again Create Campaign - Donation with date
+//        modules.CreateCampaign.create(driver, "donation", "date", "yes", "yes");
 //        System.out.println("L. Create Campaign - Reward");
 //
-//        // Again Create Campaign - Reward with date
-//        driver.get(Urls.dev);
+//        // Again Create Campaign - Reward with no date
+//        driver.get(Urls.getURLS("root"));
 //        Menus.clickCampaigns();
-//        modules.CreateCampaign.create(driver, "reward", "date", "yes");
+//        modules.CreateCampaign.create(driver, "reward", "nodate", "yes", "yes");
 //        System.out.println("M. Create Campaign - Reward with date");
 //
 //        // Again Create Campaign - Reward with date
-//        driver.get(Urls.dev);
+//        driver.get(Urls.getURLS("root"));
 //        Menus.clickCampaigns();
-//        modules.CreateCampaign.create(driver, "donation", "date", "yes");
+//        modules.CreateCampaign.create(driver, "reward", "date", "yes", "yes");
 //        System.out.println("N. Create Campaign - Reward with date");
-
+//
         // Go to Campagin Page
         driver.get(Urls.getURLS("root")); // for app.crowdfundly.io/.dev: root, Subscribe: subs, LTD: ltd
         Menus.clickCampaigns();

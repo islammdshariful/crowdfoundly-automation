@@ -8,9 +8,11 @@ import utils.Menus;
 public class SetupPaymentGateway {
     public static void paymentGateway(WebDriver driver) {
         Menus.clickSettings();
-        driver.findElement(By.xpath(OrganizationSettingsPage.TabsLocator.payment_xpth)).click();
-
         try {
+            Thread.sleep(1000);
+            driver.findElement(By.xpath(OrganizationSettingsPage.TabsLocator.payment_xpth)).click();
+
+
             // Strip
             driver.findElement(By.xpath(OrganizationSettingsPage.PaymentLocator.strip_acc_drpdwn_xpth)).click();
             Thread.sleep(1000);

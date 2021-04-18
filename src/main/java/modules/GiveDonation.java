@@ -87,10 +87,10 @@ public class GiveDonation {
                 driver.findElement(By.id(NewDonation.Locator.oi_number_id)).clear();
                 driver.findElement(By.id(NewDonation.Locator.oi_number_id)).sendKeys(NewDonation.Text.oi_number_txt);
 
-                if(tip.equals("yes")){
-                    driver.findElement(By.xpath(NewDonation.Locator.oi_agree_1_xpth)).click();
-                }else {
+                if(cmp_type.equals("reward")){
                     driver.findElement(By.xpath(NewDonation.Locator.oi_agree_2_xpth)).click();
+                }else {
+                    driver.findElement(By.xpath(NewDonation.Locator.oi_agree_xpth)).click();
                 }
             }
 

@@ -16,12 +16,22 @@ public class Config {
     public static boolean live = false;
     public static boolean dev = false;
 
-    public static void setEnv(String env){
-        if (env.equals("live")){
+    // Crowdfundly
+    public static boolean auto_approval = false;
+    public static boolean allow_public_fundrise = false;
+    public static boolean update_auto_approval = false;
+    public static boolean allow_tip = false;
+    public static boolean ahow_similar_campaigns = false;
+    public static boolean allow_login = false;
+    public static boolean escrow = false;
+    public static boolean allow_refund = false;
+
+    public static void setEnv(String env) {
+        if (env.equals("live")) {
             live = true;
-        }else if(env.equals("dev")){
+        } else if (env.equals("dev")) {
             dev = true;
-        }else{
+        } else {
             System.out.println("PLEASE CHOOSE A CORRECT ENVIRONMENT. EX: dev OR live");
             System.exit(0);
         }
@@ -29,7 +39,8 @@ public class Config {
 
 
     public static boolean quickCreate = false;
-    public static String quickCampTitle(){
+
+    public static String quickCampTitle() {
         Date date = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
         String time = sdf.format(date);

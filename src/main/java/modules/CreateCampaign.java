@@ -224,11 +224,8 @@ public class CreateCampaign {
                 // View Campaign
                 driver.findElement(By.xpath(NewCampaign.Locator.view_campaign_xpth)).click();
                 ArrayList<String> tabs = new ArrayList<String> (driver.getWindowHandles());
+                driver.close();
                 driver.switchTo().window(tabs.get(1));
-//                driver.close();
-//                driver.switchTo().window(tabs.get(0));
-
-//                driver.findElement(By.xpath(NewCampaign.Locator.public_preview_xpth)).click();
             }
 
 

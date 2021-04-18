@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import pom.OrganizationSettingsPage;
+import utils.Config;
 
 public class SetupCrowdfundly {
     public static void allowCommision(WebDriver driver) {
@@ -31,6 +32,7 @@ public class SetupCrowdfundly {
             js.executeScript("window.scrollBy(0,325)", "");
             Thread.sleep(1000);
             driver.findElement(By.xpath(OrganizationSettingsPage.CrowdfundlyLocator.allow_tip_xpth)).click();
+            Config.allow_tip = true;
 
 //            driver.findElement(By.xpath(OrganizationSettingsPage.CrowdfundlyLocator.save_xpth)).click();
         } catch (InterruptedException e) {
@@ -45,7 +47,7 @@ public class SetupCrowdfundly {
             js.executeScript("window.scrollBy(0,325)", "");
             Thread.sleep(1000);
             driver.findElement(By.xpath(OrganizationSettingsPage.CrowdfundlyLocator.auto_approv_xpth)).click();
-
+            Config.auto_approval = true;
 //            driver.findElement(By.xpath(OrganizationSettingsPage.CrowdfundlyLocator.save_xpth)).click();
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -59,7 +61,7 @@ public class SetupCrowdfundly {
             js.executeScript("window.scrollBy(0,325)", "");
             Thread.sleep(1000);
             driver.findElement(By.xpath(OrganizationSettingsPage.CrowdfundlyLocator.update_auto_approv_xpth)).click();
-
+            Config.update_auto_approval = true;
 //            driver.findElement(By.xpath(OrganizationSettingsPage.CrowdfundlyLocator.save_xpth)).click();
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -73,7 +75,7 @@ public class SetupCrowdfundly {
             js.executeScript("window.scrollBy(0,325)", "");
             Thread.sleep(1000);
             driver.findElement(By.xpath(OrganizationSettingsPage.CrowdfundlyLocator.allow_login_xpth)).click();
-
+            Config.allow_login = true;
 //            driver.findElement(By.xpath(OrganizationSettingsPage.CrowdfundlyLocator.save_xpth)).click();
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -87,6 +89,7 @@ public class SetupCrowdfundly {
             js.executeScript("window.scrollBy(0,325)", "");
             Thread.sleep(1000);
             driver.findElement(By.xpath(OrganizationSettingsPage.CrowdfundlyLocator.escrow_xpth)).click();
+            Config.escrow = true;
             Thread.sleep(1000);
 
             driver.findElement(By.id(OrganizationSettingsPage.CrowdfundlyLocator.escrow_duration_id)).click();
@@ -95,6 +98,7 @@ public class SetupCrowdfundly {
             Thread.sleep(1000);
             System.out.println("F - a: Escrow toggle ON");
             driver.findElement(By.xpath(OrganizationSettingsPage.CrowdfundlyLocator.allow_refund_xpth)).click();
+            Config.allow_refund = true;
             Thread.sleep(1000);
             System.out.println("F- b: Refund toggle ON");
 
