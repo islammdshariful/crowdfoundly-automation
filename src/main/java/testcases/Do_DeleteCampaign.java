@@ -23,7 +23,7 @@ public class Do_DeleteCampaign {
 
     @Test
     public void testCase() {
-        Config.setEnv(""); //for DEV: dev & LIVE: live
+        Config.setEnv("dev"); //for DEV: dev & LIVE: live
         invokeBrowser();
         driver.get(Urls.getURLS("root"));
         Config.allow_cookies();
@@ -33,6 +33,7 @@ public class Do_DeleteCampaign {
 //        Menus.profileMenu.clickAllPlans();
 //        CreateOrganization.create(driver);
 //        CreateCampaign.create(driver, "donation", "nodate", "");
-        DeleteCampaign.deleteCampaign(driver);
+        DeleteCampaign.deleteAllCampaign(driver);
+//        DeleteCampaign.deleteCampaign(driver, 2);
     }
 }

@@ -21,7 +21,7 @@ import static utils.Config.quickCampTitle;
 public class CreateCampaign {
     public static void create(WebDriver driver, String cmp_type, String duration, String other_info, String do_donate) {
         try {
-            Thread.sleep(3000);
+            Thread.sleep(1000);
             Menus.clickCampaigns();
             // Add new campaign
             WebElement add_new = driver.findElement(By.xpath(CampaignPage.Locators.add_new_xpth));

@@ -14,8 +14,12 @@ public class Urls {
                 return root;
             }else if(url.equals("subs")){
                 return subs;
-            }else {
+            } else if(url.equals("ltd")){
                 return ltd;
+            }
+            else {
+                System.out.println("PLEASE CHOOSE A CORRECT URL. EX: root, subs, or ltd");
+                System.exit(0);
             }
         }
         if(Config.live){
@@ -27,8 +31,12 @@ public class Urls {
                 return root;
             }else if(url.equals("subs")){
                 return subs;
-            }else {
+            }else if(url.equals("ltd")){
                 return ltd;
+            }
+            else {
+                System.out.println("PLEASE CHOOSE A CORRECT URL. EX: root, subs, or ltd");
+                System.exit(0);
             }
         }
 

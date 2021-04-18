@@ -1,5 +1,6 @@
 package tools;
 
+import modules.Login;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 import utils.Config;
@@ -21,18 +22,24 @@ public class CreateCampaign {
 
     @Test
     public void testCase() {
+        Config.setEnv("dev"); //for DEV: dev & LIVE: live
         invokeBrowser();
         driver.get(Urls.getURLS("root"));
         Config.allow_cookies();
 
+        // Login to Organization Account;
+
         Config.quickCreate = true;
 
         // Login to your account
-        modules.Login.loginToAccount(driver, "forusualtest+fr1@gmail.com", "123456");
+        modules.Login.loginToAccount(driver, "forusualtest+devautoorg1@gmail.com", "123456");
 
         // Create campaign
         for(int i = 0; i < 3; i++){
             modules.CreateCampaign.create(driver, "reward", "date", "yes", "no");
+            modules.CreateCampaign.create(driver, "donation", "date", "yes", "no");
+            modules.CreateCampaign.create(driver, "donation", "nodate", "yes", "no");
+            modules.CreateCampaign.create(driver, "donation", "nodate", "yes", "no");
         }
     }
 }

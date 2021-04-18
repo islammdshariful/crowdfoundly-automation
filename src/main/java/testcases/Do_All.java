@@ -4,6 +4,7 @@ import modules.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
+import pom.OrganizationSettingsPage;
 import utils.Config;
 import utils.DriverManager;
 import utils.Menus;
@@ -24,7 +25,7 @@ public class Do_All {
 
     @Test
     public void testCase() {
-        Config.setEnv(""); //for DEV: dev & LIVE: live
+        Config.setEnv("dev"); //for DEV: dev & LIVE: live
         invokeBrowser();
         driver.get(Urls.getURLS("root"));
         Config.allow_cookies();
@@ -43,6 +44,9 @@ public class Do_All {
             Menus.profileMenu.clickAllPlans();
             CreateOrganization.create(driver);
             System.out.println("C. Organization Created");
+
+            // Setup media
+            SetupOrgMedia.all(driver);
 
             // Set up payment gateway
             SetupPaymentGateway.paymentGateway(driver);
@@ -69,7 +73,7 @@ public class Do_All {
         System.out.println("G. Create Campaign - Donation: COMPLETED");
 
         // Ask for Refund
-        driver.get(Urls.getURLS("root"));
+        driver.get(Urls.getURLS("root")); // for app.crowdfundly.io/.dev: root, Subscribe: subs, LTD: ltd
         Menus.clickLogouts();
         Login.loginToAccount(driver, "contributor");
         System.out.println("H. Login to Contributor");
@@ -101,12 +105,12 @@ public class Do_All {
 //        System.out.println("N. Create Campaign - Reward with date");
 
         // Go to Campagin Page
-        driver.get(Urls.getURLS("root"));
+        driver.get(Urls.getURLS("root")); // for app.crowdfundly.io/.dev: root, Subscribe: subs, LTD: ltd
         Menus.clickCampaigns();
         System.out.println("O. Navigated to Campaign page");
 
         // Delete Campaign
-        DeleteCampaign.deleteCampaign(driver);
+        DeleteCampaign.deleteAllCampaign(driver);
         System.out.println("P. Campaign Deleted Successfully");
 
 //        // Delete Organization

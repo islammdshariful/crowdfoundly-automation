@@ -36,21 +36,16 @@ public class Do_Test {
 
         if (Config.dev) {
             // Create Subscription
-            CreateSubscription.createSubs(driver, "plus");
-            System.out.println("B. Subscription created");
+//            CreateSubscription.createSubs(driver, "plus");
+//            System.out.println("B. Subscription created");
+//
+//            // Create Organization
+//            Menus.profileMenu.clickSubscription();
+//            Menus.profileMenu.clickAllPlans();
+//            CreateOrganization.create(driver);
+//            System.out.println("C. Organization Created");
 
-            // Create Organization
-            Menus.profileMenu.clickSubscription();
-            Menus.profileMenu.clickAllPlans();
-            CreateOrganization.create(driver);
-            System.out.println("C. Organization Created");
-
-            Menus.clickSettings();
-            driver.findElement(By.xpath(OrganizationSettingsPage.TabsLocator.media_xpth)).click();
-            SetupOrgMedia.fav(driver);
-            SetupOrgMedia.logo(driver);
-            SetupOrgMedia.cover(driver);
-            SetupOrgMedia.slider(driver);
+            SetupOrgMedia.all(driver);
         }
     }
 }
