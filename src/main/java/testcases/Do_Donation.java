@@ -1,11 +1,10 @@
 package testcases;
 
-import modules.GiveDonation;
+import modules.GiveOnlineDonation;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 import utils.Config;
 import utils.DriverManager;
-import utils.Urls;
 
 import java.util.concurrent.TimeUnit;
 
@@ -25,6 +24,6 @@ public class Do_Donation {
         Config.setEnv(""); //for DEV: dev & LIVE: live
         invokeBrowser();
 //        (driver, url, campaign type, tip, login, other_info)
-        GiveDonation.donate(driver, "https://orgbyautomation.crowdfundly.dev/campaigns/automation-donation-nodate-77821", "donation", "yes", "yes", "yes");
+        GiveOnlineDonation.donate(driver, "https://orgbyautomation.crowdfundly.dev/campaigns/automation-donation-nodate-77821", "donation", "yes", "yes", "yes");
     }
 }

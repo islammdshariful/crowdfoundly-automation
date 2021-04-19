@@ -49,4 +49,29 @@ public class NewDonation {
 
         public static final String oi_number_txt = "01622152381";
     }
+
+    public static class OfflineLocator {
+        public static final String action_btn_xpth = "/html/body/div[1]/div/div/div/div[6]/div[2]/div/div[2]/div[2]/div/table/tbody/tr[1]/td[7]/div/div[1]/button/div/img";
+        public static final String manage_xpth = "/html/body/div[1]/div/div/div/div[6]/div[2]/div/div[2]/div[2]/div/table/tbody/tr[1]/td[7]/div/div[1]/ul/li[1]/button/i";
+
+        public static final String offline_con_xpth = "//*[@id=\"public\"]/div/div[5]/div[1]/div/div[2]/ul[1]/li[4]/a";
+        public static final String add_btn_xpth = "//*[@id=\"public\"]/div/div[5]/div[2]/div/div/div[1]/div[2]/button/i";
+
+        // Informations
+        public static final String name_id = "name";
+        public static final String email_id = "email";
+        public static final String address_id = "address";
+        public static final String amount_id = "amount";
+        public static final String do_anonymous_xpth = "//*[@id=\"offlineDonationModal\"]/div/div[2]/div/div/form/div[5]/div/label";
+
+        public static final String add_con_btn_xpth  = "//*[@id=\"offlineDonationModal\"]/div/div[2]/div/div/form/button/span";
+    }
+
+    public static class OfflineText {
+        public static final String name_txt = "Sabbir the offline contributor";
+        public static final String email_txt = "forusualtest+offline@gmail.com";
+        public static final String address_txt = "House: 345/B, Road: 45/C" +
+                "Sector: 45, Land of people, Earth, universe.";
+        public static final String amount_txt = "321.45";
+    }
 }

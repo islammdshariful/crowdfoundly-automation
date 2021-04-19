@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import pom.CampaignPage;
 import pom.NewCampaign;
@@ -12,9 +11,7 @@ import utils.Config;
 import utils.Menus;
 
 import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 
 import static utils.Config.quickCampTitle;
 
@@ -233,7 +230,7 @@ public class CreateCampaign {
                 if (do_donate.equals("yes")) {
                     System.out.println(cmp_type + " i: Going to Donate");
 //                    GiveDonation.donate(driver, "", cmp_type, "yes", "yes");
-                    GiveDonation.donate(driver, "", cmp_type, "no", "yes", other_info);
+                    GiveOnlineDonation.donate(driver, "", cmp_type, "no", "yes", other_info);
                 } else {
                     Config.allow_cookies();
                 }

@@ -9,7 +9,7 @@ import utils.DriverManager;
 
 import java.util.concurrent.TimeUnit;
 
-public class GiveDonation {
+public class GiveOnlineDonation {
     public static void donate(WebDriver driver, String url, String cmp_type, String tip, String log, String other_info) {
         try {
             if (!url.equals("")) {

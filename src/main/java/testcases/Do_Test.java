@@ -1,10 +1,8 @@
 package testcases;
 
 import modules.*;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
-import pom.OrganizationSettingsPage;
 import utils.Config;
 import utils.DriverManager;
 import utils.Menus;
@@ -46,7 +44,7 @@ public class Do_Test {
 //            System.out.println("C. Organization Created");
 
             Menus.clickSettings();
-            SetupPolices.setPolicy(driver);
+            SetupSocials.setSocials(driver);
         }
     }
 }

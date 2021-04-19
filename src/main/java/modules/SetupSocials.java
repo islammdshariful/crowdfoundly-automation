@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import pom.OrganizationSettingsPage;
 
 public class SetupSocials {
-    public static void setPolicy(WebDriver driver) {
+    public static void setSocials(WebDriver driver) {
         driver.findElement(By.xpath(OrganizationSettingsPage.TabsLocator.social_xpth)).click();
 
         driver.findElement(By.xpath(OrganizationSettingsPage.SocilaLocator.facebook_xpth)).click();
