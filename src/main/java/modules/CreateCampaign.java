@@ -229,7 +229,7 @@ public class CreateCampaign {
             if (!Config.quickCreate) {
                 if (do_donate.equals("yes")) {
                     System.out.println(cmp_type + " i: Going to Donate");
-//                    GiveDonation.donate(driver, "", cmp_type, "yes", "yes");
+//                    GiveDonation.donate(driver, url, cmp_type, tip, log, other_info);
                     GiveOnlineDonation.donate(driver, "", cmp_type, "no", "yes", other_info);
                 } else {
                     Config.allow_cookies();

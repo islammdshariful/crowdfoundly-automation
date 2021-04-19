@@ -1,5 +1,6 @@
 package testcases;
 
+import modules.GiveOfflineDonation;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 import utils.Config;
@@ -28,6 +29,10 @@ public class Do_CreateCampaign {
         modules.Login.loginToAccount(driver, "organizer");
 //        (driver, category, duration, other_info, do donation)
         modules.CreateCampaign.create(driver, "reward", "date", "yes", "yes");
+
+        // For Offline
+        driver.get(Urls.getURLS("root"));
+        GiveOfflineDonation.donate(driver, "yes");
 //        modules.CreateCampaign.create(driver, "donation", "date", "yes", "no");
 //        modules.CreateCampaign.create(driver, "reward", "nodate", "yes", "no");
 //        modules.CreateCampaign.create(driver, "reward", "date", "yes", "no");

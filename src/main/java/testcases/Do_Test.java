@@ -43,8 +43,8 @@ public class Do_Test {
 //            CreateOrganization.create(driver);
 //            System.out.println("C. Organization Created");
 
-            Menus.clickSettings();
-            SetupSocials.setSocials(driver);
+            Menus.clickCampaigns();
+            GiveOfflineDonation.donate(driver, "no");
         }
     }
 }
