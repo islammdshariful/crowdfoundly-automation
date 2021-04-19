@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 import utils.Config;
 import utils.DriverManager;
-import utils.Menus;
 import utils.Urls;
 
 import java.util.concurrent.TimeUnit;
@@ -43,8 +42,9 @@ public class Do_Test {
 //            CreateOrganization.create(driver);
 //            System.out.println("C. Organization Created");
 
-            Menus.clickCampaigns();
-            GiveOfflineDonation.donate(driver, "no");
+            ManageTeamMember.addMember(driver);
+            ManageTeamMember.deleteMember(driver);
+            ManageTeamMember.addMember(driver);
         }
     }
 }
