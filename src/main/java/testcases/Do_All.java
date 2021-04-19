@@ -1,16 +1,13 @@
 package testcases;
 
 import modules.*;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
-import pom.OrganizationSettingsPage;
 import utils.Config;
 import utils.DriverManager;
 import utils.Menus;
 import utils.Urls;
 
-import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 public class Do_All {

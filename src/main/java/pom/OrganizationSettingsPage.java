@@ -61,6 +61,60 @@ public class OrganizationSettingsPage {
         public static final String paypal_client_secret_txt = "EAAkuLQyPmrhYCVnu5X2r9TmHrARTcNMqHfmUgej5HK8XJif7Zn0KM990lTljboYgVwYqqGOIWpv-GEl";
     }
 
+    public static class PoliciesLocator {
+        public static final String privacyPolicy_xpth = "//*[@id=\"other-info\"]/div[1]/div/label";
+        public static final String termsConditions_xpth = "//*[@id=\"other-info\"]/div[2]/div/label";
+        public static final String refundPolicy_xpth = "//*[@id=\"other-info\"]/div[3]/div/label";
+
+        public static final String privacyPolicy_des_xpth = "//*[@id=\"privacyPolicyData\"]/div[1]/p";
+        public static final String termsConditions_des_xpth = "//*[@id=\"termsAndConditionsData\"]/div[1]/p";
+        public static final String refundPolicy_des_xpth = "//*[@id=\"refundPolicyData\"]/div[1]/p";
+
+        public static final String save_btn_xpth = "//*[@id=\"dashboard\"]/div/div[6]/div[2]/div/div[2]/div[2]/div/form/button/span";
+    }
+
+    public static class PoliciesText {
+        public static final String privacyPolicy_txt = "Lorem Ipsum is simply a dummy text of the printing and " +
+                "typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the " +
+                "1500s when an unknown printer took a galley of type and scrambled it to make a type specimen " +
+                "book. It has survived not only five centuries, but also the leap into electronic typesetting, " +
+                "remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset " +
+                "sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like " +
+                "Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply a dummy text of the " +
+                "printing and typesetting industry.";
+        public static final String termsConditions_txt = "It is a long established fact that a reader will be distracted by the readable content " +
+                "of a page when looking at its layout. The point of using Lorem Ipsum is that it has a " +
+                "more-or-less normal distribution of letters, as opposed to using 'Content here, " +
+                "content here', making it look like readable English. Many desktop publishing " +
+                "packages and web page editors now use Lorem Ipsum as their default model text, " +
+                "and a search for 'lorem ipsum' will uncover many web sites still in their infancy. " +
+                "Various versions have evolved over the years, sometimes by accident, sometimes on " +
+                "purpose (injected humour and the like).";
+        public static final String refundPolicy_txt = "Lorem Ipsum is simply a dummy text of the " +
+                "printing and typesetting industry. Lorem Ipsum has been the industry's standard " +
+                "dummy text ever since the 1500s when an unknown printer took a galley of type and " +
+                "scrambled it to make a type specimen book. It has survived not only five centuries, " +
+                "but also the leap into electronic typesetting, remaining essentially unchanged.";
+    }
+
+    public static class SocilaLocator {
+        public static final String facebook_xpth = "//*[@id=\"dashboard\"]/div/div[6]/div[2]/div/div[2]/div[2]/div/form/div/div[1]/div/input";
+        public static final String twitter_xpth = "//*[@id=\"dashboard\"]/div/div[6]/div[2]/div/div[2]/div[2]/div/form/div/div[2]/div/input";
+        public static final String linkedin_xpth = "//*[@id=\"dashboard\"]/div/div[6]/div[2]/div/div[2]/div[2]/div/form/div/div[3]/div/input";
+        public static final String instagram_xpth = "//*[@id=\"dashboard\"]/div/div[6]/div[2]/div/div[2]/div[2]/div/form/div/div[4]/div/input";
+        public static final String youtube_xpth = "//*[@id=\"dashboard\"]/div/div[6]/div[2]/div/div[2]/div[2]/div/form/div/div[5]/div/input";
+
+        public static final String save_btn_xpth = "//*[@id=\"dashboard\"]/div/div[6]/div[2]/div/div[2]/div[2]/div/form/button/span";
+    }
+
+    public static class SocilaText {
+        public static final String facebook = "https://www.facebook.com/crowdfundly.io";
+        public static final String twitter = "https://twitter.com/crowdfundly_io";
+        public static final String linkedin = "https://www.linkedin.com/company/crowdfundly/";
+        public static final String instagram = "https://www.instagram.com/forusualtest/";
+        public static final String youtube = "https://www.youtube.com/channel/UCbFDVtJ5ANIXBZ1mPZTWmug";
+    }
+
     public static class CrowdfundlyLocator {
         public static final String commision_id = "commission_percentage";
         public static final String auto_approv_xpth = "//*[@id=\"dashboard\"]/div/div[6]/div[2]/div/div[2]/div[2]/form/div[2]/div/div/div[1]/div/div/label";

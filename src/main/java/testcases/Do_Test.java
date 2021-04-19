@@ -45,7 +45,8 @@ public class Do_Test {
 //            CreateOrganization.create(driver);
 //            System.out.println("C. Organization Created");
 
-            SetupOrgMedia.all(driver);
+            Menus.clickSettings();
+            SetupPolices.setPolicy(driver);
         }
     }
 }
