@@ -8,22 +8,28 @@ import org.openqa.selenium.support.ui.Select;
 import pom.CampaignPage;
 import pom.NewCampaign;
 import utils.Config;
+import utils.DriverManager;
 import utils.Menus;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
 import static utils.Config.quickCampTitle;
 
 public class CreateCampaign {
-    public static void create(WebDriver driver, String cmp_type, String duration, String other_info, String do_donate) {
+    public static void create(String start_fundraising, String cmp_type, String duration, String other_info, String do_donate) {
+        WebDriver driver = DriverManager.driver;
+        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         try {
-            Thread.sleep(1000);
-            Menus.clickCampaigns();
-            // Add new campaign
-            WebElement add_new = driver.findElement(By.xpath(CampaignPage.Locators.add_new_xpth));
-            JavascriptExecutor executor = (JavascriptExecutor) driver;
-            executor.executeScript("arguments[0].click();", add_new);
+            if(!start_fundraising.equals("yes")){
+                Thread.sleep(1000);
+                Menus.clickCampaigns();
+                // Add new campaign
+                WebElement add_new = driver.findElement(By.xpath(CampaignPage.Locators.add_new_xpth));
+                JavascriptExecutor executor = (JavascriptExecutor) driver;
+                executor.executeScript("arguments[0].click();", add_new);
+            }
 
             // Campaign type
             if (cmp_type.equals("reward")) {
@@ -219,10 +225,12 @@ public class CreateCampaign {
                 driver.findElement(By.xpath(NewCampaign.Locator.dwnld_pdf_xpth)).click();
 
                 // View Campaign
-                driver.findElement(By.xpath(NewCampaign.Locator.view_campaign_xpth)).click();
-                ArrayList<String> tabs = new ArrayList<String> (driver.getWindowHandles());
-                driver.close();
-                driver.switchTo().window(tabs.get(1));
+                if(!start_fundraising.equals("yes")){
+                    driver.findElement(By.xpath(NewCampaign.Locator.view_campaign_xpth)).click();
+                    ArrayList<String> tabs = new ArrayList<String> (driver.getWindowHandles());
+                    driver.close();
+                    driver.switchTo().window(tabs.get(1));
+                }
             }
 
 

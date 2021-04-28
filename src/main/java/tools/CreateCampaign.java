@@ -35,11 +35,11 @@ public class CreateCampaign {
         modules.Login.loginToAccount(driver, "forusualtest+devautoorg1@gmail.com", "123456");
 
         // Create campaign
-        for(int i = 0; i < 3; i++){
-            modules.CreateCampaign.create(driver, "reward", "date", "yes", "no");
-            modules.CreateCampaign.create(driver, "donation", "date", "yes", "no");
-            modules.CreateCampaign.create(driver, "donation", "nodate", "yes", "no");
-            modules.CreateCampaign.create(driver, "donation", "nodate", "yes", "no");
+        for(int i = 0; i < 1; i++){
+            modules.CreateCampaign.create("no", "reward", "date", "yes", "no");
+            modules.CreateCampaign.create("no", "donation", "date", "yes", "no");
+            modules.CreateCampaign.create("no", "donation", "nodate", "yes", "no");
+            modules.CreateCampaign.create("no", "donation", "nodate", "yes", "no");
         }
     }
 }

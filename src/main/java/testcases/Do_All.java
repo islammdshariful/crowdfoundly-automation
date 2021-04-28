@@ -67,7 +67,7 @@ public class Do_All {
         }
 
         // Create Campaign - Donation
-        modules.CreateCampaign.create(driver, "donation", "nodate", "yes", "yes");
+        modules.CreateCampaign.create("no", "donation", "nodate", "yes", "yes");
         System.out.println("G. Create Campaign - Donation: COMPLETED");
 
         // Ask for Refund
@@ -87,19 +87,19 @@ public class Do_All {
         System.out.println("K. Refund Request Approved");
 
 //        // Again Create Campaign - Donation with date
-//        modules.CreateCampaign.create(driver, "donation", "date", "yes", "yes");
+//        modules.CreateCampaign.create(driver, "no", "donation", "date", "yes", "yes");
 //        System.out.println("L. Create Campaign - Reward");
 //
 //        // Again Create Campaign - Reward with no date
 //        driver.get(Urls.getURLS("root"));
 //        Menus.clickCampaigns();
-//        modules.CreateCampaign.create(driver, "reward", "nodate", "yes", "yes");
+//        modules.CreateCampaign.create(driver, "no", "reward", "nodate", "yes", "yes");
 //        System.out.println("M. Create Campaign - Reward with date");
 //
 //        // Again Create Campaign - Reward with date
 //        driver.get(Urls.getURLS("root"));
 //        Menus.clickCampaigns();
-//        modules.CreateCampaign.create(driver, "reward", "date", "yes", "yes");
+//        modules.CreateCampaign.create(driver, "no", "reward", "date", "yes", "yes");
 //        System.out.println("N. Create Campaign - Reward with date");
 //
         // Go to Campagin Page

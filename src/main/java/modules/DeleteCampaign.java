@@ -37,7 +37,7 @@ public class DeleteCampaign {
 
                 driver1.findElement(By.xpath("/html/body/div[1]/div/div/div/div[6]/div[2]/div/div[2]/div[2]/div/table/tbody/tr[" + xpth + "]/td[7]/div/div[1]/ul/li[4]/button")).click();
                 Thread.sleep(1000);
-                driver1.findElement(By.xpath(CampaignPage.Locators.confirm_dlt_btn_xpth)).click();
+                driver1.findElement(By.xpath(CampaignPage.Locators.confirm_btn_xpth)).click();
                 xpth++;
             }
         } catch (InterruptedException e) {
@@ -73,7 +73,7 @@ public class DeleteCampaign {
 
                 driver1.findElement(By.xpath("/html/body/div[1]/div/div/div/div[6]/div[2]/div/div[2]/div[2]/div/table/tbody/tr[" + xpth + "]/td[7]/div/div[1]/ul/li[4]/button")).click();
                 Thread.sleep(1000);
-                driver1.findElement(By.xpath(CampaignPage.Locators.confirm_dlt_btn_xpth)).click();
+                driver1.findElement(By.xpath(CampaignPage.Locators.confirm_btn_xpth)).click();
                 xpth++;
                 if (count == camCount) {
                     break;

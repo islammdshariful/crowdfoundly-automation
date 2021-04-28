@@ -3,7 +3,10 @@ package modules;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import pom.NewCatagories;
+import utils.DriverManager;
 import utils.Menus;
+
+import java.util.concurrent.TimeUnit;
 
 public class CreateCategories {
     public static void create(WebDriver driver) {

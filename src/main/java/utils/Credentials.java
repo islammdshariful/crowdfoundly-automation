@@ -26,8 +26,10 @@ public class Credentials {
                     return con_email;
                 }else if(usr.equals("organizer")) {
                     return org_email;
-                }else {
+                }else if (usr.equals("fundraiser")){
                     return fund_email;
+                }else {
+                    return "Choose correct user: contributor or organizer or fundraiser";
                 }
             }
             if(Config.live){
@@ -41,8 +43,10 @@ public class Credentials {
                     return con_email;
                 }else if(usr.equals("organizer")) {
                     return org_email;
-                }else {
+                }else if (usr.equals("fundraiser")){
                     return fund_email;
+                }else {
+                    return "Choose correct user: contributor or organizer or fundraiser";
                 }
             }
             return "";
@@ -63,8 +67,10 @@ public class Credentials {
                 return con_password;
             }else if(usr.equals("organizer")) {
                 return org_password;
-            }else {
+            }else if (usr.equals("fundraiser")){
                 return fund_password;
+            }else {
+                return "";
             }
         }
         if(Config.live){
@@ -78,8 +84,10 @@ public class Credentials {
                 return con_password;
             }else if(usr.equals("organizer")) {
                 return org_password;
-            }else {
+            }else if (usr.equals("fundraiser")){
                 return fund_password;
+            }else {
+                return "";
             }
         }
         return "";

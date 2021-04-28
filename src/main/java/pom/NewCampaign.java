@@ -9,7 +9,7 @@ public class NewCampaign {
 
 
         // Campaign Category
-        public static final String cmp_catagory_xpth = "//*[@id=\"public\"]/div/div[3]/div[2]/div/div[1]/div[2]/div[1]/div[2]/div/div[2]/div[1]/label";
+        public static final String cmp_catagory_xpth = "//*[@id=\"public\"]/div/div[3]/div[2]/div/div[1]/div[2]/div[1]/div[2]/div/div[2]/div[8]/label";
         public static final String cmp_cat_nxt_btn_xpth = "//*[@id=\"buttonArea\"]/div/button[2]";
 
 

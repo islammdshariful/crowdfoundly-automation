@@ -140,8 +140,6 @@ public class Menus {
         }
     }
 
-
-
     public static void clickSettings() {
         try {
             WebDriver driver = DriverManager.driver;
@@ -178,6 +176,99 @@ public class Menus {
             executor.executeScript("arguments[0].click();", logout_xpth);
         } catch (InterruptedException e) {
             e.printStackTrace();
+        }
+    }
+
+    public static class fundraiserMenu {
+        public static void clickDashboard() {
+            try {
+                WebDriver driver = DriverManager.driver;
+                Thread.sleep(1000);
+                WebElement walletpayout_xpth = driver.findElement(By.xpath("//*[@id=\"dashboard\"]/div/div[5]/div/div[2]/ul/li[1]/a/span"));
+                driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+                JavascriptExecutor executor = (JavascriptExecutor) driver;
+                executor.executeScript("arguments[0].click();", walletpayout_xpth);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
+        public static void clickCampaigns() {
+            try {
+                WebDriver driver = DriverManager.driver;
+                Thread.sleep(1000);
+                WebElement campaigns_xpth = driver.findElement(By.xpath("//*[@id=\"dashboard\"]/div/div[5]/div/div[2]/ul/li[2]/a/span"));
+                driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+                JavascriptExecutor executor = (JavascriptExecutor) driver;
+                executor.executeScript("arguments[0].click();", campaigns_xpth);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
+        public static void clickOnlineContributors() {
+            try {
+                WebDriver driver = DriverManager.driver;
+                Thread.sleep(1000);
+                WebElement oncontributor_xpth = driver.findElement(By.xpath("//*[@id=\"dashboard\"]/div/div[5]/div/div[2]/ul/li[3]/a/span"));
+                driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+                JavascriptExecutor executor = (JavascriptExecutor) driver;
+                executor.executeScript("arguments[0].click();", oncontributor_xpth);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
+        public static void clickOfflineContributors() {
+            try {
+                WebDriver driver = DriverManager.driver;
+                Thread.sleep(1000);
+                WebElement offcontributor_xpth = driver.findElement(By.xpath("//*[@id=\"dashboard\"]/div/div[5]/div/div[2]/ul/li[4]/a/span"));
+                driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+                JavascriptExecutor executor = (JavascriptExecutor) driver;
+                executor.executeScript("arguments[0].click();", offcontributor_xpth);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
+        public static void clickWalletPayouts() {
+            try {
+                WebDriver driver = DriverManager.driver;
+                Thread.sleep(1000);
+                WebElement walletpayout_xpth = driver.findElement(By.xpath("//*[@id=\"dashboard\"]/div/div[5]/div/div[2]/ul/li[5]/a/span"));
+                driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+                JavascriptExecutor executor = (JavascriptExecutor) driver;
+                executor.executeScript("arguments[0].click();", walletpayout_xpth);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
+        public static void clickRefunds() {
+            try {
+                WebDriver driver = DriverManager.driver;
+                Thread.sleep(1000);
+                WebElement refunds_xpth = driver.findElement(By.xpath("//*[@id=\"dashboard\"]/div/div[5]/div/div[2]/ul/li[6]/a/span"));
+                driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+                JavascriptExecutor executor = (JavascriptExecutor) driver;
+                executor.executeScript("arguments[0].click();", refunds_xpth);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
+        public static void clickPayoutMethods() {
+            try {
+                WebDriver driver = DriverManager.driver;
+                Thread.sleep(1000);
+                WebElement payouts_xpth = driver.findElement(By.xpath("//*[@id=\"dashboard\"]/div/div[5]/div/div[2]/ul/li[8]/a/span"));
+                driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+                JavascriptExecutor executor = (JavascriptExecutor) driver;
+                executor.executeScript("arguments[0].click();", payouts_xpth);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 

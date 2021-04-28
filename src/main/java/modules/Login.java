@@ -9,7 +9,7 @@ import utils.Config;
 import utils.Credentials;
 
 public class Login {
-    public static void loginToAccount(WebDriver driver,  String email, String pass) {
+    public static void loginToAccount(WebDriver driver, String email, String pass) {
 
         driver.findElement(By.id(LoginPage.Locators.email_id)).click();
         driver.findElement(By.id(LoginPage.Locators.email_id)).clear();
@@ -19,9 +19,9 @@ public class Login {
         driver.findElement(By.id(LoginPage.Locators.pass_id)).clear();
         driver.findElement(By.id(LoginPage.Locators.pass_id)).sendKeys(pass);
 
-        if(Config.dev){
+        if (Config.dev) {
             driver.findElement(By.xpath(LoginPage.Locators.dev_signin_btn_xpth)).click();
-        }else {
+        } else {
             driver.findElement(By.xpath(LoginPage.Locators.live_signin_btn_xpth)).click();
         }
     }
@@ -37,9 +37,11 @@ public class Login {
             } else if (usr.equals("organizer")) {
                 driver.findElement(By.id(LoginPage.Locators.email_id)).sendKeys(Credentials.getEmail(usr));
 //                driver.findElement(By.id(LoginPage.Locators.email_id)).sendKeys(Credentials.dev.org_email);
-            } else {
+            } else if (usr.equals("fundraiser")) {
                 driver.findElement(By.id(LoginPage.Locators.email_id)).sendKeys(Credentials.getEmail(usr));
 //                driver.findElement(By.id(LoginPage.Locators.email_id)).sendKeys(Credentials.dev.fund_email);
+            } else {
+                driver.findElement(By.id(LoginPage.Locators.email_id)).sendKeys(Credentials.getEmail(usr));
             }
 
             driver.findElement(By.id(LoginPage.Locators.pass_id)).click();
@@ -50,17 +52,25 @@ public class Login {
             } else if (usr.equals("organizer")) {
                 driver.findElement(By.id(LoginPage.Locators.pass_id)).sendKeys(Credentials.getPassword(usr));
 //                driver.findElement(By.id(LoginPage.Locators.pass_id)).sendKeys(Credentials.dev.org_password);
+            } else if (usr.equals("fundraiser")) {
+                driver.findElement(By.id(LoginPage.Locators.pass_id)).sendKeys(Credentials.getPassword(usr));
+//                driver.findElement(By.id(LoginPage.Locators.email_id)).sendKeys(Credentials.dev.fund_email);
             } else {
                 driver.findElement(By.id(LoginPage.Locators.pass_id)).sendKeys(Credentials.getPassword(usr));
-//                driver.findElement(By.id(LoginPage.Locators.pass_id)).sendKeys(Credentials.dev.fund_password);
             }
-            System.out.println(usr+ " - data fill up completed");
-            if(Config.dev){
-                driver.findElement(By.xpath(LoginPage.Locators.dev_signin_btn_xpth)).click();
-            }else {
-                driver.findElement(By.xpath(LoginPage.Locators.live_signin_btn_xpth)).click();
+
+            System.out.println(usr + " - data fill up completed");
+            if (Config.dev) {
+                if (usr.equals("contributor") || usr.equals("organizer") || usr.equals("fundraiser")) {
+                    driver.findElement(By.xpath(LoginPage.Locators.dev_signin_btn_xpth)).click();
+                    System.out.println(usr + " - signing button clicked");
+                }
+            } else {
+                if (usr.equals("contributor") || usr.equals("organizer") || usr.equals("fundraiser")) {
+                    driver.findElement(By.xpath(LoginPage.Locators.live_signin_btn_xpth)).click();
+                    System.out.println(usr + " - signing button clicked");
+                }
             }
-            System.out.println(usr+ " - signing button clicked");
             Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();

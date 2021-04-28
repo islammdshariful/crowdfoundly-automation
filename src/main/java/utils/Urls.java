@@ -16,6 +16,8 @@ public class Urls {
                 return subs;
             } else if(url.equals("ltd")){
                 return ltd;
+            } else if(url.equals("org")){
+                return "https://orgbyautomation.crowdfundly.dev/";
             }
             else {
                 System.out.println("PLEASE CHOOSE A CORRECT URL. EX: root, subs, or ltd");
