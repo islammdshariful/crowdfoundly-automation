@@ -38,8 +38,8 @@ public class Do_Test {
         driver.get(Urls.getURLS("root"));
         Config.allow_cookies();
         Login.loginToAccount(driver, "fundraiser");
-        Menus.fundraiserMenu.clickPayoutMethods();
-        Fundraiser.setupPayoutMethods(driver, "paypal");
+//        Fundraiser.setupPayoutMethods(driver, "bank");
+        Fundraiser.withdrawalRequest(driver, "bank");
 
 
 

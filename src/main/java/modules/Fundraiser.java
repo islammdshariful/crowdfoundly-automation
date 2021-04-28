@@ -31,9 +31,9 @@ public class Fundraiser {
 
         driver.findElement(By.xpath(FundraiserDashboard.Locator.add_new_payouts_btn_xpth)).click();
 
-        Select payoutmethos = new Select(driver.findElement(By.id(FundraiserDashboard.Locator.slelect_mehtod_id)));
+        Select payoutmethods = new Select(driver.findElement(By.id(FundraiserDashboard.Locator.slelect_mehtod_id)));
         if(method.equals("bank")){
-            payoutmethos.selectByVisibleText(FundraiserDashboard.Text.Bank_txt);
+            payoutmethods.selectByVisibleText(FundraiserDashboard.Text.Bank_txt);
 
             driver.findElement(By.id(FundraiserDashboard.Locator.beneficiary_name_id)).click();
             driver.findElement(By.id(FundraiserDashboard.Locator.beneficiary_name_id)).sendKeys(FundraiserDashboard.Text.beneficiary_name_txt);
@@ -56,7 +56,7 @@ public class Fundraiser {
 
             driver.findElement(By.xpath(FundraiserDashboard.Locator.save_btn_xpth)).click();
         }else {
-            payoutmethos.selectByVisibleText(FundraiserDashboard.Text.paypal_txt);
+            payoutmethods.selectByVisibleText(FundraiserDashboard.Text.paypal_txt);
 
             driver.findElement(By.id(FundraiserDashboard.Locator.paypal_email_id)).click();
             driver.findElement(By.id(FundraiserDashboard.Locator.paypal_email_id)).sendKeys(FundraiserDashboard.Text.paypal_email_txt);
@@ -86,8 +86,24 @@ public class Fundraiser {
 
     }
 
-    public static void withdrawalRequest(WebDriver driver) {
+    public static void withdrawalRequest(WebDriver driver, String method) {
         Menus.fundraiserMenu.clickWalletPayouts();
 
+        driver.findElement(By.xpath(FundraiserDashboard.Locator.new_request_btn_xpth)).click();
+
+        driver.findElement(By.id(FundraiserDashboard.Locator.amount_id)).click();
+        driver.findElement(By.id(FundraiserDashboard.Locator.amount_id)).sendKeys(FundraiserDashboard.Text.amount_txt);
+
+        Select payoutmethods = new Select(driver.findElement(By.id(FundraiserDashboard.Locator.payment_method_id)));
+        if (method.equals("bank")){
+            payoutmethods.selectByVisibleText(FundraiserDashboard.Text.payment_bank_method_txt);
+        }else {
+            payoutmethods.selectByVisibleText(FundraiserDashboard.Text.payment_paypal_method_txt);
+        }
+
+        driver.findElement(By.id(FundraiserDashboard.Locator.note_id)).click();
+        driver.findElement(By.id(FundraiserDashboard.Locator.note_id)).sendKeys(FundraiserDashboard.Text.note_txt);
+
+        driver.findElement(By.xpath(FundraiserDashboard.Locator.send_btn_xpth)).click();
     }
 }

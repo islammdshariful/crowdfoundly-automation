@@ -33,12 +33,17 @@ public class FundraiserDashboard {
         public static final String paypal_txt = "PAYPAL";
 
         public static final String beneficiary_name_txt = "Md. Shariful Islam Sabbir";
-        public static final String account_number_txt = "01622152381";
+        public static final String account_number_txt = "016221523811";
         public static final String bank_name_txt = "Standard Chartered Bank";
         public static final String branch_name_txt = "Mirpur";
         public static final String swift_code_txt = "SCBLBDDXXXX";
         public static final String country_name_txt = "Bangladesh";
 
         public static final String paypal_email_txt = "facilitator@jouleslabs.com";
+
+        public static final String amount_txt = "20.50";
+        public static final String payment_paypal_method_txt = "PAYPAL( fadcilitator@jouleslabs.com)";
+        public static final String payment_bank_method_txt = "BANK( 016221523811)";
+        public static final String note_txt = "Lorem Ipsum is simply a dummy text. Phasellus ac ligula velit. Maecenas fringilla at neque ut tincidunt.";
     }
 }

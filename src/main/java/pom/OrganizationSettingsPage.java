@@ -132,6 +132,6 @@ public class OrganizationSettingsPage {
 
     public static class CrowdfundlyText {
         public static final String commision_txt = "5";
-        public static final String escrow_duration_txt = "2";
+        public static final String escrow_duration_txt = "1";
     }
 }
