@@ -3,6 +3,7 @@ package testcases;
 import modules.*;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
+import pom.Profile;
 import utils.Config;
 import utils.DriverManager;
 import utils.Menus;
@@ -23,7 +24,7 @@ public class Do_Test {
 
     @Test
     public void testCase() {
-        Config.setEnv("dev"); //for DEV: dev & LIVE: live
+        Config.setEnv("live"); //for DEV: dev & LIVE: live
         invokeBrowser();
 
 //        Fundraiser.join(driver);
@@ -37,10 +38,12 @@ public class Do_Test {
 
         driver.get(Urls.getURLS("root"));
         Config.allow_cookies();
-        Login.loginToAccount(driver, "fundraiser");
+//        Login.loginToAccount(driver, "organizer");
+        Login.loginToAccount(driver, "forusualtest+tesetme@gmail.com", "123456");
 //        Fundraiser.setupPayoutMethods(driver, "bank");
-        Fundraiser.withdrawalRequest(driver, "bank");
+//        Fundraiser.withdrawalRequest(driver, "bank");
 
+        SetupProfile.updateProfile("organizer");
 
 
 
