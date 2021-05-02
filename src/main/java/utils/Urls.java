@@ -6,9 +6,9 @@ public class Urls {
 
     public static String getURLS(String url) {
         if (Config.dev) {
-            String root = "https://app.crowdfundly.dev/";
-            String subs = "https://app.crowdfundly.dev/subscribe";
-            String ltd = "https://app.crowdfundly.dev/lifetime-deal";
+            String root = "https://app.crowdfundly.app/";
+            String subs = "https://app.crowdfundly.app/subscribe";
+            String ltd = "https://app.crowdfundly.app/lifetime-deal";
 
             if(url.equals("root")){
                 return root;

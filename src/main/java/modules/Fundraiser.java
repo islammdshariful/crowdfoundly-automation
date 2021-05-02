@@ -21,7 +21,6 @@ public class Fundraiser {
 
         Login.loginToAccount(driver, "fundraiser");
 
-//        CreateCampaign.create(driver, "yes", "reward", "date", "yes", "yes");
         CreateCampaign.create("yes", "reward", "date", "yes", "no");
         driver.get(Urls.getURLS("root"));
     }
@@ -32,7 +31,7 @@ public class Fundraiser {
         driver.findElement(By.xpath(FundraiserDashboard.Locator.add_new_payouts_btn_xpth)).click();
 
         Select payoutmethods = new Select(driver.findElement(By.id(FundraiserDashboard.Locator.slelect_mehtod_id)));
-        if(method.equals("bank")){
+        if (method.equals("bank")) {
             payoutmethods.selectByVisibleText(FundraiserDashboard.Text.Bank_txt);
 
             driver.findElement(By.id(FundraiserDashboard.Locator.beneficiary_name_id)).click();
@@ -55,7 +54,7 @@ public class Fundraiser {
             driver.findElement(By.xpath(FundraiserDashboard.Locator.country_xpth)).sendKeys(Keys.ENTER);
 
             driver.findElement(By.xpath(FundraiserDashboard.Locator.save_btn_xpth)).click();
-        }else {
+        } else {
             payoutmethods.selectByVisibleText(FundraiserDashboard.Text.paypal_txt);
 
             driver.findElement(By.id(FundraiserDashboard.Locator.paypal_email_id)).click();
@@ -95,9 +94,9 @@ public class Fundraiser {
         driver.findElement(By.id(FundraiserDashboard.Locator.amount_id)).sendKeys(FundraiserDashboard.Text.amount_txt);
 
         Select payoutmethods = new Select(driver.findElement(By.id(FundraiserDashboard.Locator.payment_method_id)));
-        if (method.equals("bank")){
+        if (method.equals("bank")) {
             payoutmethods.selectByVisibleText(FundraiserDashboard.Text.payment_bank_method_txt);
-        }else {
+        } else {
             payoutmethods.selectByVisibleText(FundraiserDashboard.Text.payment_paypal_method_txt);
         }
 
@@ -105,5 +104,10 @@ public class Fundraiser {
         driver.findElement(By.id(FundraiserDashboard.Locator.note_id)).sendKeys(FundraiserDashboard.Text.note_txt);
 
         driver.findElement(By.xpath(FundraiserDashboard.Locator.send_btn_xpth)).click();
+    }
+
+    public static void acceptwithdrawalRequest(WebDriver driver, String method) {
+        Menus.clickWalletPayouts();
+
     }
 }

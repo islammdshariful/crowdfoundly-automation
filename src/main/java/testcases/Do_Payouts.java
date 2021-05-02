@@ -1,18 +1,17 @@
 package testcases;
 
-import modules.*;
+import modules.Fundraiser;
+import modules.Login;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
-import pom.Profile;
 import utils.Config;
 import utils.DriverManager;
 import utils.Menus;
 import utils.Urls;
 
-import java.awt.*;
 import java.util.concurrent.TimeUnit;
 
-public class Do_Test {
+public class Do_Payouts {
     WebDriver driver = null;
 
     public void invokeBrowser() {
@@ -30,7 +29,7 @@ public class Do_Test {
         driver.get(Urls.getURLS("root"));
         Config.allow_cookies();
         Login.loginToAccount(driver, "fundraiser");
-//        Fundraiser.withdrawalRequest(driver, "bank");
+        Fundraiser.withdrawalRequest(driver, "bank");
         Menus.clickLogouts();
         Login.loginToAccount(driver, "organizer");
         Menus.clickWalletPayouts();

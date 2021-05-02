@@ -174,6 +174,7 @@ public class Menus {
             driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
             JavascriptExecutor executor = (JavascriptExecutor) driver;
             executor.executeScript("arguments[0].click();", logout_xpth);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

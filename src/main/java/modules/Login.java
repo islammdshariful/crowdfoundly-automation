@@ -60,17 +60,18 @@ public class Login {
             }
 
             System.out.println(usr + " - data fill up completed");
-            if (Config.dev) {
-                if (usr.equals("contributor") || usr.equals("organizer") || usr.equals("fundraiser")) {
-                    driver.findElement(By.xpath(LoginPage.Locators.dev_signin_btn_xpth)).click();
-                    System.out.println(usr + " - signing button clicked");
-                }
-            } else {
-                if (usr.equals("contributor") || usr.equals("organizer") || usr.equals("fundraiser")) {
-                    driver.findElement(By.xpath(LoginPage.Locators.live_signin_btn_xpth)).click();
-                    System.out.println(usr + " - signing button clicked");
-                }
-            }
+//            if (Config.dev) {
+//                if (usr.equals("contributor") || usr.equals("organizer") || usr.equals("fundraiser")) {
+//                    driver.findElement(By.xpath(LoginPage.Locators.dev_signin_btn_xpth)).click();
+//                    System.out.println(usr + " - signing button clicked");
+//                }
+//            } else {
+//                if (usr.equals("contributor") || usr.equals("organizer") || usr.equals("fundraiser")) {
+//                    driver.findElement(By.xpath(LoginPage.Locators.live_signin_btn_xpth)).click();
+//                    System.out.println(usr + " - signing button clicked");
+//                }
+//            }
+            driver.findElement(By.xpath(LoginPage.Locators.signin_btn_xpth)).click();
             Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
