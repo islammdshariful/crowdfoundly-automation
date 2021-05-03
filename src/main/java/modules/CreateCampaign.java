@@ -20,6 +20,7 @@ import static utils.Config.quickCampTitle;
 public class CreateCampaign {
     public static void create(String start_fundraising, String cmp_type, String duration, String other_info, String do_donate) {
         WebDriver driver = DriverManager.driver;
+        driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
         driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         try {
             if(!start_fundraising.equals("yes")){
@@ -222,7 +223,7 @@ public class CreateCampaign {
                 driver.findElement(By.id(NewCampaign.Locator.flyder_txt_id)).sendKeys(NewCampaign.Text.brochure_msg_text);
                 driver.findElement(By.xpath(NewCampaign.Locator.update_summary_btn_xpth)).click();
                 Thread.sleep(1000);
-                driver.findElement(By.xpath(NewCampaign.Locator.dwnld_pdf_xpth)).click();
+//                driver.findElement(By.xpath(NewCampaign.Locator.dwnld_pdf_xpth)).click();
 
                 // View Campaign
                 if(!start_fundraising.equals("yes")){
@@ -238,7 +239,7 @@ public class CreateCampaign {
                 if (do_donate.equals("yes")) {
                     System.out.println(cmp_type + " i: Going to Donate");
 //                    GiveDonation.donate(driver, url, cmp_type, tip, log, other_info);
-                    GiveOnlineDonation.donate(driver, "", cmp_type, "no", "yes", other_info);
+                    GiveOnlineDonation.donate("", cmp_type, "yes", "yes", other_info);
                 } else {
                     Config.allow_cookies();
                 }

@@ -12,6 +12,7 @@ import utils.Menus;
 import utils.Urls;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class Fundraiser {
     public static void join(WebDriver driver) {
@@ -23,7 +24,7 @@ public class Fundraiser {
 
         Login.loginToAccount(driver, "fundraiser");
 
-        CreateCampaign.create("yes", "reward", "date", "yes", "no");
+        CreateCampaign.create("yes", "reward", "date", "no", "no");
         driver.get(Urls.getURLS("root"));
     }
 
@@ -71,6 +72,11 @@ public class Fundraiser {
         driver.findElement(By.xpath(CampaignPage.Locators.action_btn_xpth)).click();
         driver.findElement(By.xpath(CampaignPage.Locators.fundraiser_action_published_btn_xpth)).click();
         driver.findElement(By.xpath(CampaignPage.Locators.confirm_btn_xpth)).click();
+        try {
+            Thread.sleep(7000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     public static void rejectCampaign(WebDriver driver) {
@@ -83,8 +89,10 @@ public class Fundraiser {
     public static void doDonate(WebDriver driver) {
         Menus.fundraiserMenu.clickCampaigns();
         driver.findElement(By.xpath("//*[@id=\"dashboard\"]/div/div[6]/div[2]/div/div[2]/div[2]/div/table/tbody/tr[1]/td[3]/a/span")).click();
-        GiveOnlineDonation.donate(driver, "", "reward", "yes", "yes", "yes");
-
+        ArrayList<String> tabs = new ArrayList<String> (driver.getWindowHandles());
+        driver.close();
+        driver.switchTo().window(tabs.get(1));
+        GiveOnlineDonation.donate("", "reward", "yes", "yes", "no");
     }
 
     public static void withdrawalRequest(WebDriver driver, String method) {

@@ -10,7 +10,10 @@ import utils.DriverManager;
 import java.util.concurrent.TimeUnit;
 
 public class GiveOnlineDonation {
-    public static void donate(WebDriver driver, String url, String cmp_type, String tip, String log, String other_info) {
+    public static void donate(String url, String cmp_type, String tip, String log, String other_info) {
+        WebDriver driver = DriverManager.driver;
+        driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         try {
             if (!url.equals("")) {
                 driver.get(url);
@@ -47,17 +50,18 @@ public class GiveOnlineDonation {
                 }
             }
 
+
             driver.findElement(By.xpath(NewDonation.Locator.backit_contribute_xpth)).click();
+            Thread.sleep(1000);
 
             if (cmp_type.equals("reward")) {
                 driver.findElement(By.xpath(NewDonation.Locator.get_now_btn_xpth)).click();
-                System.out.println(" b. Amount is set");
             } else {
                 driver.findElement(By.xpath(NewDonation.Locator.custom_amnt_xpth)).click();
                 driver.findElement(By.xpath(NewDonation.Locator.custom_amnt_xpth)).sendKeys(NewDonation.Text.custom_amnt_text);
                 driver.findElement(By.xpath(NewDonation.Locator.custom_amnt_nxt_btn_xpth)).click();
-                System.out.println(" b. Amount is set");
             }
+            System.out.println(" b. Amount is set");
 
 
             if (tip.equals("yes")) {
@@ -113,7 +117,7 @@ public class GiveOnlineDonation {
             driver.findElement(By.xpath(NewDonation.Locator.contribute_now_btn_xpth)).click();
             Thread.sleep(4000);
             // Download PDF Flyer
-            driver.findElement(By.xpath(NewDonation.Locator.dwnld_pdf_flyer_xpth)).click();
+//            driver.findElement(By.xpath(NewDonation.Locator.dwnld_pdf_flyer_xpth)).click();
             System.out.println(" e. PDF downloaded");
         } catch (InterruptedException e) {
             e.printStackTrace();

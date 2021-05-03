@@ -54,7 +54,7 @@ public class FundraiserDashboard {
 
         public static final String paypal_email_txt = "facilitator@jouleslabs.com";
 
-        public static final String amount_txt = "20.50";
+        public static final String amount_txt = "5.50";
         public static final String payment_paypal_method_txt = "PAYPAL( fadcilitator@jouleslabs.com)";
         public static final String payment_bank_method_txt = "BANK( 016221523811)";
         public static final String note_txt = "Lorem Ipsum is simply a dummy text. Phasellus ac ligula velit. Maecenas fringilla at neque ut tincidunt.";

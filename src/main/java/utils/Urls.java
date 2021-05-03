@@ -17,9 +17,8 @@ public class Urls {
             } else if(url.equals("ltd")){
                 return ltd;
             } else if(url.equals("org")){
-                return "https://orgbyautomation.crowdfundly.dev/";
-            }
-            else {
+                return "https://orgbyautomation.crowdfundly.app/";
+            } else {
                 System.out.println("PLEASE CHOOSE A CORRECT URL. EX: root, subs, or ltd");
                 System.exit(0);
             }
@@ -35,8 +34,9 @@ public class Urls {
                 return subs;
             }else if(url.equals("ltd")){
                 return ltd;
-            }
-            else {
+            }else if(url.equals("org")){
+                return "https://orgbyautomation.crowdfundly.io/";
+            } else {
                 System.out.println("PLEASE CHOOSE A CORRECT URL. EX: root, subs, or ltd");
                 System.exit(0);
             }

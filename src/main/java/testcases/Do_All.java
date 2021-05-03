@@ -32,39 +32,39 @@ public class Do_All {
         Login.loginToAccount(driver, "organizer");
         System.out.println("A. Login to organization");
 
-        if (Config.dev) {
-            // Create Subscription
-            CreateSubscription.createSubs(driver, "plus");
-            System.out.println("B. Subscription created");
 
-            // Create Organization
-            Menus.profileMenu.clickSubscription();
-            Menus.profileMenu.clickAllPlans();
-            CreateOrganization.create(driver);
-            System.out.println("C. Organization Created");
+//            // Create Subscription
+//            CreateSubscription.createSubs(driver, "plus");
+//            System.out.println("B. Subscription created");
+//
+//            // Create Organization
+//            Menus.profileMenu.clickSubscription();
+//            Menus.profileMenu.clickAllPlans();
+//            CreateOrganization.create(driver);
+//            System.out.println("C. Organization Created");
+//
+//            // Setup media
+//            SetupOrgMedia.all(driver);
+//
+//            // Set up payment gateway
+//            SetupPaymentGateway.paymentGateway(driver);
+//            System.out.println("D. payment Gatway Setup Completed");
+//
+//            // Set up Tips
+//            SetupCrowdfundly.allowTips(driver);
+//            System.out.println("E. Allow tips Activated");
+//
+//            // Set up   Login
+//            SetupCrowdfundly.allowLogin(driver);
+//            System.out.println("E1. Allow Login Activated");
+//
+//            //Set up Refund
+//            SetupCrowdfundly.activeEscrow(driver);
+//            System.out.println("F. Escrow Activated");
+//
+//            // Save Crowdfundly
+//            SetupCrowdfundly.saveCrowdfundly(driver);
 
-            // Setup media
-            SetupOrgMedia.all(driver);
-
-            // Set up payment gateway
-            SetupPaymentGateway.paymentGateway(driver);
-            System.out.println("D. payment Gatway Setup Completed");
-
-            // Set up Tips
-            SetupCrowdfundly.allowTips(driver);
-            System.out.println("E. Allow tips Activated");
-
-            // Set up   Login
-            SetupCrowdfundly.allowLogin(driver);
-            System.out.println("E1. Allow Login Activated");
-
-            //Set up Refund
-            SetupCrowdfundly.activeEscrow(driver);
-            System.out.println("F. Escrow Activated");
-
-            // Save Crowdfundly
-            SetupCrowdfundly.saveCrowdfundly(driver);
-        }
 
         // Create Campaign - Donation
         modules.CreateCampaign.create("no", "donation", "nodate", "yes", "yes");
@@ -102,14 +102,39 @@ public class Do_All {
 //        modules.CreateCampaign.create(driver, "no", "reward", "date", "yes", "yes");
 //        System.out.println("N. Create Campaign - Reward with date");
 //
-        // Go to Campagin Page
-        driver.get(Urls.getURLS("root")); // for app.crowdfundly.io/.dev: root, Subscribe: subs, LTD: ltd
-        Menus.clickCampaigns();
-        System.out.println("O. Navigated to Campaign page");
+//        // Go to Campagin Page
+//        driver.get(Urls.getURLS("root")); // for app.crowdfundly.io/.dev: root, Subscribe: subs, LTD: ltd
+//        Menus.clickCampaigns();
+//        System.out.println("O. Navigated to Campaign page");
+//
+//        // Delete Campaign
+//        DeleteCampaign.deleteAllCampaign(driver);
+//        System.out.println("P. Campaign Deleted Successfully");
 
-        // Delete Campaign
-        DeleteCampaign.deleteAllCampaign(driver);
-        System.out.println("P. Campaign Deleted Successfully");
+        // Join a Fundraiser
+        Menus.clickLogouts();
+        Fundraiser.join(driver);
+
+        // Approve Campaign
+        Menus.clickLogouts();
+        Login.loginToAccount(driver, "organizer");
+        Fundraiser.approveCampaign(driver);
+
+        // Donate Campaign
+        Fundraiser.doDonate(driver);
+        driver.get(Urls.getURLS("root"));
+
+        // Request a withdrawal request
+        Menus.clickLogouts();
+        Login.loginToAccount(driver, "fundraiser");
+        Fundraiser.withdrawalRequest(driver, "bank");
+
+        // Approve withdrawal request
+        Menus.clickLogouts();
+        Login.loginToAccount(driver, "organizer");
+        Fundraiser.acceptWithdrawalRequest(driver);
+
+        Menus.clickLogouts();
 
 //        // Delete Organization
 //        DeleteAccounts.deleteOrganization(driver);

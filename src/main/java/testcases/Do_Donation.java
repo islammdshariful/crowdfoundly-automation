@@ -21,9 +21,9 @@ public class Do_Donation {
 
     @Test
     public void testCase() {
-        Config.setEnv(""); //for DEV: dev & LIVE: live
+        Config.setEnv("dev"); //for DEV: dev & LIVE: live
         invokeBrowser();
 //        (driver, url, campaign type, tip, login, other_info)
-        GiveOnlineDonation.donate(driver, "https://orgbyautomation.crowdfundly.dev/campaigns/automation-donation-nodate-77821", "donation", "yes", "yes", "yes");
+        GiveOnlineDonation.donate("https://orgbyautomation.crowdfundly.app/campaigns/automation-reward-date-49199", "reward", "yes", "yes", "no");
     }
 }
