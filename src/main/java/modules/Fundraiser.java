@@ -11,6 +11,8 @@ import utils.Config;
 import utils.Menus;
 import utils.Urls;
 
+import java.io.IOException;
+
 public class Fundraiser {
     public static void join(WebDriver driver) {
         driver.get(Urls.getURLS("org"));
@@ -106,8 +108,26 @@ public class Fundraiser {
         driver.findElement(By.xpath(FundraiserDashboard.Locator.send_btn_xpth)).click();
     }
 
-    public static void acceptwithdrawalRequest(WebDriver driver, String method) {
-        Menus.clickWalletPayouts();
+    public static void acceptWithdrawalRequest(WebDriver driver) {
+        try {
+            Menus.clickWalletPayouts();
 
+            driver.findElement(By.xpath(FundraiserDashboard.Locator.action_btn_xpth)).click();
+            driver.findElement(By.xpath(FundraiserDashboard.Locator.accept_btn_xpth)).click();
+            driver.findElement(By.xpath(FundraiserDashboard.Locator.confirm_btn_xpth)).click();
+
+            Thread.sleep(1000);
+
+            driver.findElement(By.xpath(FundraiserDashboard.Locator.action_btn_xpth)).click();
+            driver.findElement(By.xpath(FundraiserDashboard.Locator.update_btn_xpth)).click();
+            driver.findElement(By.xpath(FundraiserDashboard.Locator.choose_img_xpth)).click();
+            Thread.sleep(1000);
+            Runtime.getRuntime().exec(System.getProperty("user.dir") + "/autoit/SetReceipt/receipt_fileupload.exe");
+            Thread.sleep(1000);
+            driver.findElement(By.xpath(FundraiserDashboard.Locator.sent_xpth)).click();
+            driver.findElement(By.xpath(FundraiserDashboard.Locator.confirm_btn_xpth)).click();
+        } catch (InterruptedException | IOException e) {
+            e.printStackTrace();
+        }
     }
 }

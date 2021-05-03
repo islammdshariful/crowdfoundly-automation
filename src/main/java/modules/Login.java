@@ -2,8 +2,6 @@ package modules;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.testng.asserts.SoftAssert;
-import pom.DashboardPage;
 import pom.LoginPage;
 import utils.Config;
 import utils.Credentials;
@@ -33,13 +31,10 @@ public class Login {
             driver.findElement(By.id(LoginPage.Locators.email_id)).clear();
             if (usr.equals("contributor")) {
                 driver.findElement(By.id(LoginPage.Locators.email_id)).sendKeys(Credentials.getEmail(usr));
-//                driver.findElement(By.id(LoginPage.Locators.email_id)).sendKeys(Credentials.dev.con_email);
             } else if (usr.equals("organizer")) {
                 driver.findElement(By.id(LoginPage.Locators.email_id)).sendKeys(Credentials.getEmail(usr));
-//                driver.findElement(By.id(LoginPage.Locators.email_id)).sendKeys(Credentials.dev.org_email);
             } else if (usr.equals("fundraiser")) {
                 driver.findElement(By.id(LoginPage.Locators.email_id)).sendKeys(Credentials.getEmail(usr));
-//                driver.findElement(By.id(LoginPage.Locators.email_id)).sendKeys(Credentials.dev.fund_email);
             } else {
                 driver.findElement(By.id(LoginPage.Locators.email_id)).sendKeys(Credentials.getEmail(usr));
             }
@@ -48,13 +43,10 @@ public class Login {
             driver.findElement(By.id(LoginPage.Locators.pass_id)).clear();
             if (usr.equals("contributor")) {
                 driver.findElement(By.id(LoginPage.Locators.pass_id)).sendKeys(Credentials.getPassword(usr));
-//                driver.findElement(By.id(LoginPage.Locators.pass_id)).sendKeys(Credentials.dev.con_password);
             } else if (usr.equals("organizer")) {
                 driver.findElement(By.id(LoginPage.Locators.pass_id)).sendKeys(Credentials.getPassword(usr));
-//                driver.findElement(By.id(LoginPage.Locators.pass_id)).sendKeys(Credentials.dev.org_password);
             } else if (usr.equals("fundraiser")) {
                 driver.findElement(By.id(LoginPage.Locators.pass_id)).sendKeys(Credentials.getPassword(usr));
-//                driver.findElement(By.id(LoginPage.Locators.email_id)).sendKeys(Credentials.dev.fund_email);
             } else {
                 driver.findElement(By.id(LoginPage.Locators.pass_id)).sendKeys(Credentials.getPassword(usr));
             }

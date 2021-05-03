@@ -19,13 +19,26 @@ public class FundraiserDashboard {
 
         public static final String save_btn_xpth = "//*[@id=\"addPayoutMethodModal\"]/div/div[2]/div/div/form/button/span";
 
-        // Wallet & payout
+        // Wallet & payout - Fundraiser
         public static final String new_request_btn_xpth = "//*[@id=\"dashboard\"]/div/div[6]/div[2]/div/div[1]/div[2]/div[1]/button";
         public static final String amount_id = "amount";
         public static final String payment_method_id = "payment-method";
         public static final String note_id = "note";
 
         public static final String send_btn_xpth = "//*[@id=\"withdrawalRequestModal\"]/div/div[2]/div/div/form/button/span";
+
+        // Wallet & payout - Organizer
+        public static final String action_btn_xpth = "/html/body/div[1]/div/div/div/div[6]/div[2]/div/div[1]/div[2]/div[2]/div/div/div/table/tbody/tr/td[8]/div/button/div/img";
+        public static final String view_btn_xpth = "/html/body/div[1]/div/div/div/div[6]/div[2]/div/div[1]/div[2]/div[2]/div/div/div/table/tbody/tr/td[8]/div/ul/li[1]/button";
+        public static final String accept_btn_xpth = "/html/body/div[1]/div/div/div/div[6]/div[2]/div/div[1]/div[2]/div[2]/div/div/div/table/tbody/tr/td[8]/div/ul/li[2]/button";
+        public static final String deny_btn_xpth = "/html/body/div[1]/div/div/div/div[6]/div[2]/div/div[1]/div[2]/div[2]/div/div/div/table/tbody/tr/td[8]/div/ul/li[3]/button";
+        public static final String update_btn_xpth = "/html/body/div[1]/div/div/div/div[6]/div[2]/div/div[1]/div[2]/div[2]/div/div/div/table/tbody/tr/td[8]/div/ul/li[2]/button";
+
+        public static final String choose_img_xpth = "//*[@id=\"updateWithdrawRequestModal\"]/div/div[2]/div/div/div[5]/form/div[1]/label[2]/span/i";
+        public static final String sent_xpth = "//*[@id=\"updateWithdrawRequestModal\"]/div/div[2]/div/div/div[5]/form/button/span";
+
+        public static final String confirm_btn_xpth = "/html/body/div[3]/div/div[3]/button[1]";
+        public static final String cancel_btn_xpth = "/html/body/div[3]/div/div[3]/button[2]";
     }
 
     public class Text {

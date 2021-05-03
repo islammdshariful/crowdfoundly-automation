@@ -33,5 +33,6 @@ public class Do_Payouts {
         Menus.clickLogouts();
         Login.loginToAccount(driver, "organizer");
         Menus.clickWalletPayouts();
+        Fundraiser.acceptWithdrawalRequest(driver);
     }
 }

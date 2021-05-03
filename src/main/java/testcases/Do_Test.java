@@ -29,10 +29,11 @@ public class Do_Test {
         invokeBrowser();
         driver.get(Urls.getURLS("root"));
         Config.allow_cookies();
-        Login.loginToAccount(driver, "fundraiser");
+//        Login.loginToAccount(driver, "fundraiser");
 //        Fundraiser.withdrawalRequest(driver, "bank");
-        Menus.clickLogouts();
-        Login.loginToAccount(driver, "organizer");
-        Menus.clickWalletPayouts();
+//        Menus.clickLogouts();
+//        Login.loginToAccount(driver, "organizer");
+//        Menus.clickWalletPayouts();
+//        Fundraiser.acceptWithdrawalRequest(driver);
     }
 }
