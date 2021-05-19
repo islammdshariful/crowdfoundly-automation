@@ -32,7 +32,7 @@ public class CreateCampaign {
         Config.quickCreate = true;
 
         // Login to your account
-        modules.Login.loginToAccount(driver, "forusualtest+devautoorg1@gmail.com", "123456");
+        modules.Login.loginToAccount("forusualtest+devautoorg1@gmail.com", "123456");
 
         // Create campaign
         for(int i = 0; i < 1; i++){

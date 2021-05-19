@@ -2,6 +2,7 @@ package testcases;
 
 import modules.CreateRefundRequest;
 import modules.Login;
+import modules.ManageRefundRequest;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 import utils.Config;
@@ -30,7 +31,7 @@ public class Do_Cam_Don_Ref {
         Config.allow_cookies();
 
         // Login to Organization Account
-        Login.loginToAccount(driver, "organizer");
+        Login.loginToAccount("organizer");
         System.out.println("A. Login to organization");
 
         // Create Campaign - Donation
@@ -40,9 +41,17 @@ public class Do_Cam_Don_Ref {
         // Ask for Refund
         driver.get(Urls.getURLS("root")); // for app.crowdfundly.io/.dev: root, Subscribe: subs, LTD: ltd
         Menus.clickLogouts();
-        Login.loginToAccount(driver, "contributor");
+        Login.loginToAccount("contributor");
         System.out.println("H. Login to Contributor");
         CreateRefundRequest.create(driver);
         System.out.println("I. Refund Request Sent");
+
+        // Login to Organization Account
+        Login.loginToAccount("organizer");
+        System.out.println("J. Organization Login");
+
+        // Manage Refund
+        ManageRefundRequest.approve(driver);
+        System.out.println("K. Refund Request Approved");
     }
 }

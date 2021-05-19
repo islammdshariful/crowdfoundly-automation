@@ -29,7 +29,7 @@ public class Do_Org_SetOrg {
         Config.allow_cookies();
 
         // Login to Organization Account
-        Login.loginToAccount(driver, "organizer");
+        Login.loginToAccount("organizer");
         System.out.println("A. Login to organization");
 
         // Create Subscription

@@ -28,10 +28,10 @@ public class Do_Payouts {
         invokeBrowser();
         driver.get(Urls.getURLS("root"));
         Config.allow_cookies();
-        Login.loginToAccount(driver, "fundraiser");
+        Login.loginToAccount("fundraiser");
         Fundraiser.withdrawalRequest(driver, "bank");
         Menus.clickLogouts();
-        Login.loginToAccount(driver, "organizer");
+        Login.loginToAccount("organizer");
         Menus.clickWalletPayouts();
         Fundraiser.acceptWithdrawalRequest(driver);
     }

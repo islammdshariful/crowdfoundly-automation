@@ -28,12 +28,12 @@ public class Do_JoinFunraiser {
         invokeBrowser();
         Fundraiser.join(driver);
         Menus.clickLogouts();
-        Login.loginToAccount(driver, "organizer");
+        Login.loginToAccount("organizer");
         Fundraiser.approveCampaign(driver);
         Fundraiser.doDonate(driver);
         driver.get(Urls.getURLS("root"));
         Menus.clickLogouts();
-        Login.loginToAccount(driver, "fundraiser");
+        Login.loginToAccount("fundraiser");
     }
 
 

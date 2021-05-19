@@ -30,7 +30,7 @@ public class GiveOnlineDonation {
                 if (driver1.findElements(By.xpath(NewDonation.Locator.login_btn1_xpth)).size() != 0) {
                     driver1.findElement(By.xpath(NewDonation.Locator.login_btn1_xpth)).click();
                     System.out.println(cmp_type + " 1 a. Login to Contributor Account...");
-                    Login.loginToAccount(driver, "contributor");
+                    Login.loginToAccount("contributor");
                     try {
                         Thread.sleep(2000);
                     } catch (InterruptedException e) {
@@ -40,7 +40,7 @@ public class GiveOnlineDonation {
                 } else if (driver1.findElements(By.xpath(NewDonation.Locator.login_btn2_xpth)).size() != 0) {
                     driver1.findElement(By.xpath(NewDonation.Locator.login_btn2_xpth)).click();
                     System.out.println(cmp_type + " 2 a. Login to Contributor Account...");
-                    Login.loginToAccount(driver, "contributor");
+                    Login.loginToAccount("contributor");
                     try {
                         Thread.sleep(2000);
                     } catch (InterruptedException e) {

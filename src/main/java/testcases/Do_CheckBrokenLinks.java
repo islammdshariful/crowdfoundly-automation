@@ -11,6 +11,7 @@ import modules.Login;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import utils.Config;
 import utils.DriverManager;
 import utils.Urls;
@@ -18,17 +19,17 @@ import utils.Urls;
 
 import java.util.concurrent.TimeUnit;
 
-import static org.testng.Assert.assertEquals;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
 public class Do_CheckBrokenLinks {
-    private static WebDriver driver = null;
+    public static WebDriver driver = null;
 
     public static void invokeBrowser() {
         driver = DriverManager.driver;
         driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
     }
 
     private static void brokenLinks(WebDriver driver) {
@@ -37,21 +38,19 @@ public class Do_CheckBrokenLinks {
         int respCode = 200;
 
         List<WebElement> links = driver.findElements(By.tagName("a"));
-        Iterator<WebElement> it = links.iterator();
-        while (it.hasNext()) {
-            url = it.next().getAttribute("href");
-            System.out.println(url);
+        for (WebElement link : links) {
+            url = link.getAttribute("href");
+//            System.out.println(url);
 
             if (url == null || url.isEmpty()) {
-                System.out.println("URL is either not configured for anchor tag or it is empty");
+                System.out.println(url + " is either not configured for anchor tag or it is empty");
                 continue;
             }
 
             if (!url.startsWith(Urls.getURLS("root"))) {
-                System.out.println("URL belongs to another domain, skipping it.");
+                System.out.println(url + " belongs to another domain, skipping it.");
                 continue;
             }
-
             try {
                 huc = (HttpURLConnection) (new URL(url).openConnection());
                 huc.setRequestMethod("HEAD");
@@ -63,7 +62,6 @@ public class Do_CheckBrokenLinks {
                 } else {
                     System.out.println(url + " is a valid link");
                 }
-
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -75,9 +73,8 @@ public class Do_CheckBrokenLinks {
         invokeBrowser();
         driver.get(Urls.getURLS("root"));
         Config.allow_cookies();
-
         // Login to Organization Account
-        Login.loginToAccount(driver, "organizer");
+        Login.headlesslogin("organizer");
         System.out.println("A. Login to organization");
 
         try {

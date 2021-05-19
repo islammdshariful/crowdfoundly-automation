@@ -27,7 +27,7 @@ public class Do_ManageRefund {
         invokeBrowser();
         driver.get(Urls.getURLS("root"));
         Config.allow_cookies();
-        Login.loginToAccount(driver, "organizer");
+        Login.loginToAccount("organizer");
         ManageRefundRequest.approve(driver);
     }
 }

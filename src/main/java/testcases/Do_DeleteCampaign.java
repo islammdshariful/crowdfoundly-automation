@@ -27,7 +27,7 @@ public class Do_DeleteCampaign {
         invokeBrowser();
         driver.get(Urls.getURLS("root"));
         Config.allow_cookies();
-        Login.loginToAccount(driver, "organizer");
+        Login.loginToAccount("organizer");
 //        CreateSubscription.createSubs(driver, "plus");
 //        Menus.profileMenu.clickSubscription();
 //        Menus.profileMenu.clickAllPlans();

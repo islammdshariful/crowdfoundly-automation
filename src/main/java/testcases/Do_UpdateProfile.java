@@ -26,7 +26,7 @@ public class Do_UpdateProfile {
         invokeBrowser();
         driver.get(Urls.getURLS("root"));
         Config.allow_cookies();
-        Login.loginToAccount(driver, "organizer");
+        Login.loginToAccount("organizer");
         SetupProfile.updateProfile("organizer");
     }
 }

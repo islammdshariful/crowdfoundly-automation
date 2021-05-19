@@ -26,6 +26,6 @@ public class Do_Login {
         invokeBrowser();
         driver.get(Urls.getURLS("root"));
         Config.allow_cookies();
-        Login.loginToAccount(driver, "contributor");
+        Login.loginToAccount("contributor");
     }
 }

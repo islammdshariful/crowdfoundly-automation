@@ -29,7 +29,7 @@ public class Do_CreateOrganization {
         invokeBrowser();
         driver.get(Urls.getURLS("root"));
         Config.allow_cookies();
-        modules.Login.loginToAccount(driver, "organizer");
+        modules.Login.loginToAccount("organizer");
         CreateSubscription.createSubs(driver, "free");
         Menus.profileMenu.clickSubscription();
         Menus.profileMenu.clickAllPlans();

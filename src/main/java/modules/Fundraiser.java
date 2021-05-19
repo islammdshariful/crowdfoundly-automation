@@ -22,7 +22,7 @@ public class Fundraiser {
         driver.findElement(By.xpath(OrgPage.Locator.start_fund_xpth)).click();
         Config.allow_cookies();
 
-        Login.loginToAccount(driver, "fundraiser");
+        Login.loginToAccount("fundraiser");
 
         CreateCampaign.create("yes", "reward", "date", "no", "no");
         driver.get(Urls.getURLS("root"));

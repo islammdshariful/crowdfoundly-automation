@@ -29,7 +29,7 @@ public class Do_All {
         Config.allow_cookies();
 
         // Login to Organization Account
-        Login.loginToAccount(driver, "organizer");
+        Login.loginToAccount("organizer");
         System.out.println("A. Login to organization");
 
 
@@ -73,13 +73,13 @@ public class Do_All {
         // Ask for Refund
         driver.get(Urls.getURLS("root")); // for app.crowdfundly.io/.dev: root, Subscribe: subs, LTD: ltd
         Menus.clickLogouts();
-        Login.loginToAccount(driver, "contributor");
+        Login.loginToAccount("contributor");
         System.out.println("H. Login to Contributor");
         CreateRefundRequest.create(driver);
         System.out.println("I. Refund Request Sent");
 
         // Login to Organization Account
-        Login.loginToAccount(driver, "organizer");
+        Login.loginToAccount("organizer");
         System.out.println("J. Organization Login");
 
         // Manage Refund
@@ -117,7 +117,7 @@ public class Do_All {
 
         // Approve Campaign
         Menus.clickLogouts();
-        Login.loginToAccount(driver, "organizer");
+        Login.loginToAccount("organizer");
         Fundraiser.approveCampaign(driver);
 
         // Donate Campaign
@@ -126,12 +126,12 @@ public class Do_All {
 
         // Request a withdrawal request
         Menus.clickLogouts();
-        Login.loginToAccount(driver, "fundraiser");
+        Login.loginToAccount("fundraiser");
         Fundraiser.withdrawalRequest(driver, "bank");
 
         // Approve withdrawal request
         Menus.clickLogouts();
-        Login.loginToAccount(driver, "organizer");
+        Login.loginToAccount("organizer");
         Fundraiser.acceptWithdrawalRequest(driver);
 
         Menus.clickLogouts();

@@ -1,23 +1,25 @@
 package testcases;
 
-import modules.DeleteAccounts;
+import modules.Fundraiser;
+import modules.Login;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 import utils.Config;
 import utils.DriverManager;
+import utils.Menus;
 import utils.Urls;
 
 import java.util.concurrent.TimeUnit;
 
-public class Do_DeleteOrganization {
+public class Do_withdrawal {
     WebDriver driver = null;
 
     public void invokeBrowser() {
         driver = DriverManager.driver;
         driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
     }
 
     @Test
@@ -26,7 +28,13 @@ public class Do_DeleteOrganization {
         invokeBrowser();
         driver.get(Urls.getURLS("root"));
         Config.allow_cookies();
-        modules.Login.loginToAccount("organizer");
-        DeleteAccounts.deleteOrganization(driver);
+
+        Login.loginToAccount("fundraiser");
+        Fundraiser.withdrawalRequest(driver, "bank");
+
+        // Approve withdrawal request
+        Menus.clickLogouts();
+        Login.loginToAccount("organizer");
+        Fundraiser.acceptWithdrawalRequest(driver);
     }
 }

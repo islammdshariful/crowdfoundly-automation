@@ -23,6 +23,7 @@ public class Do_Donation {
     public void testCase() {
         Config.setEnv("dev"); //for DEV: dev & LIVE: live
         invokeBrowser();
+        Config.allow_cookies();
 //        (driver, url, campaign type, tip, login, other_info)
         GiveOnlineDonation.donate("https://orgbyautomation.crowdfundly.app/campaigns/automation-reward-date-49199", "reward", "yes", "yes", "no");
     }
