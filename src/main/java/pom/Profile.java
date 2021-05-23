@@ -2,6 +2,7 @@ package pom;
 
 public class Profile {
     public class Locator {
+        public static final String dashboard_xpth = "//*[@id=\"sidebar\"]/div/div[2]/ul/li[2]/a";
         public static final String menu_btn_xpth = "/html/body/div[1]/div/div/div/div[6]/div[1]/div/div[2]/div[3]";
         public static final String my_prfile_btn_xpth = "/html/body/div[1]/div/div/div/div[6]/div[1]/div/div[2]/div[3]/div/ul/li[2]";
 

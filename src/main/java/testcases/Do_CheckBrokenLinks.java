@@ -19,7 +19,6 @@ import utils.Urls;
 
 import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
 public class Do_CheckBrokenLinks {
     public static WebDriver driver = null;

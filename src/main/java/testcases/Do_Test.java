@@ -29,12 +29,9 @@ public class Do_Test {
         invokeBrowser();
         driver.get(Urls.getURLS("root"));
         Config.allow_cookies();
-        Login.loginToAccount("fundraiser");
-        Fundraiser.withdrawalRequest(driver, "bank");
-        Menus.clickLogouts();
         Login.loginToAccount("organizer");
-//        Fundraiser.doDonate(driver);
-        Menus.clickWalletPayouts();
-        Fundraiser.acceptWithdrawalRequest(driver);
+        SetupOrgMedia.all(driver);
+        SetupOrgMedia.removeMedia();
+        SetupOrgMedia.all(driver);
     }
 }

@@ -16,7 +16,6 @@ public class SetupProfile {
         WebDriver driver = DriverManager.driver;
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         try {
-
             if (driver.findElements(By.xpath(DashboardPage.Locators.overview_txt_xpth)).size() != 0) {
                 driver.findElement(By.xpath(Profile.Locator.menu_btn_xpth)).click();
                 driver.findElement(By.xpath(Profile.Locator.my_prfile_btn_xpth)).click();
@@ -57,6 +56,9 @@ public class SetupProfile {
             }
 
             driver.findElement(By.xpath(Profile.Locator.save_btn_xpth)).click();
+
+//            driver.findElement(By.xpath(Profile.Locator.dashboard_xpth)).click();
+//            Menus.clickLogouts();
         } catch (InterruptedException | IOException e) {
             e.printStackTrace();
         }

@@ -27,7 +27,16 @@ public class OrganizationSettingsPage {
         public static final String fav_crop_xpth = "//*[@id=\"favicon\"]/div/div[2]/div/div/div[2]/div[2]/button[2]/i";
         public static final String logo_crop_xpth = "//*[@id=\"logo\"]/div/div[2]/div/div/div[2]/div[2]/button[2]/i";
         public static final String cover_img_crop_xpth = "//*[@id=\"cover-photo\"]/div/div[2]/div/div/div[2]/div[2]/button[2]/i";
-        public static final String  slider_img_crop_xpth = "//*[@id=\"galleryImgCropper\"]/div/div[2]/div/div/div[2]/div[2]/button[2]/i";
+        public static final String slider_img_crop_xpth = "//*[@id=\"galleryImgCropper\"]/div/div[2]/div/div/div[2]/div[2]/button[2]/i";
+
+        public static final String remove_logo_xpth = "//*[@id=\"dashboard\"]/div/div[6]/div[2]/div/div[2]/div[2]/div/form/div/div/div[1]/div/div/div[1]/button/i";
+        public static final String remove_fav_xpth = "//*[@id=\"dashboard\"]/div/div[6]/div[2]/div/div[2]/div[2]/div/form/div/div/div[2]/div/div/div[1]/button/i";
+        public static final String remove_cover_xpth = "//*[@id=\"dashboard\"]/div/div[6]/div[2]/div/div[2]/div[2]/div/form/div/div/div[3]/div/div/div[1]/button/i";
+        public static final String remove_slider2_xpth = "//*[@id=\"gallery\"]/label/div/div[2]/div/div/button/i";
+        public static final String remove_slider1_xpth = "//*[@id=\"gallery\"]/label/div/div[1]/div/div/button/i";
+
+        public static final String remove_confirm_xpth = "/html/body/div[3]/div/div[3]/button[1]";
+        public static final String remove_cancel_xpth = "/html/body/div[3]/div/div[3]/button[2]";
     }
 
     public static class BasicLocator {
