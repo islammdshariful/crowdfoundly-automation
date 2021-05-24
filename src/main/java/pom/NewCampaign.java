@@ -1,5 +1,7 @@
 package pom;
 
+import org.openqa.selenium.firefox.ProfilesIni;
+
 public class NewCampaign {
     public static class Locator {
         // Fundraising type
@@ -111,6 +113,17 @@ public class NewCampaign {
         public static final String update_summary_btn_xpth = "//*[@id=\"public\"]/div/div[5]/div[2]/div/div/div[2]/div/div/div[2]/div/button/span";
         public static final String dwnld_pdf_xpth = "//*[@id=\"public\"]/div/div[5]/div[2]/div/div/div[2]/div/div/div[1]/div/a";
 
+        // Post update
+        public static final String post_update_xpth = "//*[@id=\"public\"]/div/div[5]/div[1]/div/div[2]/ul[2]/li[3]/a";
+        public static final String post_update_btn_xpth = "//*[@id=\"public\"]/div/div[5]/div[2]/div/div/div[2]/div/div[1]/button";
+        public static final String message_xpth = "//*[@id=\"message\"]/div[1]/p";
+        public static final String image_xpth = "//*[@id=\"images\"]/div/div";
+        public static final String post_img_crop_xpth = "//*[@id=\"updateImageCropper\"]/div/div[2]/div/div/div[2]/div[2]/button[2]";
+        public static final String add_video_xpth = "//*[@id=\"createUpdateModal\"]/div/div[2]/div/form/div/div[3]/button";
+        public static final String vdo_url_xpth = "//*[@id=\"createUpdateModal\"]/div/div[2]/div/form/div/div[3]/input";
+        public static final String post_an_update_btn_xpth = "//*[@id=\"createUpdateModal\"]/div/div[2]/div/form/div/button/span";
+        public static final String cross_modal_xpth = "//*[@id=\"createUpdateModal\"]/div/div[2]/button/img";
+
         // View campaign
         public static final String view_campaign_xpth = "//*[@id=\"public\"]/div/div[5]/div[2]/div/div/div[1]/a";
 
@@ -152,6 +165,17 @@ public class NewCampaign {
                 "\n" +
                 "Why do we use it?\n" +
                 "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.";
+
+        public static final String post_update_mesg_txt = "Lorem Ipsum is simply a dummy " +
+                "text of the printing and typesetting industry. Lorem Ipsum has been the " +
+                "industry's standard dummy text ever since the 1500s when an unknown printer " +
+                "took a galley of type and scrambled it to make a type specimen book. It has " +
+                "survived not only five centuries, but also the leap into electronic typesetting, " +
+                "remaining essentially unchanged. It was popularised in the 1960s with the release " +
+                "of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop" +
+                " publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem " +
+                "Ipsum is simply a dummy text of the printing and typesetting industry.\n";
+        public static final String vdo_url = "https://www.youtube.com/watch?v=xbqA6o8_WC0";
     }
 
 

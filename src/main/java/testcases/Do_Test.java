@@ -1,8 +1,10 @@
 package testcases;
 
 import modules.*;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
+import pom.CampaignPage;
 import pom.Profile;
 import utils.Config;
 import utils.DriverManager;
@@ -30,8 +32,6 @@ public class Do_Test {
         driver.get(Urls.getURLS("root"));
         Config.allow_cookies();
         Login.loginToAccount("organizer");
-        SetupOrgMedia.all(driver);
-        SetupOrgMedia.removeMedia();
-        SetupOrgMedia.all(driver);
+        CreateCampaign.create("no", "reward", "date", "yes", "no");
     }
 }

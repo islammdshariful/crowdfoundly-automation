@@ -32,7 +32,6 @@ public class Do_All {
         Login.loginToAccount("organizer");
         System.out.println("A. Login to organization");
 
-
 //            // Create Subscription
 //            CreateSubscription.createSubs(driver, "plus");
 //            System.out.println("B. Subscription created");

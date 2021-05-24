@@ -209,21 +209,11 @@ public class CreateCampaign {
             } else {
                 driver.findElement(By.xpath(NewCampaign.Locator.edit_campaign_xpth)).click();
 
-                // Update Thank you message
-                driver.findElement(By.xpath(NewCampaign.Locator.thankyou_message_xpth)).click();
-                driver.findElement(By.xpath(NewCampaign.Locator.ty_msg_input_xpth)).click();
-                driver.findElement(By.xpath(NewCampaign.Locator.ty_msg_input_xpth)).clear();
-                driver.findElement(By.xpath(NewCampaign.Locator.ty_msg_input_xpth)).sendKeys(NewCampaign.Text.ty_msg_text);
-                driver.findElement(By.xpath(NewCampaign.Locator.ty_save_msg_xpth)).click();
+                // Update Thank you message & Brochure
+                Edit_camp();
 
-                // Update Brochure
-                driver.findElement(By.xpath(NewCampaign.Locator.brochure_xpth)).click();
-                driver.findElement(By.id(NewCampaign.Locator.flyder_txt_id)).click();
-                driver.findElement(By.id(NewCampaign.Locator.flyder_txt_id)).clear();
-                driver.findElement(By.id(NewCampaign.Locator.flyder_txt_id)).sendKeys(NewCampaign.Text.brochure_msg_text);
-                driver.findElement(By.xpath(NewCampaign.Locator.update_summary_btn_xpth)).click();
-                Thread.sleep(1000);
-//                driver.findElement(By.xpath(NewCampaign.Locator.dwnld_pdf_xpth)).click();
+                // Post Update
+                post_Update();
 
                 // View Campaign
                 if(!start_fundraising.equals("yes")){
@@ -247,5 +237,69 @@ public class CreateCampaign {
         } catch (InterruptedException | IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public static void Edit_camp(){
+        WebDriver driver = DriverManager.driver;
+        driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+
+        try {
+            // Update Thank you message
+            driver.findElement(By.xpath(NewCampaign.Locator.thankyou_message_xpth)).click();
+            driver.findElement(By.xpath(NewCampaign.Locator.ty_msg_input_xpth)).click();
+            driver.findElement(By.xpath(NewCampaign.Locator.ty_msg_input_xpth)).clear();
+            driver.findElement(By.xpath(NewCampaign.Locator.ty_msg_input_xpth)).sendKeys(NewCampaign.Text.ty_msg_text);
+            driver.findElement(By.xpath(NewCampaign.Locator.ty_save_msg_xpth)).click();
+
+            // Update Brochure
+            driver.findElement(By.xpath(NewCampaign.Locator.brochure_xpth)).click();
+            driver.findElement(By.id(NewCampaign.Locator.flyder_txt_id)).click();
+            driver.findElement(By.id(NewCampaign.Locator.flyder_txt_id)).clear();
+            driver.findElement(By.id(NewCampaign.Locator.flyder_txt_id)).sendKeys(NewCampaign.Text.brochure_msg_text);
+            driver.findElement(By.xpath(NewCampaign.Locator.update_summary_btn_xpth)).click();
+            Thread.sleep(1000);
+//                driver.findElement(By.xpath(NewCampaign.Locator.dwnld_pdf_xpth)).click();
+
+            // Post Update
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+    public static void post_Update(){
+        WebDriver driver = DriverManager.driver;
+        driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+
+        try {
+            // Post Update
+            driver.findElement(By.xpath(NewCampaign.Locator.post_update_xpth)).click();
+            Thread.sleep(3000);
+
+            driver.findElement(By.xpath((NewCampaign.Locator.post_update_btn_xpth))).click();
+
+            driver.findElement(By.xpath(NewCampaign.Locator.message_xpth)).click();
+            driver.findElement(By.xpath(NewCampaign.Locator.message_xpth)).clear();
+            driver.findElement(By.xpath(NewCampaign.Locator.message_xpth)).sendKeys(NewCampaign.Text.post_update_mesg_txt);
+
+            driver.findElement(By.xpath(NewCampaign.Locator.image_xpth)).click();
+            Thread.sleep(1000);
+            Runtime.getRuntime().exec(System.getProperty("user.dir") + "/autoit/SetPostUpdate/post_update_fileupload.exe");
+            Thread.sleep(1000);
+            driver.findElement(By.xpath(NewCampaign.Locator.post_img_crop_xpth)).click();
+
+            driver.findElement(By.xpath(NewCampaign.Locator.add_video_xpth)).click();
+            driver.findElement(By.xpath(NewCampaign.Locator.vdo_url_xpth)).click();
+            driver.findElement(By.xpath(NewCampaign.Locator.vdo_url_xpth)).clear();
+            driver.findElement(By.xpath(NewCampaign.Locator.vdo_url_xpth)).sendKeys(NewCampaign.Text.vdo_url);
+
+            driver.findElement(By.xpath(NewCampaign.Locator.post_an_update_btn_xpth)).click();
+            Thread.sleep(2000);
+            driver.findElement(By.xpath(NewCampaign.Locator.cross_modal_xpth)).click();
+        } catch (InterruptedException | IOException e) {
+            e.printStackTrace();
+        }
+
     }
 }
